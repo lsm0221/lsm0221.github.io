@@ -1,0 +1,229 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    /* font-size: 100px; */
+    /* 按100px算 */
+    font-size: 50px;
+}
+body {
+    font-size: 14px;
+}
+
+.top {
+    width: 7.5rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0.62rem auto;
+    margin-bottom: 0.30rem;
+}
+.top span {
+    margin: 0 2.64rem;
+    font-size: 0.36rem;
+    font-weight: bold;
+}
+.top a {
+    text-decoration: none;
+    font-size: 0.36rem;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+.top a img {
+    width: 0.2rem;
+    height: 0.35rem;
+}
+
+.price {
+    width: 6.60rem;
+    height: 4.80rem;
+    margin: 0 auto;
+    margin-top: 0.62rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #ccc;
+}
+.price-1 img{
+    width: 0.66rem;
+    height: 0.64rem;
+    margin-top: 0.38rem;
+}
+.price-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.price-1 span:nth-child(2) {
+    font-size: 0.30rem;
+    color: #333;
+    font-weight: 700;
+    margin-top: 0.3rem;
+}
+.price-1 span:nth-child(3) {
+    font-size: 0.60rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 0.35rem;
+}
+.price-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0.28rem;
+}
+.price-2-1 {
+    text-align: center;
+}
+.price-2-1 p:nth-child(1) {
+    font-size: 0.36rem;
+    color: #A2A2A2;
+}
+.price-2-1 p:nth-child(2) {
+    font-size: 0.24rem;
+    color: #A2A2A2;
+    margin-top: 0.28rem;
+}
+
+.gift {
+    width: 6.60rem;
+    height: 2.14rem;
+    margin: 0 auto;
+    margin-top: 0.32rem;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+}
+.gift a {
+    text-decoration: none;
+}
+.gift-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.gift-1 span:nth-child(1) {
+    margin-top: 0.28rem;
+    margin-left:  0.30rem;
+    font-size: 0.30rem;
+    color: #333;
+    font-weight: bold;
+}
+.gift-1 span:nth-child(2) {
+    margin-top: 0.35rem;
+    margin-right: 0.30rem;
+    font-size: 0.24rem;
+    color: #F8C42E;
+}
+.gift-1 .number {
+    color: #333;
+}
+.gift-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.gift-2 span:nth-child(1) {
+    margin-top: 0.47rem;
+    margin-left: 0.24rem;
+    font-size: 0.42rem;
+    color: #333;
+    font-weight: bold;
+}
+.gift-2 span:nth-child(2) {
+    margin-top: 0.60rem;
+    font-size: 0.24rem;
+    margin-right: 0.20rem;
+    color: #333;
+}
+
+.help {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.56rem;
+    margin-bottom: 0.40rem;
+}
+.help a {
+    text-decoration: none;
+    font-size: 0.26rem;
+    color: #7181A4;
+}
+
+@media screen and (min-width:50px) and (max-width:150px) {
+    html {
+        font-size: 15px;
+    }
+    .present {
+        width: 150px;
+    }
+}
+
+ @media screen and (min-width:150px) and (max-width:185px) {
+    html {
+        font-size: 20px;
+    }
+}
+ @media screen and (min-width:185px) and (max-width:225px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width:225px) and (max-width:264px) {
+    html {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width:264px) and (max-width:320px) {
+    html {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:360px) {
+    html {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:374px) {
+    html {
+        font-size: 45px;
+    }
+}
+
+
+@media screen and (min-width:374px) and (max-width:414px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width:414px) and (max-width:485px) {
+    html {
+        font-size: 55px;
+    }
+}
+
+@media screen and (min-width:485px) and (max-width:562px) {
+    html {
+        font-size: 65px;
+    }
+}
+
+@media screen and (min-width:562px) and (max-width:768px) {
+    html {
+        font-size: 75px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}

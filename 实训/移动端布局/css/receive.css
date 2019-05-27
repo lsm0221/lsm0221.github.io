@@ -1,0 +1,237 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    /* font-size: 100px; */
+    /* 按100px算 */
+    font-size: 50px;
+}
+body {
+    font-size: 14px;
+}
+
+.top {
+    width: 7.5rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0.62rem auto;
+    margin-bottom: 0.30rem;
+}
+.top span {
+    margin: 0 2.64rem;
+    font-size: 0.36rem;
+    font-weight: bold;
+}
+.top a {
+    text-decoration: none;
+    font-size: 0.36rem;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+.top a img {
+    width: 0.2rem;
+    height: 0.35rem;
+}
+
+.price {
+    width: 6.60rem;
+    height: 4.40rem;
+    margin: 0 auto;
+    margin-top: 0.80rem;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #ccc;
+    text-align: center;
+}
+.price p:nth-child(1) img {
+    width: 0.66rem;
+    height: 0.66rem;
+}
+.price p:nth-child(1) {
+    margin-top: 0.30rem;
+}
+.price p:nth-child(2) {
+    font-size: 0.30rem;
+    color: #333;
+    font-weight: 600;
+    margin-top: 0.30rem;
+}
+.price p:nth-child(3) {
+    font-size: 0.60rem;
+    color: #333;
+    font-weight: 600;
+    margin-top: 0.30rem; 
+}
+.price p:nth-child(4) {
+    font-size: 0.30rem;
+    color: #7D7D7D;
+    margin-top: 0.30rem;
+}
+.price p:nth-child(4) span {
+    color: #89CA72;
+}
+
+.gift {
+    width: 6.60rem;
+    height: 2.10rem;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 0.42rem;
+}
+.gift-1 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;   
+}
+.gift-1 a span:nth-child(1) {
+    font-size: 0.30rem;
+    color: #333;
+    font-weight:bold;
+    margin-top: 0.30rem;
+    margin-left: 0.30rem;
+}
+.gift-1 a span:nth-child(2) {
+    font-size: 0.24rem;
+    color: #F9CD5E;
+    margin-top: 0.32rem;
+    margin-right: 0.30rem;
+}
+.gift-2 {
+    margin-top: 0.38rem;
+    margin-left: 0.30rem;
+}
+.gift-2 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 0.24rem;
+    align-items: center;
+}
+.gift-2 a span:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #747474;
+}
+.gift-2-1 {
+    width: 0.68rem;
+    height: 0.68rem;
+    border: 1px solid #E6E6E6;
+    border-radius: 0.68rem;
+
+}
+.gift-2-1 img{
+    width: 0.36rem;
+    height: 0.42rem;
+}
+.gift-2 a span:nth-child(2) {
+    color: #747474;
+    margin-right: 0.16rem;
+}
+.gift-2 a span:nth-child(2) b {
+    color: #333;
+}
+.gift-1 a {
+    position: relative;
+}
+.gift-1 a span:nth-child(2) b{
+    position: absolute;
+    top: 0.78rem; 
+    right: 0.26rem;
+}
+
+.help {
+    width: 100%;
+    margin-top: 0.35rem;
+    margin-bottom: 0.40rem;
+}
+.help p {
+    text-align: center;
+    font-size: 0.26rem;
+    color: #A6AFC4;
+}
+
+@media screen and (min-width:50px) and (max-width:150px) {
+    html {
+        font-size: 15px;
+    }
+    .present {
+        width: 150px;
+    }
+}
+
+ @media screen and (min-width:150px) and (max-width:185px) {
+    html {
+        font-size: 20px;
+    }
+}
+ @media screen and (min-width:185px) and (max-width:225px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width:225px) and (max-width:264px) {
+    html {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width:264px) and (max-width:320px) {
+    html {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:360px) {
+    html {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:374px) {
+    html {
+        font-size: 45px;
+    }
+}
+
+
+@media screen and (min-width:374px) and (max-width:414px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width:414px) and (max-width:485px) {
+    html {
+        font-size: 55px;
+    }
+}
+
+@media screen and (min-width:485px) and (max-width:562px) {
+    html {
+        font-size: 65px;
+    }
+}
+
+@media screen and (min-width:562px) and (max-width:768px) {
+    html {
+        font-size: 75px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}
