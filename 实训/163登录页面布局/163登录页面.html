@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/favicon.ico">
+    <title>163登录页面</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body,html {
+            height: 100%;
+            /* width: 100%; */
+        }
+        .top {
+            height: 10%;
+        }
+        .content {
+            background: url(img/3.jpg) center no-repeat;
+            width: 100%;
+            height: 100%;
+            background-color: #EEEEEE;
+            /* min-height: 500px;
+            min-width: 900px; */
+        }
+        .footer {
+            height: 10%;
+        }
+
+        .top {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+        .header > div {
+            width: 136px;
+            height: 32px;;
+            background: url(img/4.png) 50% no-repeat;
+            background-size: 100%;
+            text-align: center;
+           
+        }
+        .header > p {
+            margin-left: 156px;
+            margin-top: -24px;
+            border-left: 1px solid #ccc;
+            padding-left: 20px;
+            color: #777;
+            font-size: 16px;
+            float: left;
+        }
+        .header-right {
+            
+           margin-top: -25px;
+        }
+        .item {
+            overflow: hidden;
+            margin-left: 363px;
+        }
+        .item li {
+            list-style: none;
+            float: left;
+           
+        }
+        .item li a {
+            text-decoration: none;
+            padding: 13px;
+            font-size: 12px;
+            color: #777;
+        }
+        .item li a:hover {
+            color: #444;
+        }
+        .content {
+            position: relative;
+           top: -30px
+        }
+        .content-right {
+            width: 450px;
+            height: 473px;
+            /* border: 1px border #ccc; */
+            box-shadow: 2px 2px 5px rgba(0,0,0,.1),-2px -2px 5px rgba(0,0,0,.1);;
+            background-color: #fff;
+            border-radius: 8px;
+            position: absolute;
+            top: 28px;
+            right: 260px;
+        }
+        .login {
+            width: 100%;
+            height: 48px;
+            overflow: hidden;
+        }
+        .login1 {
+            width: 50%;
+            height: 48px;
+            float: left;
+            line-height: 48px;
+            text-align: center;
+        }
+        .login1 a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 100;
+            color: #3182d9;
+            padding-bottom: 10px;
+            
+        }
+        .login1:hover a{
+            border-bottom: 2px solid #3182d9;
+            
+        }
+        .login2 {
+            width: 50%;
+            height: 48px;
+            float: left;
+            line-height: 48px;
+            text-align: center;
+        }
+        .login2 a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 100;
+            color: #3182d9;
+            padding-bottom: 10px;
+            
+        }
+        .login2:hover a{
+            border-bottom: 2px solid #3182d9;         
+        }
+        .info {
+            width: 330px;
+            /* height: 300px; */
+            margin: 0 auto;
+            /* border: 1px solid red; */
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        .info1 {
+            border: 1px solid #c5cddb;
+            overflow: hidden;
+            height: 44px;
+            line-height: 44px;
+        }
+        .info1:hover {
+            border: 1px solid #4aafe9;
+        }
+        .icon {
+            background: url('img/5.png') no-repeat -251px -89px;
+            width: 20px;
+            height: 20px;
+            float: left;
+            position: relative;
+            top: 12px;
+            left: 10px;
+        }
+        
+
+
+        .info2 {
+            border: 1px solid #c5cddb;
+            overflow: hidden;
+            height: 44px;
+            line-height: 44px;
+        }
+        .info2:hover {
+            border: 1px solid #4aafe9;
+        }
+        .icon2 {
+            background: url('img/5.png') no-repeat -292px -88px;
+            width: 20px;
+            height: 22px;
+            float: left;
+            position: relative;
+            top: 12px;
+            left: 10px;
+        }
+        .input {
+            float: left;
+            margin-left: 20px;
+        
+        }
+        input[type="text"] {
+            padding: 12px 0px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 170px;
+            /* height: 42px;
+            line-height: 42px;
+             */
+        }
+        .tip {
+            float: left;
+            margin-top: 15px;
+        }
+        .tip > label {
+            font-size: 12px;
+            color: #999;
+            margin-left: 10px;
+
+        }
+        .help {
+            float: right;
+            margin-top: 15px;
+        }
+        .help a {
+            text-decoration: none;
+            color: #3182d9;
+            font-size: 12px;
+        }
+        .help a:hover {
+            color: blue;
+        }
+        .button {
+            width: 330px;
+            float: left;
+            margin-top: 40px;
+            height: 48px;
+        }
+        .button1 {
+            width: 162px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            color: #fff;
+            background: #3182d9;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            letter-spacing: 11px;
+            cursor: pointer;
+        }
+        .button1:hover {
+            background: rgb(16, 155, 219)
+        }
+        .button2 {
+            width: 162px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            color: #3182d9;
+            background: #EAF2FB;
+            border: none;
+            border: 1px solid #abccef;
+            border-radius: 4px;
+            font-size: 18px;
+            letter-spacing: 11px;
+            cursor: pointer;
+        }
+        .button2:hover {
+            background: rgb(131, 205, 240)
+        }
+        .ad {
+            width: 256px;
+            /* height: 35px; */
+            margin: auto;
+            margin-top: 150px;
+            padding-bottom: 20px;
+        }
+        .suggest {
+            width: 450px;
+            height: 74px;
+            line-height: 74px;
+            background: #fafafa;
+            /* overflow: hidden; */
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .suggest p {
+            width: 450px;
+            height: 20px;
+            line-height: 20px;
+            margin-left: 60px;        
+            padding-top: 15px;
+        
+        }
+        .suggest p a {
+            text-decoration: none;
+            color: #999;
+            font-size: 14px;
+        }
+        .footer {
+            width: 1000px;
+            height: 65px;
+            margin: 20px auto;
+            /* background: red; */
+        }
+        .footer1 a {
+            width: 92px;
+            height: 28px;
+            display: inline-block;
+            background: url(img/7.png);
+            background-size: 100%;
+            position: absolute;
+        }
+        .footer2 {        
+            text-align: center;
+            margin-left: 100px
+        }
+        .footer2 a {
+            text-decoration: none;
+            font-size: 13px;
+            color: #848585;
+            padding: 5px;
+        }
+        .footer2 a:hover {
+            color: #ccc;
+        }
+        .footer2 p {
+            font-size: 13px;
+            color: #848585;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="top">
+            <div class="header">
+                <div></div>
+                <p>中文邮箱第一品牌</p>
+            </div>
+            <div class="header-right">
+                <ul class="item">
+                    <li><a href="">企业邮箱</a></li>
+                    <li><a href="">VIP邮箱</a></li>
+                    <li><a href="">国外用户登录</a></li>
+                    <li><a href="">手机版</a></li>
+                    <li><a href="">电脑版</a></li>
+                    <li><a href="">帮助</a></li>
+                    <li><a href="">常见问题</a></li>
+                    <li><a href="">私人助理</a></li>
+                    <li><a href="">登录反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-right">
+                <div class="login">
+                    <div class="login1">
+                        <a href="#">二维码登录</a>
+                    </div>
+                    <div class="login2">
+                        <a href="">邮箱账号登录</a>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <div class="info1">
+                        <div class="icon"></div>
+                        <div class="input">
+                            <input type="text" placeholder="邮箱账号或手机号码">
+                            <span>@163.com</span>
+                        </div>
+                    </div>
+                    <div class="info2" style="margin-top:20px;">
+                            <div class="icon2"></div>
+                            <div class="input">
+                                <input type="text" placeholder="输入密码">
+                            </div>
+                    </div>
+
+                    <div class="tip">
+                        <span class="cicle"><input type="checkbox" name="tip"></span> 
+                        <label for="tip">十天内登录</label>
+                    </div>
+                    <div class="help">
+                        <a href="#">忘记密码？</a>
+                    </div>
+
+                    <div class="button">
+                        <button class="button1">登录</button>
+                        <button class="button2">注册</button>
+                    </div>
+
+                    <div class="ad">
+                        <a href="">
+                          <img src="img/6.png" alt="">  
+                        </a>
+                    </div>                  
+                </div>
+
+                <div class="suggest">
+                    <p><a href="">爆款 全净皓齿变速式声波电动牙刷</a></p>
+                    <p style="padding-top:7px;"><a href="" style="color:#cb4444;">网易邮箱提醒您谨防邮件诈骗</a>!</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer1">
+                <a href="">
+                    <span class="pic"></span>
+                </a>
+            </div>
+            <div class="footer2">
+                <a href="#">网易首页</a>
+                <a href="#">网易智造</a>
+                <a href="#">网易·有钱</a>
+                <a href="#">网易严选</a>
+                <a href="#">政府公益热线</a>
+                <p>
+                        网易公司版权所有©1997-2019  <a href="">ICP证粤B2-20090191</a>   <a href="">粤公网安备</a> 44010602000311 <span style="color:#DBD0CC">（数据来源：艾媒邮箱报告）</span>
+                </p>
+            </div>
+        </div>
+    
+</body>
+</html>
