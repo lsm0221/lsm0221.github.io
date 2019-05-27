@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100度</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* 总体 */
+        .container {
+            width: 1000px;
+            background-color: #fff;
+            margin: 0 auto;        
+        }
+
+        /* 头部 */
+        .header {
+            overflow: hidden;
+        }
+        .header-1 {
+            width: 1000px;
+            height: 30px;
+            background: #e9e9e9;
+            border: 1px solid #ccc;         
+        }
+        .header-2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .header-3 {
+            margin-top: -80px;
+            float: right;
+        }
+
+        /* 内容 */
+        .content {
+            overflow: hidden;
+        }
+        .content-left {
+            width: 330px;
+            float: left;
+        }
+        .content-1 {
+            
+            margin-top: 5px;
+        }
+        .content-left-2 {
+            margin-top: 7px;
+            background: #ebebe9;
+            border: 1px solid darkgray;
+            border-top: none;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;                       
+            overflow: hidden;
+        }
+
+        .content-left-2>p {
+            padding: 10px;
+            margin-left: 10px;
+            background: url(100度作业图片/hm_lmxian.jpg) no-repeat left bottom ;
+        }
+        .content-left-2 p a {
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            
+        }
+        .content-left-2 p a:hover {
+            color: #363636;
+            text-decoration: underline;
+        }
+        .content-left-2 ul {
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .content-left-2 ul li {
+            float: left;
+            background: #4b4b4b;
+            color: #fff;
+            width: 145px;
+            margin: 0 5px 5px 11px;
+            list-style: none;
+        }
+        .content-left-2 ul li a {
+            float: left;
+            text-decoration: none;
+        }
+        .content-left-2 > ul li>p {
+            overflow: hidden;
+            font-size: 14px;
+            padding-top: 19px;
+            /* padding-left: 2px; */
+        }
+
+        .free {
+            margin-top: 12px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .free h3 {
+            line-height: 33px;
+            background: #363636;
+            padding-left: 10px;
+            font-size: 15px;
+            color: #fff;
+        }
+        .free-2 {
+            overflow: hidden;
+            padding-top: 20px;
+            padding-left: 10px;
+            
+        }
+        .free-2-1 {
+            float: left;
+            width: 130px;
+            margin-right: 25px;
+            margin-left: 10px;
+        }
+        .free-2-1 h4 {
+            line-height: 15px;
+            font-size: 14px;
+            border-left: 4px solid red;
+            padding-left: 5px;
+            margin-top: 10px;
+        }
+        .free-2-2 {
+            float: left;
+            width: 130px;
+            margin-top: 10px;
+        }
+        .free-2-2 h4 {
+            line-height: 15px;
+            font-size: 14px;
+            border-left: 4px solid red;
+            padding-left: 5px;
+        }
+        
+
+
+
+        .content-right {
+            width: 638px; 
+            margin-left: 360px;
+            margin-top: 5px;
+        }
+        .content-right h2 {
+            background-color: #363636;
+            color: #fff;
+            padding-left: 12px;
+            font-size: 16px;
+            line-height: 40px;     
+        }
+        .content-right a {
+           font-size: 13px;
+            font-weight: normal;
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .content-right a:hover {
+            text-decoration: underline;
+        }
+        .content-right-1 {
+            margin-top: 3px;
+        }
+        .content-right-2 {
+            border: 4px solid #ccc;
+            overflow: hidden;
+        }
+        .content-right-2 li {
+            list-style-type: none;           
+            padding: 20px ;     
+            width: 260px;   
+            float: left; 
+            margin-left: 10px;
+           
+        }
+        .content-right-2 li a {
+            float: left;
+            
+        }
+        .content-right-2 li a img {
+            border: 2px solid #ccc;
+        }
+        .content-right_1 {
+            overflow: hidden;
+            text-indent: 2em;
+            padding-left:  20px;
+            font-size: 14px;
+        }
+
+        .content-right-3 {
+            overflow: hidden;
+        }
+
+        .content-right-3_1 {
+            width: 310PX;
+            float: left;
+            margin-top: 10px;
+            margin-left: -10px;
+        }
+        .content-right-3_2 {
+            float: right;
+            width: 310px;
+            margin-top: 10px;
+           
+        }
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .footer p>a {
+            font-size: 13px;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+        .footer p>a:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="header-1">
+            </div>
+            <div class="header-2">
+                <a href="">
+                    <img src="100度作业图片/logo.gif" alt="">
+                </a>
+            </div>
+            <div class="header-3">
+                <a href="">
+                    <img src="100度作业图片/headrimg.gif" alt="">
+                </a>
+            </div>
+            <div class="header-4">
+                <a href="">
+                    <img src="100度作业图片/banner.jpg" alt="" width="1000">
+                </a>
+            </div>
+        </div>
+
+        <!-- 内容 -->
+        <div class="content">
+            <div class="content-left">
+                <div class="content-1">
+                    <img src="100度作业图片/20160109_2.jpg" alt="" width="330">
+                </div>
+                <div class="content-left-2">
+                   <p><a href="">查看更多</a></p>
+                   <ul>
+                       <li>
+                           <a href="">
+                               <img src="100度作业图片/20160111_2.jpg" alt="">
+                           </a>
+                           <p>王府井希尔顿酒店</p>
+                       </li>
+                       <li>
+                            <a href="">
+                                <img src="100度作业图片/20160111_2.jpg" alt="">
+                            </a>
+                            <p>王府井希尔顿酒店</p>
+                        </li>
+                        <li>
+                                <a href="">
+                                    <img src="100度作业图片/20160111_2.jpg" alt="">
+                                </a>
+                                <p>王府井希尔顿酒店</p>
+                            </li>
+                            <li>
+                                    <a href="">
+                                        <img src="100度作业图片/20160111_2.jpg" alt="">
+                                    </a>
+                                    <p>王府井希尔顿酒店</p>
+                                </li>
+                   </ul>
+                </div>
+                <div class="free">
+                    <h3>免费体验</h3>
+                    <div class="free-1">
+                        <img src="100度作业图片/fqbanner.jpg" alt="" width="100%">
+                        <div free-2>
+                            <div class="free-2-1">
+                                <h4>今日大奖</h4>
+                                <a href="">
+                                    <img src="100度作业图片/private.jpg" alt="">
+                                </a>
+                                <p>天台爱情 电影票</p>
+                                <p>东都国际影城 提供</p>
+                            </div>
+                            <div class="free-2-2">
+                                <h4>最近大奖得主</h4>
+                                <dl>
+                                    <dt style="font-size:13px;">Good 白</dt>
+                                    <dd style="font-size:13px;">抢到 <b>天台爱情</b> 电影票</dd>
+                                    <dt style="font-size:13px;">Good 白</dt>
+                                    <dd style="font-size:13px;">抢到 <b>天台爱情</b> 电影票</dd>
+                                    <dt style="font-size:13px;">Good 白</dt>
+                                    <dd style="font-size:13px;">抢到 <b>天台爱情</b> 电影票</dd>
+                                    <dt style="font-size:13px;">Good 白</dt>
+                                    <dd style="font-size:13px;">抢到 <b>天台爱情</b> 电影票</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="content-right">
+                <h2>HOT博文
+                    <a href="#">查看更多>></a>
+                </h2>
+                <div class="content-right-1">
+                    <img src="100度作业图片/hm_rban.jpg" alt="" width="638">
+                </div>
+                <div class="content-right-2">
+                    <ul>
+                        <div class="border">
+                        <li style=" border-bottom: 1px dashed #000;">
+                            <a href="">
+                                <img src="100度作业图片/xlxiaguo.jpg" alt="">
+                            </a>
+                            <div class="content-right_1">
+                                <p>
+                                    这是一个瞎吃的时代，也是一个吃虾的时代
+                                </p>
+                                <p style="color:red">
+                                    带你去最HOT的地方
+                                </p>
+                            </div>
+                        </li>
+                        
+                        </div>
+                        <li style=" border-bottom: 1px dashed #000;">
+                                <a href="">
+                                    <img src="100度作业图片/xlxiaguo.jpg" alt="">
+                                </a>
+                                <div class="content-right_1">
+                                    <p>
+                                        这是一个瞎吃的时代，也是一个吃虾的时代
+                                    </p>
+                                    <p style="color:red">
+                                        带你去最HOT的地方
+                                    </p>
+                                </div>
+                        </li>
+                        <li>
+                                <a href="">
+                                    <img src="100度作业图片/xlxiaguo.jpg" alt="">
+                                </a>
+                                <div class="content-right_1">
+                                    <p>
+                                        这是一个瞎吃的时代，也是一个吃虾的时代
+                                    </p>
+                                    <p style="color:red">
+                                        带你去最HOT的地方
+                                    </p>
+                                </div>
+                        </li>
+                        <li>
+                                <a href="">
+                                    <img src="100度作业图片/xlxiaguo.jpg" alt="">
+                                </a>
+                                <div class="content-right_1">
+                                    <p>
+                                        这是一个瞎吃的时代，也是一个吃虾的时代
+                                    </p>
+                                    <p style="color:red">
+                                        带你去最HOT的地方
+                                    </p>
+                                </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="content-right-3">
+                    <div class="content-right-3_1">
+                        <a href=""><img src="100度作业图片/hm_rtu01.gif" alt="" width="310"></a>  
+                        <a href=""><img src="100度作业图片/hm_rtu03.gif" alt="" width="310"></a>  
+                        <a href=""><img src="100度作业图片/hm_rtu05.gif" alt="" width="310"></a> 
+                        <a href=""><img src="100度作业图片/hm_rtu07.gif" alt="" width="310"></a>    
+                    </div>
+
+                    <div class="content-right-3_2">
+                        <a href=""><img src="100度作业图片/hm_rtu02.gif" alt="" width="310"></a>
+                        <a href=""><img src="100度作业图片/hm_rtu04.gif" alt="" width="310"></a>
+                        <a href=""><img src="100度作业图片/hm_rtu06.gif" alt="" width="310"></a>
+                        <a href=""><img src="100度作业图片/hm_rtu08.gif" alt="" width="310"></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 尾部 -->
+        <div class="footer">
+            <p>
+                <a href="">网络视听许可证0108251号</a>       
+            </p>
+            <p style="margin-top:10px;">
+                    Copyright © 2013 壹佰度 100du.com 版权所有
+            </p>
+        </div>
+    </div>
+</body>
+</html>
