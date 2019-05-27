@@ -1,0 +1,332 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    /* font-size: 100px; */
+    /* 按100px算 */
+    font-size: 50px;
+}
+body {
+    font-size: 14px;
+}
+p {
+    margin: 0;
+}
+.top {
+    width: 7.5rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0.62rem auto;
+    margin-bottom: 0.30rem;
+}
+.top span {
+    margin: 0 auto;
+    font-size: 0.36rem;
+    font-weight: bold;
+}
+.top a {
+    text-decoration: none;
+    font-size: 0.36rem;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+.top a img {
+    width: 0.2rem;
+    height: 0.35rem;
+}
+
+.content {
+    width: 6.70rem;
+    margin: 0.70rem auto;
+}
+.content-top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.content-top-1 {
+    display: flex;
+    flex-direction: row;
+}
+.content-top-1 img{
+    width: 0.34rem;
+    height: 0.34rem;
+    margin-right: 0.20rem;
+    color: #717171;
+}
+.content-top-1 span {
+    font-size: 0.28rem;
+    color: #717171;
+}
+.content-top-2 a {
+    text-decoration: none;
+    font-size: 0.24rem;
+    color: #8D8D8D;
+}
+
+.content-gift {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.38rem;
+}
+.content-gift img:nth-child(1) {
+    width: 2.26rem;
+    height: 2.55rem;
+}
+.content-gift img:nth-child(2) {
+    width: 0.66rem;
+    height: 0.66rem;
+    margin-top: 0.40rem;
+}
+
+.content-number {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.32rem;
+}
+.content-number span {
+    color: #878787;
+    font-size: 0.24rem;
+}
+.content-number span img {
+    width: 0.24rem;
+    height: 0.24rem;
+}
+
+.conteht-quality {
+    width: 100%;
+    margin-top: 0.10rem;
+}
+.conteht-quality ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.conteht-quality ul li {
+    width: 3.00rem;
+    height: 2.63rem;
+    border-radius: 5px;
+    border: 1px solid #E2E2E2;
+    list-style: none;
+    margin-top: 0.32rem;
+}
+.conteht-quality-1 {
+    margin-left: 0.30rem;
+   margin-top: 0.33rem;
+   position: relative;
+}
+.conteht-quality-1 p:nth-child(1) {
+    font-size: 0.30rem;
+    color: #BCBCBC;
+}
+.conteht-quality-1 p:nth-child(2) {
+    font-size: 0.48rem;
+    color: #656565;
+}
+.conteht-quality-1 p:nth-child(2) span {
+    font-size: 0.24rem;
+    color: #656565;
+}
+.conteht-quality-1 p:nth-child(3) {
+    font-size: 0.20rem;
+    color: #A8A8A8;
+}
+
+.conteht-quality-1 p:nth-child(4) img{
+    width: 0.63rem;
+    height: 0.58rem;
+}
+.conteht-quality-1 p:nth-child(4) {
+    position: absolute;
+    right: 0.30rem;
+    top: 0;
+}
+.conteht-quality-2 {
+    border-top: 1px solid #E2E2E2;
+    margin-top: 0.23rem;
+}
+.conteht-quality-2 a {
+    display: flex;
+    flex-direction: row;
+}
+.conteht-quality-2 img {
+    width: 0.33rem;
+    height: 0.35rem;
+    margin: 0.20rem auto;
+}
+.conteht-quality-3 {
+    border-top: 1px solid #E2E2E2;
+    margin-top: 0.23rem;
+}
+.conteht-quality-3 a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
+    font-size: 0.3rem;
+    color: #898989;
+}
+.conteht-quality-3 img:first-child {
+    width: 0.45rem;
+    height: 0.09rem;
+    margin: 0.35rem 0.48rem;
+
+}
+.conteht-quality-3 img:last-child {
+    width: 0.33rem;
+    height: 0.35rem;
+    margin: 0.20rem 0.48rem;
+}
+.conteht-quality-3 a span {
+    margin: auto;
+}
+
+.content-area {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.60rem;
+}
+.content-area p {
+    font-size: 0.22rem;
+    color: #878787;
+}
+
+.footer {
+    width: 100%;
+    border-top: 1px solid #EDEDED;
+    margin-top: -0.20rem;
+}
+.footer-1 {
+    width: 6.70rem;
+    margin: 0.30rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.footer-shop {
+    margin-left: 0.15rem;
+    display: flex;
+    flex-direction: column;
+}
+.footer-shop span:nth-child(1) {
+    font-size: 0.20rem;
+    color: #888888;
+}
+.footer-shop span:nth-child(2) {
+    font-size: 0.42rem;
+    color: #333333;
+    font-weight: bold;
+    margin-left: -0.09rem;
+}
+.footer-buy {
+    display: flex;
+    margin-right: 0.15rem;
+    margin-top: 0.08rem;
+}
+.footer-buy a {
+    width: 1.48rem;
+    height: 0.66rem;
+    background: #69BE49;
+    text-align: center;
+    line-height: 0.66rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.28rem;
+}
+.modal-footer a {
+    width: 50%;
+    height: 0.78rem; 
+    font-size: 0.36rem;
+    line-height: 0.6rem;   
+}
+@media screen and (min-width:50px) and (max-width:150px) {
+    html {
+        font-size: 15px;
+    }
+    .present {
+        width: 150px;
+    }
+}
+
+ @media screen and (min-width:150px) and (max-width:185px) {
+    html {
+        font-size: 20px;
+    }
+}
+ @media screen and (min-width:185px) and (max-width:225px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width:225px) and (max-width:264px) {
+    html {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width:264px) and (max-width:320px) {
+    html {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:360px) {
+    html {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:374px) {
+    html {
+        font-size: 45px;
+    }
+}
+
+
+@media screen and (min-width:374px) and (max-width:414px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width:414px) and (max-width:485px) {
+    html {
+        font-size: 55px;
+    }
+}
+
+@media screen and (min-width:485px) and (max-width:562px) {
+    html {
+        font-size: 65px;
+    }
+}
+
+@media screen and (min-width:562px) and (max-width:768px) {
+    html {
+        font-size: 75px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}

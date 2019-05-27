@@ -1,0 +1,193 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    /* font-size: 100px; */
+    /* 按100px算 */
+    font-size: 50px;
+}
+body {
+    font-size: 14px;
+}
+
+.top {
+    width: 7.5rem;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 0.62rem;
+}
+.top span {
+    margin: 0 2.64rem;
+    font-size: 0.36rem;
+    font-weight: bold;
+}
+.top a {
+    text-decoration: none;
+    font-size: 0.36rem;
+    font-weight: bold;
+    margin-left: 0.2rem;
+}
+.top a img {
+    width: 0.2rem;
+    height: 0.35rem;
+}
+
+.shop {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.60rem;
+}
+.shop img {
+    width: 5.60rem;
+    height: 3.60rem;
+}
+.shop p {
+    font-size: 0.30rem;
+    color: #636363;
+    margin-top: 0.15rem;
+}
+
+.receiver {
+    width: 100%;
+    background: #F8F8F8;
+    margin-top: 0.40rem;
+}
+.info {
+    width: 6.20rem;
+    height: 0.48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 0.48rem;
+}
+.info span:nth-child(1) {
+    font-size: 0.24rem;
+    color: #898989;
+}
+
+.connection-1 {
+    width: 6.20rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.4rem;
+}
+.connection-1 span {
+    font-size: 0.28rem;
+    color: #6C6C6C;
+}
+.connection-1 span:nth-child(1) {
+    width: 4.20rem;
+}
+
+.sure {
+    margin: 0 auto;
+    margin-top: 0.73rem;
+    width: 6.90rem;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+    background: #09BB07;
+    border-radius: 5px;  
+}
+.sure a {
+    text-decoration: none;
+    font-size: 0.36rem;
+    color: #fff;
+}
+
+.help {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.55rem;
+    margin-bottom: 0.55rem;
+}
+.help a {
+    text-decoration: none;
+    font-size: 0.26rem;
+    color: #7282A4;
+}
+
+@media screen and (min-width:50px) and (max-width:150px) {
+    html {
+        font-size: 15px;
+    }
+    .present {
+        width: 150px;
+    }
+}
+
+ @media screen and (min-width:150px) and (max-width:185px) {
+    html {
+        font-size: 20px;
+    }
+}
+ @media screen and (min-width:185px) and (max-width:225px) {
+    html {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width:225px) and (max-width:264px) {
+    html {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width:264px) and (max-width:320px) {
+    html {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:360px) {
+    html {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width:360px) and (max-width:374px) {
+    html {
+        font-size: 45px;
+    }
+}
+
+
+@media screen and (min-width:374px) and (max-width:414px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width:414px) and (max-width:485px) {
+    html {
+        font-size: 55px;
+    }
+}
+
+@media screen and (min-width:485px) and (max-width:562px) {
+    html {
+        font-size: 65px;
+    }
+}
+
+@media screen and (min-width:562px) and (max-width:768px) {
+    html {
+        font-size: 75px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 100px;
+    }
+}
