@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>仿天猫商城点击选中商品效果</title>
+    <link rel="shortcut icon"  href="static/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+</head>
+<body>
+  <div class="top">请选择信息后加入购物车</div>
+  <div class="main">
+    <p class="p1">
+      <b style="border:0px;">版本</b>
+      <span id="sp0" class="ed" name="0">ONE A2001</span>
+      <span id="sp1" class="ed" name="0">ONE A0001</span>
+      <span id="sp2" class="ed" name="0">ONE A1001</span>
+    </p>
+    <p class="p2">
+      <b style="border:0px;">机身颜色</b>
+      <span id="sp3" class="co" name="0">白色</span>
+      <span id="sp4" class="co" name="0">黑色</span>
+      <span id="sp5" class="co" name="0">金色</span>
+    </p>
+    <p class="p3">
+      <b style="border:0px;">套餐类型</b>
+      <span id="sp6" class="pa" name="0">标配</span>
+      <span id="sp7" class="pa" name="0">套餐一</span>
+      <span id="sp8" class="pa" name="0">套餐二</span>
+    </p>
+    <p class="p4">
+      <b style="border:0px;">运行内存</b>
+      <span id="sp9" class="ru" name="0">2GB</span>
+      <span id="sp10" class="ru" name="0">3GB</span>
+      <span id="sp11" class="ru" name="0">4GB</span>
+    </p>
+    <p class="p5">
+      <b style="border:0px;">机身内存</b>
+      <span id="sp12" class="me" name="0">16GB</span>
+      <span id="sp13" class="me" name="0">32GB</span>
+      <span id="sp14" class="me" name="0">64GB</span>
+    </p>
+    <p class="p6">
+      <b style="border:0px;">产地</b>
+      <span id="sp15" class="ad" name="0">中国大陆</span>
+      <span id="sp15" class="ad" name="0">港澳台</span>
+    </p>
+    <p class="p7">
+      <b style="border:0px;">价格</b>
+      <span id="sp15" class="ad" name="0">999元抢购</span>
+    </p>
+    <p class="p8">
+      <b style="border:0px;">数量</b>
+      <input type="text" value="1" style="width:40px;height:26px;">
+    </p>
+
+    <p style="margin-top:30px;margin-left:95px;">
+      <button class="bu1">加入购物车</button>
+      <button class="bu2">打开购物车</button>
+    </p>
+    
+  </div>
+  <div class="shopCar">
+    <li style="font-size:14px;background: #C40000;color: white;">您所选商品信息如下：</li>
+    <div class="sright">
+      
+    </div>
+    <div class="kong" style="background:#ccc;width:100%;height:7px;display:none"></div>
+    <button class="bu3" style="width:80px;height:35px;margin-left:20px;">隐藏购物车</button>
+    <button class="bu4" style="width:80px;">清空购物车</button>
+  </div>
+
+  <script>
+      $(function(){
+          $('span').click(function(){
+              if($(this).hasClass('check')){
+                $(this).removeClass('check')
+              }else{
+                  $(this).addClass('check').siblings('span').removeClass('check')
+              }
+          })
+      })
+  </script>
+</body>
+</html>
