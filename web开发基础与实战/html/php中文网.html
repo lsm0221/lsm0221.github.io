@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PHP中文网</title>
+	<style>
+		.box{
+			width:218px;
+			height: 170px;
+			position: relative;
+			top:60px;
+			left:60px;
+			border-radius: 10px;
+			box-shadow: 1px 3px 7px #ccc;			
+		}
+		.box img{
+			width: 218px;
+			height:130px;
+			border-radius: 10px;
+		}
+		.box span{
+			font-size: 12px;
+			color:#ccc;
+			padding: :5px 20px;
+			position: absolute;
+			z-index: 10;
+		}
+		.box p{
+
+			height: 90px;
+			padding: 0 14px;
+			background: #fff;
+			font-size: 14px;
+			text-indent: 5em;
+			position: absolute;
+			top:65px;
+			border-radius: 10px;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="http://img.php.cn/upload/course/000/126/153/5acc118f11d6b969.jpg" alt="">
+		<p>
+			javascript极速入门
+		</p>
+		<span>12345个人看</span>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		$(function(){
+			$('.box').hover(
+				function(){
+					$('p').stop().animate({'top':'30px'})
+				},
+				function(){
+					$('p').stop().animate({'top':'65px'})
+			})
+		})
+	</script>
+</body>
+</html>

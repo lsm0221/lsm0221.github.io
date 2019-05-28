@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒布局</title>
+	<style>
+		body{
+			padding:0;
+			margin:0;
+		}
+
+
+		div.box{
+			
+			display:box;
+			display:-webkit-box;
+			-webkit-box-orient:horizontal;
+		}
+		div.left{
+			width:300px;
+			/*float:left;*/
+			background: green;
+			padding:10px;
+			-moz-box-ordinal-group:3;
+			-webkit-box-ordinal-group:3;
+		}
+		div.right{
+			width:300px;
+			/*float:right;*/
+			background: red;
+			padding:10px;
+			-moz-box-ordinal-group:2;
+			-webkit-box-ordinal-group:2;
+		}
+
+		div.center{
+			/*width:400px;
+			/*float:left;*/
+			background: blue;
+			box-flex:1;
+			-webkit-box-flex:1;
+			-moz-box-flex:1;
+			-moz-box-ordinal-group:1;
+			-webkit-box-ordinal-group:1;
+		}
+
+		.left,.center,.right{
+			box-sizing:border-box;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<h2>栏目名称</h2>
+				<ul>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+				</ul>
+		</div>
+		<div class="center">
+			<p>爱美之心，人皆有之。但是过度美颜，有可能是一种不健康的心理表现。改变外在的形象，或者靠美颜获得安慰，并不能解决深层次的心理问题。 秉持还原真实的理念，过去的iphone前置摄像头总是被吐槽。因为拍出的照片太真实了，让很多爱秀的照片的人大呼不过瘾。 而9月新发布的iPhone xs 和 xs max决定痛改前非，植入了美颜功能，并且对所有拍下的照片自动美白磨皮处理。对于想把自己拍得美的女孩子们，这功能简直是不能太好！然而，在欧洲，这功能却引起了用户的普遍不满，甚至还出现了许多的投诉。在不久前发布的iOS 12.1正式版中，相关功能已经得到调整。 </p>
+
+		</div>
+		<div class="right">
+			<h2>栏目名称</h2>
+				<ul>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+					<li><a href="#">栏目名称</a></li>
+				</ul>
+		</div>
+	</div>
+</body>
+</html>

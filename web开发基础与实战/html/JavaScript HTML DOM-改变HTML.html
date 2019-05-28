@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变HTML</title>
+</head>
+<body>
+	<div id="box">大家好</div>
+	<script type="text/javascript">
+		document.getElementById("box").innerHTML="new HTML"
+	</script>
+
+	<p>大家好 我是lsm</p>
+	<script type="text/javascript">
+		function changecontent(elements,content)
+		{
+			var len=elements.length  //获取元素长度
+			for(var i=0;len>i;i++)
+			{
+				elements[i].innerHTML=content  //获取元素下标，改变内容
+			}
+		}
+		var p1=document.getElementsByTagName("p") //获取p标签
+		changecontent(p1,"中文网")
+
+
+	</script>
+</body>
+</html>

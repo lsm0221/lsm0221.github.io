@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		input[type="text"]:enabled{
+			background-color: red;
+		}
+		input[type="text"]:disabled{
+			background-color: yellow;
+		}
+
+		input[type="text"]:read-only{
+			background: green;
+		}
+		input[type="password"]:read-write{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<form action="">
+	姓名:	<input type="text" name="" placeholder="请输入姓名" enabled><br><br>
+	学校:	<input type="text" name="" placeholder="请输入学校"   disabled>
+<br><br>
+	
+ 	用户名:<input type="text" value="lsm" placeholder="请输入用户名" readonly><br><br>
+ 	密码 :<input type="password" name="" placeholder="请输入密码">
+	</form>
+</body>
+</html>

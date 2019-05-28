@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animation属性</title>
+	<style>
+		div{
+			width:20px;
+			height:20px;
+			background: pink;
+		}
+		@keyframes mycolor{
+			0% { background-color: pink;; }
+			20%	{ background-color: yellow;
+					width:50px;
+					height:60px;
+					transform:rotate(10deg);
+					transform:translate(10px,20px); }
+			50% { background-color:red; 
+					width:70px;
+					height:80px;
+					transform:rotate(30deg);
+					transform:translate(30px,40px);}
+			70% {background-color:blue;
+					width:90px;
+					height:100px;
+					transform:rotate(45deg);
+					transform:translate(50px,60px);}
+			100% {background-color:black;
+					width:150px;
+					height:200px;
+					transform:rotate(60deg);}
+		}
+		div:hover{
+			animation-name:mycolor;
+			animation-duration:5s;
+			animation-timing-function:linear;
+			animation-iteration-count:infinite;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>animation属性</h1>
+	<div></div>
+</body>
+</html>

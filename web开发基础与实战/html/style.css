@@ -1,0 +1,151 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-color:#f3f3f3;
+}
+
+
+.container{
+	width:1000px;
+	margin:auto;
+
+}
+div.logo{	
+	display:inline-block;
+	vertical-align: top;
+	width:755px;
+
+}
+div a img{
+	width:550px;
+	height:150px;
+}
+div.sousuo{
+	display:inline-block;
+	vertical-align: top;
+	margin-top:65px;
+	text-align: right;
+	width:240px;
+}
+input[type="text"]{
+	background: #f3f3f3;
+	border:1px solid #ccc;
+	height:40px;
+	line-height: 40px;
+	font-size:22px;
+	padding-left:10px;
+	width:165px;
+	display: inline-block;
+	vertical-align:top;
+	
+}
+input[type="submit"]{
+	background-color: #3598db;
+	color:#fff;
+	border:1px solid #3598db;
+	height:42px;
+	display: inline-block;
+	vertical-align: top;
+	font-size:20px;
+	padding:0 10px;
+
+}
+div.nav{
+	background: #3598db;
+	height:60px;
+
+       }
+div nav ul li{
+	list-style: none;
+	display: inline-block;
+	line-height: 60px;
+	border-right: 1px solid #2f89c5;
+	-webkit-transition:background 1s linear ;
+
+}
+div nav ul li a{
+	text-decoration:none;
+	color: #fff;
+	font-size: 16px;
+	padding:30px;
+}
+div nav ul li.on{
+	background-color: #2f89c5;
+}
+div nav ul li:hover{
+	background: #2f89c5;
+}
+div.body_warpper{
+	margin-top: 20px;
+}
+ .lunbotu{	
+ 	 width:628px;
+ 	 height:278px; 	 
+ 	 background:url(images/timg.jpg) ;
+ 	 background-repeat: no-repeat;
+ 	 margin-left:250px;
+ 	 box-shadow:1px 4px 15px #A39F9F;
+ }
+div.body_left{
+	width:628px;
+	display:inline-block;
+	vertical-align:top;
+	margin-right: 20px;
+
+}
+div.body_right{
+	width:352px;
+	height:500px;
+	background: #000;
+	margin-left:250px;
+	display:inline-block;
+	vertical-align:top;
+}
+div.xinwen{
+	margin-top:30px;
+}
+div.title_bg{
+	margin-left:250px;
+	border:solid 1px #ccc;
+	width:628px;
+	background: #ccc;
+	height:45px;
+	line-height: 45px
+}
+div.title_bg h2{	
+	font-size: 16px;
+	padding-left:10px;
+}
+div.title_bg h2 a{
+	text-decoration: none;
+	color:#444444;
+}
+ul.title_ps li a img{
+	margin-left: 250px;	
+	width:315px;	
+	height:165px;
+}
+.title_ps2 h3 ,p{
+	margin-left: 250px;
+	float:left;
+}
+.titke_ps2 a ,h3{
+	margin-left: 250px;
+	float:left;
+}
+ul.xinwen li{
+	width:100%;
+	vertical-align: bottom;
+	display: inline-block;
+
+}
+ul.xinwen li a{
+	vertical-align: top;
+	display: inline-block;
+}
+div.xinwen li a.ms{
+	width:308px;
+}
+

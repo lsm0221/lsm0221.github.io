@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变CSS样式</title>
+</head>
+<body>
+	<div id="box">大家好哇</div>
+	<script type="text/javascript">	
+		document.getElementById("box").style.color="red"
+	</script>
+
+	<div class="text">你们好哇</div>
+	<p>中文网</p>
+	<script type="text/javascript">
+		function changecss(elements,content)
+		{
+			var len=elements.length
+			for(i=0;len>i;i++)
+			{
+				elements[i].style.color=content
+			}
+		}
+		var text1=document.getElementsByClassName("text")
+		changecss(text1,"blue")
+		var text2=document.getElementsByTagName("p")
+		changecss(text2,"yellow")
+
+	</script>
+	
+</body>
+</html>

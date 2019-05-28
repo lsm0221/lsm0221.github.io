@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式方法</title>
+	<script type="text/javascript">
+		var a=/abc/
+		var str1="abc123456,123"
+		var str2="xyz123456"
+		console.log(a.test(str1))
+		console.log(a.test(str2))
+		console.log(a.exec(str1))
+		console.log(a.exec(str2))
+		console.log(a.compile(str1))
+
+		var reg=/abc/g
+		var str="abc123abc456abc"
+		var r="x"
+		console.log(str.match(reg))
+		console.log(str.search(reg))
+		console.log(r.search(reg))
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

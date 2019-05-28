@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin:20px 0;
+		}
+		div.centerbody{
+			width:960px;
+			margin:auto;
+		}
+		div.left{
+			width:740px;
+			float:left;
+		}
+		p{
+			line-height:600px;
+			text-align: center;
+			font-weight:bold;
+			font-size: 2em;
+			margin:0 0 20px 0;
+			color:#ffffff;
+
+		}
+		p.left-z{
+			width:200px;
+			float:left;
+			background: blue;
+		}
+		p.left-y{
+			width:520px;
+			float:right;
+			background: red;
+		}
+		p.right{
+			width:200px;
+			float:right;
+			background: yellow;
+		}
+		@media screen and (min-width:1000px){
+			div.centerbody{
+				width:1000px;
+
+			}
+			div.left{
+				width:780px;
+			}
+			p.left-y{
+				width:560px;
+			}
+			p.left-z{
+				width:200px;
+			}
+			p.right{
+				width:200px;
+			}
+		}
+
+		@media screen and (min-width:640px) and (max-width:999px){
+			div.centerbody{
+				width:640px;
+
+			}
+			div.left{
+				width:640px;
+			}
+			p.left-y{
+				width:420px;
+			}
+			p.left-z{
+				width:200px;
+			}
+			p.right{
+				width:100%;
+				clear:both;
+				float:none;
+				line-height: 150px;
+			}
+		}
+
+		@media screen and (max-width:649px){
+			div.centerbody{
+				width:100%;
+
+			}
+			div.left{
+				width:100%;
+				float:none;
+			}
+			p.left-y{
+				width:100%;
+				float:none;
+			}
+			p.left-z{
+				width:100%;
+				float:none;
+			}
+			p.right{
+				width:100%;
+				float:none;
+				line-height: 150px
+			}
+
+			p{
+				line-height: 150px;
+			}
+		}
+	</style> 
+</head>
+<body>
+	<div class="centerbody">
+		<div class="left">
+			<p class="left-z">Center</p>
+			<p class="left-y">Left</p>
+		</div>
+		<p class="right">right</p>
+	</div>
+</body>
+</html>

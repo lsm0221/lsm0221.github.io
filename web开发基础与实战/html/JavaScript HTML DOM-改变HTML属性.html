@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变HTML属性</title>
+</head>
+<body>
+	<img src="images/1.jpg" alt="风景" id="image">
+	<script type="text/javascript">
+		document.getElementById("image").src="images/2.jpg"
+	</script>
+
+	<img src="images/heaebg.jpg" alt="" class="image1">
+	<script type="text/javascript">
+		function changecontent(elements,content)
+		{
+			var len=elements.length
+			for(var i=0;len>i;i++)
+			{
+				elements[i].src=content
+			}
+
+		}
+		var img=document.getElementsByClassName("image1")
+			changecontent(img,"images/logo.png")
+ 
+
+	</script>
+</body>
+</html>

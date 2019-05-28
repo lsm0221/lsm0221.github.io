@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>邮箱正则表达式</title>
+	<script type="text/javascript">
+		var reg=/^[a-zA-Z\d]+[\.\-\_a-zA-Z\d]*\@[a-zA-Z\d]+(\.[a-zA-Z]{2,4})+$/
+		var str="feir@qq.com"
+		console.log(reg.test(str))
+		var str2="feir@qqcom"
+		console.log(reg.test(str2))
+		var str3="feai_main.in-123@qq.com"
+		console.log(reg.test(str3))
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>屏蔽词</title>
+	<script type="text/javascript">
+		var biWord=["王八蛋","sb","fuck","shit"]
+		var str=biWord.join(")|(")//数组转换成字符串
+		console.log(str)
+		var regstr="("+str+")"
+		console.log(regstr)
+		var reg=new RegExp(regstr,"ig")//ig修饰符i:忽略了大小写，g:全局变量
+		console.log(reg)
+		function biYourWord(str)	
+		{
+			return str.replace(reg,"*")
+		}
+		var test="王八蛋你是SB,fuck you,shit"
+		console.log(biYourWord(test))
+		
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h1:before{
+			content:counter(lsm,upper-alpha)'.';
+		}
+		h1{
+			counter-increment:lsm;
+		}
+
+		p:before{
+			content:'第'counter(lsm1,upper-roman)'章、';
+		}
+		p{
+			counter-increment:lsm1;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+	<h1>标题</h1>
+	<p>shshshshshsshshhhs</p>
+</body>
+</html>

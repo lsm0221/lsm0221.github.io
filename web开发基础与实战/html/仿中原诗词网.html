@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿中原诗词网</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+
+		.clear{clear:both;}
+		.box{width: 100%;
+			height:1400px;}
+
+		.header{width: 950px;
+			    height: 156px; 
+			    background:url(images/heaebg.jpg);
+				margin:auto;
+			    }
+
+		img{float:left; cursor:pointer;}
+
+		.login{float:right;
+			   margin-top:15px;
+			   background:white;			 
+			   }
+
+		.login > a { text-decoration:none;
+					 
+					 font-size:13px;
+					}
+		.login > a:link{ color:black; }
+		.login > a:visited{ color:red; }
+		.login > a:hover{ color:green; }
+		
+		.menu {width:100%;
+			  height:30px;
+			  background-color:green;
+			  box-shadow:0px 5px 20px #1F1612 inset;}
+		
+		ul{ width:950px;
+			height:30px;
+			margin:auto;									
+		  }
+
+		ul>li{float:left;
+			  list-style:none;
+			  width:86px;
+			  line-height:30px;
+			  text-align:center;}
+
+		ul>li>a{text-decoration:none;
+			color:#fff;
+			cursor:pointer;
+		}
+
+		ul>li>a:hover{color:black;}
+
+		.content{width:950px;
+				margin:auto;
+				}
+
+		.pic{width:950px;
+			height:212px;
+			background:url(images/t0167b143d2787f0bb0.jpg);
+			margin-top:5px;
+			margin-left:5px;
+			}
+		 
+		.content_1{width:950px;
+					height:30px;
+					border-style:solid;
+					border-width:1px;
+					border-color:#ccc;
+					margin-left:5px;
+					margin-top:5px;
+				}
+		
+		.content_1>span{font-size:13px;
+						color:#666;
+						line-height:30px;
+						float:left;
+				}
+
+		span>a{color:#1F1612;
+				text-decoration:none;
+
+		}
+
+		.content_1>form{width:290px;
+						float:right;
+						margin-top:5px;
+						}
+
+		select{border-width:1px;
+			   border-style:solid;
+			   border-color:#ccc;
+				height:20px;
+				float:left;}
+
+		input[type="text"]{border-width:1px;
+							border-style:solid;
+							border-color:#ccc;
+							height:18px;
+							width:130px;
+							float:left;
+		}
+
+		input[type="img"]{border-width:0px;
+						  border-style:solid;
+							border-color:#ccc;
+							height:20px;
+							width:51px;
+							float:left;
+							background-image:url(images/serchbt2_03.jpg);
+							}
+
+		.content_2{width:950px;margin-top:5px;}
+
+		.left{width:693px;
+			height:700px;
+			border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+			float:left;
+			margin-left:5px;
+		}
+
+		table{width:693px;border-collapse:collapse;}
+
+		.list_1{border-bottom-width:1px;
+				border-bottom-style:dotted;
+				border-bottom-color:#666;
+				height:30px;
+				line-height:30px;
+				padding-left:10px;
+				font-size:14px;
+				font-weight:bold;
+			}
+
+		.list_1:before{content:url(images/tle.jpg);}
+
+		.list_2{font-weight:bold;
+			    font-size:14px;
+			    height:30px;
+			    line-height:30px;
+			    padding-left:30px;
+			    color:#666;
+				}
+
+		.list_2>a{color:#666;
+				 text-decoration:none;
+				 padding-left:15px;
+				}
+
+		.list_2>a:hover{color:black;
+						text-decoration:underline;
+					}
+		
+		.list_3{background:#F2F2F2;
+				height:30px;
+				font-size:13px;
+				color:#666;
+				text-align:center;
+			}
+
+		.list_4{height:30px;
+				font-size:13px;
+				color:#666;
+				text-align:center;
+				border-width:1px;
+				border-style:solid;
+				border-color:#ccc;
+			}
+
+		.list_4>td{border-style:solid;
+					border-width:1px;
+					border-color:#ccc;
+					}
+
+		.list_4>td>a{text-decoration:none;
+					color:#666;
+		}
+
+		.list_4_1{text-align:left;}
+
+		.list_4_1>a:hover{color:green;}
+
+		.list_4_2>a:hover{text-decoration:underline;}
+		
+		
+		
+		.right{width:240px;
+			float:right;
+			margin-left:5px;
+		}
+
+		.right_1{width:240px;
+			border-style:solid;
+			border-width:1px;
+			border-color:#ccc;
+			height:310px;
+			margin-bottom:5px;
+		}
+
+		.right_1>table{width:235px;
+				border-collapse:collapse;
+				margin:auto;
+
+		}
+
+		.right_li:before{content:url(images/zzzlRightBg2_10.jpg  );
+							margin-left:10px;
+						}
+
+		.right_1 table tr{height:30px;
+							line-height:30px;
+							font-size:13px;
+							color:#666;
+							border-bottom-style:solid;
+							border-bottom-width:1px;
+							border-bottom-color:#ccc;
+						}
+
+		.right_li>a{text-decoration:none;
+					color:#666;
+		}
+
+		.right_li>a:hover{color:green;
+
+		}
+		
+		.right_li_1>a{text-decoration:none;
+						}
+
+		.right_li_1>a:hover{color:#ccc;
+							text-decoration:underline;
+						}
+
+		.bottom{width:100%;
+				 
+				margin-top:800px;
+				text-align:center;
+
+				}
+		.bottom-border{
+			width:100%;
+			height:5px;
+			background-color: #367A08;
+				 
+		}
+		.bottom p {
+					margin-top: 30px;
+			 		text-decoration:none;
+					color:#666;
+					font-size:13px;
+					}
+
+		.bottom p a:hover{color:#ccc;}
+		
+		.bottom p a{text-decoration:none;
+					color:#666;}
+
+		small{color:#666;}
+
+		small a:hover{ color:#ccc; }
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="header">
+		<img src ="images/logo.png">
+		<div class="login">
+			<a href="#">登 录</a> | <a href="#">注 册</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="menu">	
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">古体诗词</a></li>
+			<li><a href="#">诗词大全</a></li>
+			<li><a href="#">诗韵墨香</a></li>
+			<li><a href="#">大河之南</a></li>
+			<li><a href="#">诗词专题</a></li>
+			<li><a href="#">天宫妙对</a></li>
+			<li><a href="#">现代诗词</a></li>
+			<li><a href="#">美文原创</a></li>
+			<li><a href="#">作者专栏</a></li>
+			<li><a href="#">今日更新</a></li>
+		</ul>
+		<div class="clear"></div>						
+	</div>
+
+	<div class="content">
+		<div class="pic"></div>
+		<div class="content_1">			
+			<span>&nbsp;&nbsp;  您现在所在的位置:  <a href="#">首页</a> 》古体诗词</span>
+			<form>
+				<select>
+					<option>按作品标题</option>
+					<option>按作者标题</option>
+					<option>按古诗词标题</option>
+				</select>
+				<input type="text" name="" placeholder="请输入关键词">
+				<input type="img" name="">
+			</form>
+			</div>
+		<div class="content_2">
+			<div class="left">
+				<table>
+					<tr><td colspan="5" class="list_1">古体诗词</td></tr>
+					<tr><td colspan="5" class="list_2">排列方式:<a href="#">默认</a>  <a href="#">阅读</a>  <a href="#">评论</a>  <a href="#">推荐</a></td></tr>
+					<tr class="list_3">
+						<td>标题</td><td>作者</td><td>阅读</td><td>评论</td><td>发表时间</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					<tr class="list_4">
+						<td class="list_4_1"><a  href="#">七绝·听秋</a></td>
+						<td class="list_4_2"><a href="#">沈仙默人A</a></td>
+						<td>5</td><td>0</td>
+						<td>2018-11-04</td>
+					</tr>
+					
+				</table>
+			</div>
+
+			<div class="right">
+				<div class="right_1">
+					<div style="width:240px;height:30px;box-shadow:0px 5px 10px #ccc inset;border-bottom:1px solid #ccc">
+						<div style="width:80px;height:30px;background-color: #4B8437;font-weight:bold;color:#fff;margin-left:20px;text-align:center;line-height:30px;font-size:13px;border-top-left-radius:6px;border-top-right-radius:6px;">推荐排行</div>
+					</div>
+					<table>	
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+					</table>					
+					</div>
+				<br>
+					<div class="right_1">
+					<div style="width:240px;height:30px;box-shadow:0px 5px 10px #ccc inset;border-bottom:1px solid #ccc">
+						<div style="width:80px;height:30px;background-color: #4B8437;font-weight:bold;color:#fff;margin-left:20px;text-align:center;line-height:30px;font-size:13px;border-top-left-radius:6px;border-top-right-radius:6px;">推荐排行</div>
+					</div>
+					<table>	
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+						<tr>
+							<td class="right_li">&nbsp;<a href="#">童年记忆.夏日游泳</a></td>
+							<td class="right_li_1"><a href="#">中一</a></td>
+						</tr>
+					</table>				
+			    </div>
+				
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+	<div class="bottom">
+		<div class="bottom-border"></div>
+		<p>
+			<a href="#">联系我们</a> | <a href="#">关于诗网</a> | <a href="#">联系我们</a> | <a href="#">关于诗网</a> | <a href="#">联系我们</a> | <a href="#">关于诗网</a> | <a href="#">联系我们</a> | <a href="#">关于诗网</a> | <a href="#">管理登录</a><br>
+
+			<small>COPYRIGHT 2003-2018,POETIC.COM.CN,All Rights Reserved</small><br>
+			<small>版权所有：<a href="#">中原诗词网</a>邮箱: web@poetic.com.cn</small>	
+		</p>
+
+	</div>
+</div>
+</body>
+</html>

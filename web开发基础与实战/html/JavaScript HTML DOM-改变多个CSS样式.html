@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变多个CSS样式</title>
+</head>
+<body>
+	<div class="text">大家好</div>
+	<p>中文网</p>
+	<script type="text/javascript">
+			function changecss(elements,cssname,cssvalue)
+			{
+				var len=elements.length
+				for(i=0;len>i;i++)
+				{
+					elements[0].style[cssname]=cssvalue
+				}
+			}
+			var texts=document.getElementsByClassName("text")
+			changecss(texts,"color","red")
+			var p1=document.getElementsByTagName("p")
+			changecss(p1,"background","blue")
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的三个属性</title>
+	<script type="text/javascript">
+		var a={x:1}//使用一个原型对象
+		var b= Object.create(a)//使用这个原型创建了一个对象
+		// document.write(a.isPrototypeOf(b))
+		// var c={y:2}
+		// document.write(a.isPrototypeOf(c))
+		function classof(x)
+		{
+			document.write(Object.prototype.toString.call(x))
+		}
+		classof("1")
+		document.write(Object.isExtensible(a))
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

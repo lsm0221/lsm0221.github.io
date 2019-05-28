@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>触发的事件</title>
+	<style>
+		#box{
+			width: 100px;height: 100px;background: pink;border-radius:50px;
+			line-height: 100px;text-align: center;color:red;
+		}
+		#main{
+			width: 100px;height: 100px;background: pink;border-radius:50px;
+			line-height: 100px;text-align: center;color:#fff;
+
+		}
+
+	</style>
+</head>
+<body id="content" onload="changecss()">
+	<div id="box" onclick="changebox()">点我...</div>
+	<br>
+	<div id="main" onmouseout="changebox()">鼠标移上</div>
+	<script type="text/javascript">
+		function changebox(){
+			alert("你好")
+		}
+		var contents=document.getElementById("content")
+			function changecss(){
+				contents.style.background="blue"
+			}
+
+
+	</script>
+	
+</body>
+</html>
