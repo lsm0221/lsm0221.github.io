@@ -1,0 +1,127 @@
+/* 标签选择器 */
+ul {
+    border: 1px dashed red;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* 层级选择器 */
+ul li {
+    list-style-type: none;
+    width: 40px;
+    height: 40px;
+    background-color:wheat;
+    float: left;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 2px 2px 1px #888;
+    margin-left: 10px;
+}
+
+/* id选择器 */
+#bg-blue {
+    background-color: lightblue;
+}
+
+/* class选择器 */
+.bg-green {
+    background-color: lightgreen;
+}
+
+/* 属性选择器 */
+li[id="bg-blue"] {
+    border:2px solid red;    
+}
+
+/* 群组选择器 */
+#bg-blue, .bg-green {
+    border:2px solid blue;
+}
+
+/* 相邻选择器 */
+#bg-blue + * {
+    background-color: yellow;
+}
+
+
+/* 兄弟选择器 */
+/* #bg-blue ~ * {
+    background-color: yellow;
+} */
+
+/* 伪类:子元素选择器 */
+ul :first-child{
+    background-color: coral;
+}
+
+ul :last-child{
+    background-color: coral;
+}
+
+ul :nth-child(6){
+    /* 还可以写运算符 2n , 2n+1 */
+    background-color: coral;
+}
+
+ul :nth-last-child(3){
+    background-color: coral;
+
+}
+
+/* 伪类:类型选择器 */
+ul li:last-of-type{
+    background-color: darkorchid;
+}
+
+ul li:first-of-type{
+    background-color: darkorchid;
+
+}
+
+/* 选中每个div中的第二个子元素 */
+div :nth-child(2){
+    background-color: lightgreen;
+}
+
+/* 如果只选西门 */
+/* div:first-of-type :nth-child(3){
+    background-color: lightblue;
+} */
+
+p:nth-of-type(2){
+    /* 从0开始是第一个 */
+    background-color: yellow;
+}
+
+form :enabled{
+    /* 有效控件 */
+    background-color: wheat;
+}
+
+/* 将单选按钮中的文本前景色设置为红色,使用了伪类和相邻选择器 */
+form :checked + *{
+    color: red;
+}
+
+/* 焦点 */
+form :focus{
+    background-color: lightgreen;
+}
+
+button:hover {
+    width: 56px;
+    height: 28px;
+    background-color: black;
+    color: white;
+}
+
+/* 当前表单中输入无效值,提醒用户 */
+form :invalid{
+    color: red;
+}
+
+

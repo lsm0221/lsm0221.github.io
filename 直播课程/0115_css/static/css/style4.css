@@ -1,0 +1,64 @@
+/* 同级塌陷 谁小塌陷到大的里面*/
+.box1 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    /* margin-bottom: 30px; */
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    /* margin-top:30px; */
+}
+
+.box1 {
+    margin-bottom: 50px;
+}
+.box2 {
+    margin-top:80px;
+}
+
+/* 嵌套传递
+margin一定要用到外部的盒子上,解决每个盒子之间的距离,而不是盒子之间嵌套的盒子距离，padding来解决盒子之间嵌套的距离
+ */
+.box3 {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+  
+}
+
+.box4 {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+ 
+}
+
+.box3 {
+    padding-top: 50px;
+    height: 150px;
+    
+}
+
+/* 自动挤压 */
+.box5 {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+ 
+}
+
+.box5{
+    margin-left: 100px;
+/* 在原始的位置上偏移50px */
+    margin-left:-50px;
+
+    margin-left: auto;
+
+    margin-right:auto;
+
+    margin: 0 auto;
+}

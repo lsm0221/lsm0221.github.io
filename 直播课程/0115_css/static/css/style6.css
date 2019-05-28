@@ -1,0 +1,50 @@
+.box1 {
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+
+    position: relative;
+    /* 第一个区块: 向右移动150px即可 */
+    left:150px;
+}
+
+.box2 {
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+    /* 第二个区块不需要移动 */
+}
+
+.box3 {
+    width: 150px;
+    height: 150px;
+    background-color: lightgreen;
+
+    position: relative;
+
+    /* 第三个区块: 先右移动300px,再向上移动150px； */
+    left:300px;
+    top:-150px;
+}
+
+.box4 {
+    width: 150px;
+    height: 150px;
+    background-color: lightcoral;
+
+    /* 第四个区块: 先右移动150px,再向上移动300px */
+    position: relative;
+    left:150px;
+    top:-300px;
+}
+
+.box5 {
+    width: 150px;
+    height: 150px;
+    background-color: lightseagreen;
+
+    /* 第五个区块: 先右移动150px,再向上移动300ox */
+    position: relative;
+    left:150px;
+    top:-300px;
+}

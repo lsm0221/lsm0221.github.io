@@ -1,0 +1,39 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../images/5.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.shade {
+    /* 遮罩绝对定位,并自动伸展到整个窗口 */
+    position: absolute;
+    left: 0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    
+    background-color: black;
+    opacity: 0.7;
+}
+
+
+.login img {
+    width: 380px;
+    height: 460px;;
+}
+
+.login{
+    background-color: white;
+
+    /* 登录窗口不随窗口大小变化,说明它不是文档流中,是绝对定位 */
+    position: absolute;
+
+    /* 使登录窗口中页面的正中间位置开始显示,注意显示的起点在正中间 */
+    left: 50%;
+    top: 50%;
+
+    margin-left: -190px;
+    margin-top: -230px;
+}

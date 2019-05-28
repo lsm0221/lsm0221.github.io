@@ -1,0 +1,27 @@
+.box1{
+    width: 600px;
+    height: 600px;
+    background-color: lightgreen;
+
+    padding: 50px;
+    /* 会发现,内边距会增加盒子填充厚度,将盒子撑大 */
+
+}
+
+ /* 解决方案 1.只需要将盒子的大小,根据padding值进行调整 */
+ .box1{
+    width: 550px;
+    height: 500px;
+ }
+
+ /* 解决方法 2.改变DOM结构,将盒子的宽高与内边距设置分离 */
+ .box1{
+    width: 600px;
+    height: 600px;
+    padding: 0px;
+ }
+
+ /* 宽高分离 */
+.box2{
+    padding: 50px;
+}

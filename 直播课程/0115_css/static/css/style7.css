@@ -1,0 +1,61 @@
+.parent{
+    /* 定位父级一定要有定位属性 */
+    position: relative;
+    border:1px dashed gray;
+    width: 450px;
+    height: 450px;
+}
+
+.box1 {
+    width: 150px;
+    height: 150px;
+    background-color: lightblue;
+
+    position: absolute;
+    left: 150px;
+   
+}
+
+.box2 {
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+
+    position:absolute;
+    left:150px;
+    top:150px;
+   
+}
+
+.box3 {
+    width: 150px;
+    height: 150px;
+    background-color: lightgreen;
+
+    position: absolute;
+    left: 300px;
+    top:150px;
+   
+
+}  
+
+.box4 {
+    width: 150px;
+    height: 150px;
+    background-color: lightcoral;
+
+    position: absolute;
+    left: 150px;
+    top:300px;
+   
+}
+
+.box5 {
+    width: 150px;
+    height: 150px;
+    background-color: lightseagreen;
+
+    position: absolute;
+    top: 150px;
+    
+}

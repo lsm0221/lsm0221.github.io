@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通用布局之圣杯布局</title>
+    <link rel="stylesheet" href="static/css/style12.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="content">
+            <ul class="nav">
+                <li class="item"><a href="">首页</a></li>
+                <li class="item"><a href="">公司新闻</a></li>
+                <li class="item"><a href="">最新产品</a></li>
+                <li class="item"><a href="">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 圣杯中间主体 -->
+    <div class="container">
+        <!-- 必须先创建中间主体区块，确保它优先被渲染出来 -->
+        <!-- 与双飞翼相比,DOM结构更加简洁,不需要为main创建父级容器 -->     
+        <div class="main">主体内容区</div>
+        <div class="left">左侧</div>
+        <div class="right">右侧</div>
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="content">
+            <p>
+                <a href="">&copy; PHP中文网版权所有</a>&nbsp;|&nbsp;
+                <a href="">0551-88889999</a> &nbsp;|&nbsp;
+                <a href="">皖ICP2016098801-1</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

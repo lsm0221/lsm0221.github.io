@@ -1,0 +1,80 @@
+.header {
+    width: 100%;
+    /* 参考色块,上线时应该删除或替换 */
+    background-color:lightgray;
+}
+
+.header .content {
+    /* 头部内容区,应该居中显示,所以要有宽度 */
+    width: 1000px;
+    height: 60px;
+    background-color: lightgreen;
+    margin: 0 auto;
+}
+
+.header .content .nav {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header .content .nav .item {
+    list-style-type: none;
+}
+
+.header .content .nav .item a {
+    /* 一定要将浮动设置到链接标签<a>上面,否则无法实现导航区的点击与高亮 */
+    float: left;
+    /* 设置最小宽度和最小高度,以适应导航文本的变化 */
+    min-width: 80px;
+    min-height: 60px;
+
+    /* 设置行高与头部区块等高,使导航文本可以垂直居中显示 */
+    line-height: 60px;
+    color: #444;
+    font-size: 1.2rem;
+
+    padding: 0 15px;
+
+    text-decoration: none;
+
+    text-align: center;
+}
+
+.header .content .nav .item a:hover {
+    background-color: #444;
+    color: white;
+}
+
+.container {
+    width: 1000px;
+    height: 600px;
+    background-color:lightgrey;
+    margin: 5px auto;
+}
+
+.footer {
+    width: 100%;
+    background-color: lightgrey
+}
+
+.footer .content {
+    width: 1000px;
+    height: 60px;
+    background-color: lightgreen;
+    margin: 0px auto;
+}
+
+.footer .content p {
+    text-align:center;
+    line-height: 60px;
+}
+
+.footer .content a {
+    text-decoration: none;
+    color: #777
+}
+
+.footer .content a:hover {
+    text-decoration: underline;
+    color: #444;
+}

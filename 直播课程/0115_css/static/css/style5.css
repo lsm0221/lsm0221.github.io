@@ -1,0 +1,32 @@
+.box1 {
+    width: 150px;
+    height: 150px;
+    background-color:lightblue;
+    /* 左浮动,脱离文档流,后面的区块自动前移占据了它的空间 */
+    float:left;
+}
+
+.box2 {
+    width: 180px;
+    height: 180px;
+    background-color:lightcoral;
+
+    float:left;
+}
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    background-color:lightgreen;
+
+    float: right;
+}
+
+.box4 {
+    height: 100px;
+    background-color: lightgray;
+
+    /* clear:left;
+    clear:right; */
+    clear:both;
+}
