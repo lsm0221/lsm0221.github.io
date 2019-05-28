@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类型互相转换</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// 字符转数字函数
+		//1 string-0
+			var a="123"
+			document.write(a-0+"<br>")
+			document.write(typeof(a-0)+"<br>")    //typeof 检测数据类型
+		//2 Number(string)
+			var num="456"
+			document.write(Number(num)+"<br>")
+		//3 parseInt(string) 取整数部分，忽略小数部分，从第一个字符开始寻找，找到非数字截止，并返回找到的数字
+		    var b="123PHP"
+		    document.write(parseInt(b)+"<br>")
+		//4 parseFloat(string) 回把小数部分也取到
+		    var c="123.12PHP"
+		    document.write(parseFloat(c)+"<br>")
+
+	//数字转字符串
+	  	//1 Number+""   Number添加空字符串的方法
+	  	    var d=741
+	  	    document.write(d+""+"<br>")
+	  	    document.write(typeof(d+"")+"<br/>")
+	  	//2 String()
+	  	    var e=963
+	  	    document.write(String(e)+"<br/>")
+	  	//3 number.toString()
+	  	    var f=852
+	  	    document.write(f.toString())
+	</script>
+</body>
+</html>

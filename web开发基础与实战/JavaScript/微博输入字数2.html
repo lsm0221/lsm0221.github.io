@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微博输入字数2</title>
+		<style>
+		.box{
+			width:700px;
+			height: 165px;
+			background-color: #fff;
+			border:8px solid pink;
+			margin:0px auto;
+			padding:10px;
+		}
+		img{
+			float:left;
+		}
+		.box_1{
+			float:left;
+			margin-left:310px;
+			width:150px;
+			height: 26px;
+			text-align: right;
+			font-size: 14px;
+			color:#888;
+		}
+		.box_1 span{
+			font-size: 16px;
+			font-weight: bold;
+		}
+		#text{
+			width:700px;
+			height:100px;
+			border:1px solid #888;
+			margin-top:5px;
+
+		}
+		#sp1,#sp2,#sp3,#sp4,#sp5,#sp6{
+			float:left;
+			width:50px;
+			height: 27px;
+			line-height: 27px;
+			padding-left:32px;
+		}
+	
+		#sp1{
+			background: url(img/2.png) no-repeat left center;
+		}
+		#sp2{
+			background: url(img/3.png) no-repeat left center;
+		}
+		#sp3{
+			background: url(img/4.png) no-repeat left center;
+		}
+		#sp4{
+			background: url(img/5.png) no-repeat left center;
+		}
+		#sp5{
+			background: url(img/6.png) no-repeat left center;
+			width:70px;
+		}
+		#sp6{
+			margin-left:93px;
+			margin-right:15px;
+			color:#888;
+		}
+		#bt{
+			float:left;
+			width:80px;
+			height:26px;
+			line-height: 26px;
+			border:none;
+			color:#fff;
+			background: #ff8140;
+			border-radius:5px;
+
+		}
+	</style>
+</head>
+	<script type="text/javascript">
+		var text,number,bt,m;
+		window.onload=function (){
+			text=document.getElementById("text");
+			number=document.getElementById("number");
+			bt=document.getElementById("bt");
+			
+		text.onkeydown=function (){
+			m=140-text.value.length;
+			if(m<0){
+				number.style.color="red";
+			}else{
+				number.style.color="#ccc";
+			}
+			number.innerHTML=m;
+		}
+		bt.onclick=function(){
+			if(m==140){
+				alert("请输入文字")
+				text.focus()
+			}else if(m<0){
+				alert("输入的内容超过140")
+				text.focus()
+			}else{
+				alert("发布成功")
+				
+			}
+		}	
+
+		}
+
+
+
+
+	</script>
+
+<body>
+	<div class="box">
+		<img src="img/1.jpg">
+		<div class="box_1">还可以输入<span id="number"></span>字</div>
+		<textarea id="text" ></textarea>
+		<span id="sp1">表情</span>
+		<span id="sp2">图片</span>
+		<span id="sp3">视频</span>
+		<span id="sp4">话题</span>
+		<span id="sp5">头条文章</span>
+		<span id="sp6">公开</span>
+		<input type="button" value="发布" id="bt" >
+	</div>
+</body>
+
+</html>

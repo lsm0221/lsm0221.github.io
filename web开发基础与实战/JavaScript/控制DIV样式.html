@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>控制DIV样式</title>
+	<style>
+		#box{
+			width:200px;
+			height:200px;
+			background-color: yellow;
+			margin:20px 40px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<div id="box"></div>
+	<input type="button" value="变高" onclick="changeHeight()">
+	<input type="button" value="变长" onclick="changeWidth()">
+	<input type="button" value="变色" onclick="changeColor()">
+	<input type="button" value="重置" onclick="changeSubmit()">
+	<input type="button" value="隐藏" onclick="changeDisplay_1()">
+	<input type="button" value="显示" onclick="changeDisplay_2()">
+	<script type="text/javascript">
+		var box;
+		window.onload=function(){
+			box=document.getElementById("box")
+		}
+		 function changeHeight(){
+			box.style.height="400px";
+		}
+		 function changeWidth(){
+			box.style.width="400px";
+		}
+		 function changeColor(){
+			box.style.backgroundColor="blue"
+		}
+		 function changeSubmit(){
+			box.style.height="200px";
+			box.style.width="200px";
+			box.style.backgroundColor="yellow"
+		}
+		 function changeDisplay_1(){
+			box.style.display="none";
+		}
+		 function changeDisplay_2(){
+			box.style.display="block";
+		}
+
+
+
+	</script>
+</body>
+</html>

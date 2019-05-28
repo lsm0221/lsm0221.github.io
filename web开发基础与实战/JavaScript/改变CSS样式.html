@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变CSS样式</title>
+	<!-- 改变CSS样式:
+	 document.getElementById("id名").style.属性名="要改变的属性值" -->
+
+
+
+
+	<style>
+		#box{
+			width: 200px;height: 200px;background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" "></div>
+	<script type="text/javascript">
+		box.onclick=function box_1(x)
+		{
+			y=document.getElementById("box")
+			y.style.background="blue"
+			y.style.borderRadius="50px"
+		}
+
+
+	</script>
+</body>
+</html>

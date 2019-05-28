@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选框</title>
+	<style>
+		.box{
+			width:100px;
+			height:200px;
+			background: #fff;
+			margin:50px auto;
+			border:1px solid #888;	
+			padding:20px 10px;	
+			border-radius:5px;	
+		}
+		.box_1{
+			border-bottom:1px solid #ccc;
+			padding:10px 0px;
+			margin-bottom: 5px;
+		}	
+		.box input{
+			margin:6px;
+		}	
+	</style>
+</head>
+	<script type="text/javascript">
+			var checkall,item;
+			function checkAll(){
+				
+				checkall=document.getElementById("checkall")
+				item=document.getElementsByName("item[]")
+					for(var i=0;i<item.length;i++){
+						if(checkall.checked){
+							item[i].checked=true;
+						}else{
+							item[i].checked=false;
+						}
+					}
+				
+			}
+
+	</script>
+
+<body>
+	<div class="box">
+		<div class="box_1"><input type="checkbox" id="checkall" onclick="checkAll()">全选
+			
+		</div>
+		<input type="checkbox" name="item[]">选项1<br>
+		<input type="checkbox" name="item[]">选项2<br>
+		<input type="checkbox" name="item[]">选项3<br>
+		<input type="checkbox" name="item[]">选项4<br>
+		<input type="checkbox" name="item[]">选项5<br>
+		<input type="checkbox" name="item[]">选项6<br>
+
+
+
+	</div>
+</body>
+</html>

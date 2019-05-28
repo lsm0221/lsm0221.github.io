@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTMLDOM</title>
+</head>
+<body>	
+<!-- 查找HTML元素:
+	 	 a.通过ID查找:
+	 	 		document.getElementById("id名")
+	 	 b.通过ClassName查找:
+	 	 		document.getElementsByClassName("class名")
+	 	 c.通过TagName查找:
+	 	    	document.getElementsByTagName("标签名")
+	 改变HTML内容:
+	 	innerHTML
+	 改变HTML属性(只能改变自身的属性):
+	 	document.getElementById.属性名="改变的属性值" -->
+
+	<div id="box" style="width: 100px;height: 100px;background: #ccc" onclick="box_1(this)"></div>
+	<img src="img/p.jpg" id="pic" onclick="box_2(this)">
+	<script type="text/javascript">
+		function box_1(x){
+			document.getElementById("box").innerHTML="这是添加的内容"
+		}
+
+		function box_2(y){
+			document.getElementById("pic").src="img/风景.jpg"
+		}
+
+	</script>
+
+
+</body>
+	
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js事件</title>
+</head>
+	<script type="text/javascript">
+		function fun(){
+			alert("请输入名字")
+		}
+		function content(){
+			alert("登陆中。。")
+		}
+		function change(x){
+			x.style.borderRadius="5px"
+		}
+
+	</script>
+
+<body onload="content()">
+ 姓名:<input type="text" placeholder="请输入名字" onmouseout="fun()">
+	  <input type="submit" value="输入" onclick="change(this)">
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变量的作用域</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a=1  // 全局变量
+		function text(){
+			alert(window.a)   // 如果在函数体内引用全局变量加上:window对象 格式：window.全局变量名
+			var b=2  // 局部变量  只能在函数体内访问它
+			alert(b)
+		}
+		text()     // 函数不调用就不会执行
+		
+
+
+	</script>
+</body>
+</html>

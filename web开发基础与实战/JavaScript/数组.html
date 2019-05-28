@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+	<script type="text/javascript">
+			//创建一维数组
+			  	//  var a=new Array()
+			  	//  	a[0]=123;
+			  	//  	a[1]="psh";
+			  	//  	a[2]="456"
+			  	//		a[n]=n+1
+
+			  	//  var a=Array(1,2,3,4,n)
+			  	//  var a=[1,2,3,"psh"] 
+			  	 var a=[1,2,4,"phh"]
+			  	 document.write(a[3]+"<br>") //  访问数组，下标从0开始
+
+			 //创建二维数组
+			     	// var b=new Array(2)
+			   			// b[0]=new Array(1,2,3),
+			      // 		b[1]=new Array("pho","lll","lwl")
+			     
+			      // 创建一个二维数组，并且输出二维数组的最后一个值，将最后一个值改为100，并输出
+			      var c=new Array(
+			      		new Array(1,2,4,5),
+			      		new Array(22,44,66),
+			      		new Array(25,44,33)
+			      		)
+			      		document.write(c[2][2]+"<br>")	
+			      		c[2][2]=100
+			      		document.write(c[2][2])
+
+			      	//for in 循环	
+			      var x;
+			      var y=new Array()
+			      		y[0]="php"
+			      		y[1]="javascript"
+			      		y[2]="jq"
+			      	for(x in y)
+			      	{
+			      		document.write(y[x]+"<br/>")
+			      	}
+			      
+ 	</script>			
+</body>
+</html>
