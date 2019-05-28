@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.js"></script>
+    <title>模板字符串</title>
+    <style>
+        div{
+            display: inline-block;
+            margin: 50px 50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            box-shadow: 0px 5px 20px 399;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    
+    <script>
+        // ES6中允许使用反引号 ` ` 来创建字符串
+        // 可以嵌入变量
+        // 可以原生输出 ${}
+            // var num = Math.random()
+            // console.log(`你想要的数字是${num}`)
+            // document.write(`你想要的数字是${num}<br>`)
+
+        // a+b=c
+        // es5
+            // var a = 2
+            // var b = 5
+            // var str = a + '+' + b + '=' +(a+b)
+            // document.write(str + '<br>')
+
+        // es6
+            // let c = 2
+            // let d = 6
+            // let str1 = `${c}+${d}=${c+d}`
+            // document.write(str1)
+
+
+        // 案例
+        $(function(){
+            var len = $('div').length;
+            for( var i = 0 ; i < len ; i++ ){
+                // rgb()里面的三个值
+                var x = Math.random()*255;
+                var y = Math.random()*255;
+                var z = Math.random()*255;
+                $('div').eq(i).css('backgroundColor',`rgb(${x},${y},${z})`)
+            }
+        })
+    </script>
+</body>
+</html>

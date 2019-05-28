@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>let与const的使用</title>
+</head>
+<body>
+    <script>
+    // 变量提升的问题
+        // console.log(a)
+        // var a = 1
+
+        // console.log(b)
+        // let b = 2
+
+    //不允许重复声明
+        // function diff(){
+        //     var a = 1
+        //     let a = 4
+        //     console.log(a)
+        //     diff()
+        // }
+
+    //块级作用域
+            function fun(c){
+                    {
+                        let c 
+                console.log(c)
+                }
+                
+            }
+            fun()
+
+    // 暂时性死区
+    var a = 123 
+    function fuc(){
+        //  a = 'abc'
+         let a = 'abc'
+        console.log(a)
+    }
+    fuc()
+    </script>
+</body>
+</html>

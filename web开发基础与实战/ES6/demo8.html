@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6中的对象字面量</title>
+</head>
+<body>
+    <script>
+        //es5 对象字面量
+        var type = '红烧排骨'
+        var likes = '90%'
+        var food = {
+            type:type,
+            likes:likes
+        }
+        console.log(food)
+
+        //es6 对象字面量的简写
+        var type = '红烧排骨'
+        var likes = '90%'
+        var food = {
+            type,
+            likes
+        }
+        console.log(food)
+
+        //es5 对象方法
+        var type = '红烧排骨'
+        var likes = '90%'
+        var food = {
+            type:type,
+            likes:likes,
+            diff:function(){
+                return '今天的菜单是'+this.type+','+this.likes+'的人都喜欢'
+            }
+        }
+        console.log(food.diff())
+
+        //es6 对象方法的简写
+        var type = '红烧排骨'
+        var likes = '90%'
+        var food = {
+            type,
+            likes,
+            diff(){
+                return `今天的菜单是${this.type},${this.likes}的人都喜欢`
+            }
+        }
+        console.log(food.diff())
+
+        // es6计算对象键(keys)
+        var type = "红烧排骨"
+        var likes = "90%"
+        var food = {
+            [type]:likes
+        }
+        console.log(food)
+    </script>
+</body>
+</html>

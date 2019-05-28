@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        // 写法不同
+        // es5
+        function fun(a,b){
+            return a+b
+        }
+        console.log(fun(20,30))
+
+        // es6
+        diff = (a,b) => a+b
+        console.log(diff(2,30))
+
+        var arr = [1,2,3,4]
+        // es5
+            // arr.forEach(function(a){
+            //     console.log(a)
+            // })
+
+        // es6
+            arr.forEach(a=>console.log(a))
+    </script>
+</body>
+</html>

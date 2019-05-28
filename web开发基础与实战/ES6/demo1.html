@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6变量声明</title>
+</head>
+<body>
+    <!-- 新的变量声明方式: let/const
+    特性:提供了块级作用域与不再具备变量提示(变量污染) -->
+    <script>
+        // var
+        function diff(){
+            for(var i = 0; i<3; i++){
+                console.log(i)
+            }
+            console.log('for结束了',i)
+        }
+        diff()
+
+        // let
+        // function mydiff(){
+        //     for(let i = 0; i<3; i++){
+        //         console.log(i)
+        //     }
+        //     console.log('for结束了',i)
+        // }
+        // mydiff()
+
+        let a = 20
+        console.log(a)
+        a = 40
+        console.log(a)
+
+        const b = 20
+        console.log(b)
+        b = 30
+    </script>
+</body>
+</html>

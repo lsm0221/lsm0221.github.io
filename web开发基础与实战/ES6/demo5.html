@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结构与赋值</title>
+</head>
+<body>
+    <script>
+        // es5
+        // var a = 1
+        // var b = 2
+
+        // es6 模式匹配
+        var [a,b,c] = [1,2,3]
+        console.log(b)
+        console.log(c)
+
+        // 对象的解构与赋值
+        var {num,shop} = {num:'123',shop:'abc'}
+        console.log(num)
+
+        var {word,come} = {word:'456',come:'ABC'}
+        console.log(word)
+        var {word:bar} = {word:'789',come:'ABC'}
+        console.log(bar)
+    </script>
+</body>
+</html>

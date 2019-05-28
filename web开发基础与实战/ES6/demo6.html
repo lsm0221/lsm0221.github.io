@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的默认参数</title>
+</head>
+<body>
+    <script>
+        // es5
+        function diff(a,b){
+            b = b || 'www.php.cn'
+            console.log(a,b)
+        }
+        diff('hello')
+
+        // es6
+        function fun(x,y='word'){
+            console.log(x,y)
+        }
+        fun('你好')
+
+        // 默认参数与解构赋值结合使用
+        function str({c,d}={c:3,d:4}){
+            console.log(c,d)
+        }
+        str()
+
+        function str1({e=5,f=6}={}){
+            console.log(e,f)
+        }
+        str1()
+    </script>
+</body>
+</html>

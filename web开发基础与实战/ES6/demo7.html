@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6中的扩展运算符</title>
+</head>
+<body>
+    <script>   
+        // 运算符: ...
+        // 不确定参数个数
+        function fun(...a) {
+            console.log(a[0],a[1],a[2],a[3])
+        }
+        fun(1,2,5,6)
+
+        // 在数组中使用 : 拷贝、合并、分割
+            // 拷贝
+            let num1 = [1,2,3]
+            let num2 = [...num1]
+            console.log(num2)
+
+            // 合并
+            let num3 = [4,...num1,6,7]
+            console.log(num3)
+
+            // 分割
+            let [b,...c] = [0,1,2,3,4,5]
+            console.log(b)
+            console.log(c)
+
+        // 在对象中使用
+        let {x,y,...z} = {x:2,y:1,a:3,c:8}
+        console.log(z)
+
+        // 将字符串转换为数组
+        let f = 'php'
+        let arr = [...f]
+        console.log(arr)
+
+    </script>
+</body>
+</html>
