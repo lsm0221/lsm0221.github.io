@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉列表的创建与激活</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<!-- 首先创建一个下拉菜单的容器dropdown -->
+	<div class="dropdown" style="margin:200px">
+		<!-- 利用按钮触发事件 -->
+		<button type="button" class="btn btn-default" data-toggle="dropdown">
+			前端开发<span class="caret"></span>
+		</button>
+		
+		<ul class="dropdown-menu">
+			<!-- 添加小标题 -->
+			<li class="dropdown-header">常用技术</li>
+			<li><a href="">HTML5</a></li>
+			<li><a href="">CSS3</a></li>
+			<li><a href="">JavaScript</a></li>
+			<!--分割线-->
+			<li class="divider"></li>
+			<li><a href="">jquery</a></li>
+			<li><a href="">bootstrap</a></li>
+			
+		</ul>
+	</div>
+</body>
+</html>

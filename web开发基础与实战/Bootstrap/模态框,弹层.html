@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模态框/弹层</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<!-- data-:属性与javascript代码绑定,内置的API
+	模态框可以通过一个按钮来激活,还可以通过一个js代码(ajax)
+	通过按钮激活模态框的时候,一定要与两个data属性配合
+	data-toggle: 模态框的打开与关闭
+	data-target: 指出我要弹出的是哪个模态框 -->
+
+	<button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModal" >打开模态框</button>
+
+	<!-- 模态框的代码 -->
+	<div class="modal fade" id="myModal" >
+		<!-- 创建一个对话框 -->
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- 模态框头部 -->
+				<div class="modal-header">
+					<!-- 关闭按钮 -->
+					<button type="button" class="close" data-dismiss="modal" >&times;</button>
+					<h3>模态框标题</h3>
+				</div>
+
+				<!-- 模态框主体 -->
+				<div class="modal-body">
+					模态框的主体代码/表单/表格/视频等
+				</div>
+
+				<!-- 模态框的脚部 -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<!-- 用户自定义的功能按钮:确定/保存/提交 -->
+					<button type="button" class="btn btn-info">保存</button>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script>
+		$('#myModal').modal({
+			backdrop:true,//false
+			show:false,//true
+		})
+		
+
+
+	</script>
+</body>
+</html>

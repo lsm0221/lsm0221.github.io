@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>按钮组与分列式下拉菜单</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>	
+	<!-- 创建一个按钮工具条 -->
+	<div class="btn-toolbar">
+		<!-- 按钮组 -->
+		<div class="btn-group">
+			<button type="button" class="btn btn-default">复制</button>
+			<button type="button" class="btn btn-info">粘贴</button>
+			<button type="button" class="btn btn-success">剪切</button>
+		</div>
+		<!-- 垂直按钮组 -->
+		<div class="btn-group-vertical btn-group-lg">
+			<button type="button" class="btn btn-success">编辑</button>
+			<button type="button" class="btn btn-danger">删除</button>
+			<div class="btn-group" >
+				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">添加<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+						<!-- 添加小标题 -->
+						<li class="dropdown-header">常用技术</li>
+						<li><a href="">HTML5</a></li>
+						<li><a href="">CSS3</a></li>
+						<li><a href="">JavaScript</a></li>
+						<!--分割线-->
+						<li class="divider"></li>
+						<li><a href="">jquery</a></li>
+						<li><a href="">bootstrap</a></li>						
+					</ul>
+			</div>
+		</div>
+
+		<!-- 分列式按钮 -->
+		<div class="btn-group">
+			<button type="button" class="btn btn-info">前端技术</button>
+			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li class="dropdown-header"></li>
+				<li><a href="">HTML5</a></li>
+				<li><a href="">CSS3</a></li>
+				<li><a href="">JavaScript</a></li>
+				
+			</ul>
+		</div>
+	</div>
+
+</body> 
+</html>

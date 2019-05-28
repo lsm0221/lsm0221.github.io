@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+	<style>
+		textarea{
+			resize: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3 class="text-center">新用户注册</h3>
+
+				<form>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="text" class="form-control" name="email" id="email" placeholder="Email">
+					</div>
+
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="text" class="form-control" name="password" id="password" placeholder="Password">
+					</div>
+
+					<div class="form-group">
+						<label for="file">选择文件</label>
+						<input type="file" name="file" id="file">
+						<p class="help-block">选择jpg/png.gif图片格式</p>
+					</div>
+					
+					<div class="form-group">
+						<label for="level">学历:</label>
+						<select class="form-control" name="select" id="select">
+							<option value="0">高中</option>
+							<option value="1">大学</option>
+							<option value="2">研究生</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="comment">留言</label>
+						<textarea  class="form-control" name="textarea" id="textarea"  rows="3"></textarea>
+
+					</div>
+
+					<!-- 复选框和单选框都很特殊,要用特殊的格式 -->
+					<label for="">选择爱好:</label>
+					<div class="checkbox">
+						<label >
+						<input type="checkbox" checked="">读书
+						</label>
+					</div>
+
+					<div class="checkbox">
+						<label>
+						<input type="checkbox">游泳
+						</label>
+					</div>	
+
+					<div class="checkbox" disabled>
+						<label>
+						<input type="checkbox" disabled>下棋
+						</label>
+					</div>
+
+					<div class="checkbox-inline">
+						<label >
+						<input type="checkbox" checked="">读书
+						</label>
+					</div>
+
+					<div class="checkbox-inline">
+						<label>
+						<input type="checkbox">游泳
+						</label>
+					</div>	
+
+					<div class="checkbox-inline" disabled>
+						<label>
+						<input type="checkbox" disabled>下棋
+						</label>
+					</div>
+
+
+					<label>选择性别:</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="sex" checked>男
+						</label>
+					</div>
+
+					<div class="radio">
+						<label>
+							<input type="radio" name="sex">女
+						</label>
+					</div>
+						
+					<div class="radio" disabled>
+						<label>
+							<input type="radio" name="sex" disabled>待定
+						</label>
+					</div>
+
+					<!-- 省略checkbox和radio中的文本内容 -->
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="name" aria-label="用户名">
+						</label>
+					</div>
+
+					<div class="radio">
+						<label>
+							<input type="radio" name="name" aria-label="用户名">
+						</label>
+					</div>
+					<br>
+					<button type="button" class="btn btn-primary">提交</button>
+				
+				</form>
+	
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>

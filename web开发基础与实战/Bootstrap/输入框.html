@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输入框组</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			<!-- 输入框组仅适合于input[type="text"],必须放在input-group的基类中,并且可以设置大小 -->
+			<h3 class="text-center">输入框</h3>
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+					<input type="email" class="form-control" placeholder="Email">
+				</div>
+				<br>
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon"><span class="glyphicon glyphicon-jpy"></span></span>
+					<input type="text" class="form-control" placeholder="Password">
+					<span class="input-group-addon">.00</span>
+				</div>
+				<br>
+				<div class="input-group">
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default">GO！</button>
+					</span>
+					<input type="text" class="form-control">
+				</div>
+				<br>
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default">电影类型</button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li class="dropdown-header">分类</li>
+							<li><a href="">动作</a></li>
+							<li><a href="">喜剧</a></li>
+							<li><a href="">爱情</a></li>
+							<li><a href="">文艺</a></li>							
+						</ul>
+						
+					</div>
+					<input type="text" class="form-control" placeholder="电影">
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>

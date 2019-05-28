@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>按钮的预定义样式</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<h3>1.可以用作按钮的元素:button、input:button、a链接</h3>
+				<!-- 虽然按钮类可以应用到 <a> 和 <button> 元素上，但是，导航和导航条组件只支持 <button> 元素。 -->
+				<button type="button" class="btn btn-default" role="button">button按钮</button>
+				<input type="button" class="btn btn-info" role="button" value="input按钮">
+				<!-- 如果 <a> 元素被作为按钮使用  并用于在当前页面触发某些功能 而不是用于链接其他页面或链接当前页面中的其他部分，那么，务必为其设置 role="button" 属性。 -->
+				<a href="http://www.php.cn" class="btn btn-primary" role="button">a标签按钮</a>
+
+				<h3>2.按钮的预定义样式</h3>
+				<button type="button" class="btn btn-default" role="button">default默认灰</button>
+				<button type="button" class="btn btn-primary" role="button">primary首选蓝</button>
+				<button type="button" class="btn btn-success" role="button">success成功绿</button>
+				<button type="button" class="btn btn-warning" role="button">warning警告黄</button>
+				<button type="button" class="btn btn-danger" role="button">danger危险红</button>
+				<button type="button" class="btn btn-info" role="button">info提示浅蓝</button>
+				<button type="button" class="btn btn-link" role="link">Link链接</button>
+
+				<h3>3.按钮预定义样式大小</h3>
+				<button type="button" class="btn btn-default btn-lg">大按钮</button>
+				<button type="button" class="btn btn-success btn-md">默认大小按钮</button>
+				<button type="button" class="btn btn-primary btn-sm">小按钮</button>
+				<button type="button" class="btn btn-warning btn-xs">极小按钮</button>
+
+				<h4>按钮状态:激活</h4>
+				<button type="button" class="btn btn-info">未激活</button>
+				<button type="button" class="btn btn-info active">激活</button>
+
+				<h5>按钮状态:禁用</h5>
+				<button type="button" class="btn btn-primary btn-lg">启用</button>
+				<button type="button" class="btn btn-primary btn-lg disabled">启用</button>
+				<a href="http://www.php.cn" class="btn btn-warning disabled">中文网</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

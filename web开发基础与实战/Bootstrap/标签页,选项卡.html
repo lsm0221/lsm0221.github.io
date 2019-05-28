@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>标签页/选项卡</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+	<style>
+		.no-border{
+			border-top:none;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				 <!-- 选项卡有两个必须要设置的属性 -->
+				 <!-- a标签中的href设置锚点:#和标签页对应的内容区的id对应 -->
+				 <!-- data-toggle:tab -->
+				 <ul class="nav nav-tabs">
+					<li class="active"><a href="#article" data-toggle="tab">技术文章</a></li>
+					<li><a href="#code" data-toggle="tab">网站源码</a></li>
+					<li><a href="#manual" data-toggle="tab">原生手册</a></li>
+					<li><a href="#blog" data-toggle="tab">推荐博文</a></li>
+				 </ul>
+				 <!-- 标签页对应的内容区 -->
+				 <div class="tab-content">
+					<div class="tab-pane active" id="article">
+						<div class="list-group ">
+							<a href="" class="list-group-item no-border">了解最新技术文章</a>
+							<a href="" class="list-group-item no-border">了解最新技术文章</a>
+							<a href="" class="list-group-item no-border">了解最新技术文章</a>
+							<a href="" class="list-group-item no-border">了解最新技术文章</a>
+							
+						</div>
+					</div>
+					
+					<div class="tab-pane" id="code">
+						<div class="list-group">
+							<a href="" class="list-group-item no-border">了解最新网站源码</a>
+							<a href="" class="list-group-item no-border">了解最新网站源码</a>
+							<a href="" class="list-group-item no-border">了解最新网站源码</a>
+							<a href="" class="list-group-item no-border">了解最新网站源码</a>
+							
+						</div>
+					</div>
+
+					<div class="tab-pane" id="manual">
+						<div class="list-group">
+							<a href="" class="list-group-item no-border">了解最新原生手册</a>
+							<a href="" class="list-group-item no-border">了解最新原生手册</a>
+							<a href="" class="list-group-item no-border">了解最新原生手册</a>
+							<a href="" class="list-group-item no-border">了解最新原生手册</a>						
+						</div>
+					</div>
+
+					<div class="tab-pane" id="blog">
+						<div class="list-group">
+							<a href="" class="list-group-item no-border">了解最新推荐博文</a>
+							<a href="" class="list-group-item no-border">了解最新推荐博文</a>
+							<a href="" class="list-group-item no-border">了解最新推荐博文</a>
+							<a href="" class="list-group-item no-border">了解最新推荐博文</a>
+							
+						</div>
+
+					</div>
+				 </div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

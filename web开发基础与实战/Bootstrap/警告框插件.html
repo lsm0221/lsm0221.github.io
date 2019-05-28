@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>警告框插件</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="alert alert-success">
+		<!-- 警告框的插件就是比组件多一个关闭按钮 -->
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<p>恭喜您,转账成功！</p>
+	</div>
+
+	<!-- 使用一个连接当做关闭按钮 -->
+	<div class="alert alert-danger">		
+		<h4>公安提醒:</h4>
+		<p>转账前,一定要打电话确认</p>
+		<a href="" data-dismiss="alert" type="button" class="btn btn-danger">关闭</a>
+	</div>
+
+	<!-- 用按钮来关闭警告框 -->
+	<div class="alert alert-warning">
+		<h4>淘宝提醒:</h4>
+		<p>任何提醒中奖都是骗子</p>
+		<button type="button" class="btn btn-info" data-dismiss="alert">知道了</button>
+	</div>
+
+	<!-- 用户自定义一个事件来关闭 -->
+	<div class="alert alert-info">
+		<h4>恭喜您入住PHP中文网</h4>
+		<button type="button" class="btn btn-success" id="close">明白了</button>
+
+	</div>
+
+	<script>
+		$('#close').click(function(){
+			$(this).alert('close')
+		})
+		 
+	</script>
+</body>
+</html>

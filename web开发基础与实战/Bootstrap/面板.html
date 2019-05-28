@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面板</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				
+				<!-- 面板也有基类:panel -->
+				<div class="panel panel-default">
+					<!-- 面板的头部 -->
+					<div class="panel-heading">
+						<!-- 面板的标题 -->
+						<h3 class="panel-title">面板的标题</h3>						
+					</div>
+					<!-- 面板的主体 -->
+					<div class="panel-body">
+						面板的主体
+					</div>
+					
+					<!-- 面板的脚部 -->
+					<div class="panel-footer">
+						面板的脚部
+					</div>					
+				</div>
+
+				<hr>
+				<!-- 面板的情景样式 -->
+				<div class="panel panel-info">    
+				<!--其他的情景样式: panel-success,panel-primary,panel-warning,panel-danger -->
+					<div class="panel-heading">		
+						<h2 class="panel-title">面板的标题</h2>
+					</div>
+
+					<div class="panel-body">
+						面板的身体
+					</div>
+					
+					<div class="panel-footer">
+						面板的脚部
+					</div>
+
+				</div>
+				
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h2 class="panel-title text-center">学生注册表</h2>
+					</div>
+
+					<!-- <div class="panel-body">     删除panel-body后 table表和其他融为一体-->
+						<table class="table table-bordered table-hover text-center">
+							<thead>
+								<tr class="bg-success">
+									<td>学号</td>
+									<td>姓名</td>
+									<td>成绩</td>
+									<td>班级</td>									
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr><tr>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table> 
+
+					<!-- </div> -->
+
+					<div class="panel-footer">
+					时间:2019.1.11
+					</div>
+				</div>	
+
+				<hr>
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">新闻标题</h3>
+
+					</div>
+					
+					<!-- <div class="panel-body"> -->
+						<div class="list-group">
+							<a href="" class="list-group-item list-group-item-warning">中国新闻</a>
+							<a href="" class="list-group-item list-group-item-success">美国新闻</a>
+							<a href="" class="list-group-item list-group-item-info">英国新闻</a>
+							<a href="" class="list-group-item list-group-item-danger">日本新闻</a>							
+						</div>
+					<!-- </div> -->
+
+					<div class="panel-footer text-center">
+						<ul class="pagination">
+							<li>
+							<a href=""><span>&laquo;</span></a>
+							</li>
+							<li><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+							<li>
+							<a href=""><span>&raquo;</span></a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
