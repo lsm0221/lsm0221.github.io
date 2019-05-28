@@ -1,0 +1,31 @@
+body {
+	
+	font-family: "微软雅黑";
+	color:#eee;
+	background: url(../../timg.jpg);
+}
+
+a {
+	color:#555;
+}
+.header,p[name="title"] {
+	background:rgba(43,102,134,0.8);
+	color:#fff;
+}
+
+
+/*left theme css*/
+.left,.right {
+	background-color: #ECF0F1;
+}
+
+.right button {
+	background:#2C6787;
+	color:#fff;
+}
+.right button:active {
+	border-color:#2BA857;
+}
+
+
+/*title struct css*/

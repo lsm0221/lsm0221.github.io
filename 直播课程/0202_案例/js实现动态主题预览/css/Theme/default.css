@@ -1,0 +1,21 @@
+body {
+	font-family: "宋体";
+	color:#eee;
+}
+
+a {
+	color:#FFB696;
+}
+
+.header button{background:#FFB696; }
+/*left theme css*/
+.left,.right {
+	background-color: #FFB696;
+}
+
+
+/*title struct css*/
+.header,p[name="title"] {
+	background:#555;
+	color:#fff;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+        }
+        body{
+            background: #ECF0F1;
+        }
+        .tab{
+            width: 1000px;
+            height: 300px;
+            margin: 100px auto;
+            box-shadow: 0 0 2px 2px #ccc;
+        }
+        .tab .top{
+            width: 100%;
+            height: 40px;
+            background: #EEF2F3;
+        }
+        .tab .top span{
+            display: block;
+            width: 100px;
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* content */
+        .content{
+            width: 100%;
+            height: 260px;
+            background: #fff;
+        }
+        .content div{
+            width: 100%;
+            height: 260px;
+            line-height: 260px;
+            text-align: center;
+            display: none;  /*将div隐藏*/
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="top">
+            <span name="0" onmouseover="changeDiv(this)">猎奇</span>
+            <span name="1" onmouseover="changeDiv(this)">娱乐</span>
+            <span name="2" onmouseover="changeDiv(this)">搞笑</span>
+            <span name="3" onmouseover="changeDiv(this)">军事</span>
+        </div>
+        <div class="content" id="content">
+                <div style="background:#95DB9B; ">1</div>
+                <div style="background:#D2B4E0; ">2</div>
+                <div style="background:#E0BFB7; ">3</div>
+                <div style="background:#74D1E3; ">4</div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function(){
+            var spanList = document.getElementsByTagName('span')
+            spanList[0].style.background = '#fff';
+            document.getElementById('content').getElementsByTagName('div')[0].style.display='block';
+
+        }
+        function changeDiv(obj){
+            var num = obj.getAttribute('name');
+            var spanList = document.getElementsByTagName('span');
+            for(var i=0; i<spanList.length;i++){
+                if(i == num){
+                    spanList[i].style.background="#fff"
+                    document.getElementById('content').getElementsByTagName('div')[i].style.display='block'
+                }else{
+                    spanList[i].style.background="#EEF2F3"
+                    document.getElementById('content').getElementsByTagName('div')[i].style.display='none';
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

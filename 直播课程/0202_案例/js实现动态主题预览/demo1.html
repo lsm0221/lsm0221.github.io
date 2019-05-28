@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js动态预览主题</title>
+    <!-- 结构样式 -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 默认主体样式 -->
+    <link rel="stylesheet" href="css/Theme/default.css">
+    <script>
+        //加载一个新的主体
+        //原理: 根据选择的主题改变加载外部主题文件的路径
+        function changeTheme(num){
+            //确定一下主题路径
+            var theme = 'default.css';
+            if(num == 1)theme = 'theme_1.css';
+            if(num == 2)theme = 'theme_2.css';
+            var nodeList = document.getElementsByTagName('head')[0].children;
+                for(var i=0; i<nodeList.length; i++){
+                    var str = nodeList[i].getAttribute('href')
+                    if(str == null){
+                        continue
+                    }
+                    if(nodeList[i].nodeName == 'LINK' && str.indexOf('Theme')!=-1 ){
+                        nodeList[i].setAttribute('href','css/Theme/'+theme) 
+                    }
+                }
+        }
+    </script>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <p>
+            <button onclick="changeTheme(0)"> 默认 </button>
+            <button onclick="changeTheme(1)">主题1</button>
+            <button onclick="changeTheme(2)">主题2</button>
+        </p>
+    </div>
+    <!-- 主体 -->
+    <div class="main">
+        <!-- 左侧 -->
+        <div class="left">
+            <p name="title">导航</p>
+        </div>
+        <!-- 右侧 -->
+        <div class="right">
+            <p name="title">主体中心</p>
+        </div>
+    </div>
+</body>
+</html>

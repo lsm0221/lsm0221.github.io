@@ -1,0 +1,38 @@
+body {
+	
+	font-family: "微软雅黑";
+	color:#eee;
+}
+
+a {
+	color:#555;
+}
+
+
+/*left theme css*/
+.left,.right {
+	border-radius:8px;
+	background-color: #ECF0F1;
+}
+ 
+.header button {
+	background:#2BA857;
+	color:#fff;
+	border-radius:3px;
+}
+.header button:hover {
+	box-shadow: 0 0 8px #fff;
+}
+
+
+/*title struct css*/
+.header,p[name="title"] {
+	background:#2BA857;
+	color:#fff;
+}
+p[name="title"] {
+	background:#2BA857;
+	color:#fff;
+	border-top-left-radius: 8px;
+	border-top-right-radius:8px;
+}
