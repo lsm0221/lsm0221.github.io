@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>people_edit.html</title>
+	<!-- 引入layui样式文件 -->
+	<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+	<!-- 引入layui基础核心库 -->
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<style>
+		.layui-form{margin:20px 50px;}
+		.layui-btn{margin:20px 130px;}
+	</style>
+</head>
+<body>
+	<form class="layui-form" action="">
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">角色名称</label>
+	    <div class="layui-input-inline">
+	      <select name="city" lay-verify="required">
+	        <option value="">请选择一个角色</option>
+	        <option value="0">系统管理员</option>
+	        <option value="1">开发人员</option>	        
+	      </select>
+	    </div>
+  	  </div>
+		
+	  <div class="layui-form-item">
+    		<label class="layui-form-label">权限菜单</label>
+    				<hr>
+    		<div class="layui-input-block">
+    		  <input type="checkbox" name="" title="管理员管理" lay-skin="primary" checked>
+    		  <hr>
+    			<input type="checkbox" name="" title="管理员列表" lay-skin="primary" checked>
+				<input type="checkbox" name="" title="角色测试" lay-skin="primary"> 
+				<input type="checkbox" name="" title="管理员添加" lay-skin="primary" > 
+			</div>
+			<hr>
+			<div class="layui-input-block">
+    		  <input type="checkbox" name="" title="权限管理" lay-skin="primary" checked>
+    		  <hr>
+    			<input type="checkbox" name="" title="菜单管理" lay-skin="primary" checked>
+				<input type="checkbox" name="" title="菜单添加" lay-skin="primary"> 
+				<input type="checkbox" name="" title="菜单保存" lay-skin="primary" > 
+			</div>
+			<hr>
+			<div class="layui-input-block">
+    		  <input type="checkbox" name="" title="系统设置" lay-skin="primary" checked>
+    		  <hr>
+    			<input type="checkbox" name="" title="网站设置" lay-skin="primary" checked>
+				<input type="checkbox" name="" title="保存设置" lay-skin="primary"> 
+				
+			</div>
+	  </div>
+	  <button class="layui-btn">保存</button>
+</form>
+  	  <script>
+		//Demo
+		layui.use('form', function(){
+		  var form = layui.form;
+		  
+		});
+	</script>
+</body>
+</html>

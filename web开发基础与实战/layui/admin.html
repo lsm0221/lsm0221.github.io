@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>admin.html</title>
+	<!-- 引入layui样式文件 -->
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+	<!-- 引入layui基础核心库 -->
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<style>
+		.header span{background: #009688;color:#fff;padding: 10px;margin-left: 30px;line-height: 32px;}
+		.header button{float: right;}
+		.header{border-bottom: 2px #009688 solid;}
+	</style>
+</head>
+<body style="padding: 10px;">
+	<div class="header">
+		<span>管理员列表</span>
+		<button class="layui-btn  layui-btn-sm" onclick="add()">添加</button>
+	</div>
+
+	<table class="layui-table">
+  		<thead>
+		    <tr>		      
+		      <th >姓名</th>
+		      <th >性别</th>
+		      <th >民族</th>
+		      <th >生日</th>
+		      <th >城市</th>		      		      
+		      <th >职业</th>
+		      <th >角色</th>
+		      <th >状态</th>
+		      <th >操作</th>		     	     
+		    </tr>
+  		</thead>
+
+  		 <tbody>
+		      <tr>
+		        <td>成龙</td>
+		        <td>男</td>
+		        <td>汉族</td>
+		        <td>1954-04-07</td>
+		        <td>香港</td>
+		        <td>演员、导演</td>
+		        <td>系统管理员</td>
+		        <td>正常</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn" onclick="del()">删除</button>
+		        </td>
+		      </tr>
+		      <tr>
+		        <td>刘德华</td>
+		        <td>男</td>
+		        <td>汉族</td>
+		        <td>1961-09-27</td>
+		        <td>香港</td>
+		        <td>歌手、演员</td>
+		        <td>系统管理员</td>
+		        <td>正常</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn" onclick="del()">删除</button>
+		        </td>
+		       
+		      </tr>
+		      <tr>
+		        <td>周杰伦</td>
+		        <td>男</td>
+		        <td>汉族</td>
+		        <td>1979-01-18</td>
+		        <td>台湾</td>
+		        <td>歌手</td>
+		        <td>系统管理员</td>
+		        <td>正常</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn" onclick="del()">删除</button>
+		        </td>
+		       
+		      </tr>
+		      <tr>
+		        <td>郭富城</td>
+		        <td>男</td>
+		        <td>汉族</td>
+		        <td>1965-10-26</td>
+		        <td>香港</td>
+		        <td>歌手、演员</td>
+		        <td>系统管理员</td>
+		        <td style="color:red;">禁用</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn" onclick="del()">删除</button>
+		        </td>
+		       
+		      <tr>
+		        <td>周润发</td>
+		        <td>男</td>
+		        <td>汉族</td>
+		        <td>1955-05-18</td>
+		        <td>香港</td>
+		        <td>演员</td>
+		        <td>系统管理员</td>
+		        <td>正常</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn" onclick="del()">删除</button>
+		        </td>
+		        
+		      </tr>
+    </tbody>
+	</table>
+
+	<script>
+	layui.use(['layer'], function(){	  
+	  var layer = layui.layer;	
+	  }); 
+
+		function del(){
+		layer.confirm('确定要删除吗？', {
+		icon:2,
+	  btn: ['确定', '取消'] //可以无限个按钮
+	  
+	}, function(index, layero){
+	  //按钮【按钮一】的回调
+	}, function(index){
+	  //按钮【按钮二】的回调
+	});
+	}
+		//添加/编辑
+	function add(){
+	layer.open({
+	  type: 2, 
+	  title:'添加管理员',
+	  area:['500px','600px'],
+	  content: 'admin/add.html' //这里content是一个普通的String
+	});
+	}
+</script>
+</body>
+</html>

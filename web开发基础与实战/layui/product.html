@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>product.html</title>
+	<!-- 引入layui样式文件 -->
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+	<!-- 引入layui基础核心库 -->
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<style>
+		.header span{background: #009688;color:#fff;padding: 10px;margin-left: 30px;line-height: 32px;}
+		.header button{float: right;}
+		.pic{height:28px;float: right;border:1px solid #f0f0f0;padding:1px; }
+	</style>
+</head>
+<body style="padding: 10px;">
+	<div class="header">
+		<span>商品列表</span>
+		<button class="layui-btn  layui-btn-sm" onclick="add(1);return false;">添加</button>
+	</div>
+	
+	<div class="layui-form-item">
+	  <div class="layui-input-inline">
+	    <input type="text" name="title"  placeholder="请输入商品名称"  class="layui-input">
+	  </div>
+	  <button class="layui-btn layui-btn-primary"><i class="layui-icon">&#xe615;</i>搜索</button>
+	</div>
+
+	<table class="layui-table">
+  		<thead>
+		    <tr>		      
+		      <th >ID</th>
+		      <th >分类</th>
+		      <th >名称</th>
+		      <th >最低价格</th>
+		      <th >成本</th>		      		      
+		      <th >PV</th>
+		      <th >状态</th>
+		      <th >添加时间</th>
+		      <th >操作</th>		     	     
+		    </tr>
+  		</thead>
+
+  		<tbody>
+		      <tr>
+		        <td>1</td>
+		        <td>iphone</td>
+		        <td>Apple iphone8 plus 64GB <img class="pic" src="image/1.jpg" alt="图片"  
+		        onmouseover="show_img(this)" onmouseleave="hide_img()"></td>
+		        <td>7000</td>
+		        <td>3000</td>
+		        <td>3</td>
+		        <td>正常</td>
+		        <td>2018-12-20</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn layui-btn-danger" onclick="del()">删除</button>
+		        </td>
+		       </tr>
+
+		       <tr>
+		        <td>2</td>
+		        <td>iphone</td>
+		        <td>Apple iphone7 plus 64GB <img src="image/2.jpg" alt="图片" class="pic"
+		        onmouseover="show_img(this)" onmouseleave="hide_img()"></td>
+		        <td>7000</td>
+		        <td>3000</td>
+		        <td>3</td>
+		        <td>正常</td>
+		        <td>2018-12-21</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn layui-btn-danger" onclick="del()">删除</button>
+		        </td>
+		       </tr>
+
+		       <tr>
+		        <td>3</td>
+		        <td>华为</td>
+		        <td>华为荣耀 128GB <img src="image/3.jpg" alt="图片" class="pic" 
+		        onmouseover="show_img(this)" onmouseleave="hide_img()"></td>
+		        <td>3000</td>
+		        <td>1200</td>
+		        <td>3</td>
+		        <td>正常</td>
+		        <td>2018-12-19</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn layui-btn-danger" onclick="del()">删除</button>
+		        </td>
+		       </tr>
+
+		       <tr>
+		        <td>4</td>
+		        <td>华为</td>
+		        <td>华为P20 pro 259GB <img src="image/4.jpg" alt="图片" class="pic" 
+		        onmouseover="show_img(this)" onmouseleave="hide_img()"></td>
+		        <td>5000</td>
+		        <td>2000</td>
+		        <td>3</td>
+		        <td>正常</td>
+		        <td>2018-12-11</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn layui-btn-danger" onclick="del()">删除</button>
+		        </td>
+		       </tr>
+
+		       <tr>
+		        <td>5</td>
+		        <td>小米</td>
+		        <td>小米8SE 64GB <img src="image/5.jpg" alt="图片" class="pic" 
+		        onmouseover="show_img(this)" onmouseleave="hide_img()"></td>
+		        <td>2500</td>
+		        <td>1000</td>
+		        <td>3</td>
+		        <td>正常</td>
+		        <td>2018-12-10</td>
+		        <td>
+					<button class="layui-btn" onclick="add()">编辑</button>
+   				    <button class="layui-btn layui-btn-danger" onclick="del()">删除</button>
+		        </td>
+		       </tr>
+		     </tbody>
+	</table>
+
+	<div id="test1"></div>
+
+	<script>
+		layui.use(['laypage','layer'], function(){
+		  var laypage = layui.laypage;
+		  var layer = layui.layer;
+		  $ = layui.jquery;
+		  //执行一个laypage实例
+		  laypage.render({
+		    elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+		    ,count: 50 //数据总数，从服务端得到
+		  });
+		});
+
+		function del(){
+		layer.confirm('确定要删除吗？', {
+		icon:2,
+	  btn: ['确定', '取消'] //可以无限个按钮
+	  
+	}, function(index, layero){
+	  //按钮【按钮一】的回调
+	}, function(index){
+	  //按钮【按钮二】的回调
+	});
+	}
+
+	//编辑
+	function add(){
+	layer.open({
+	  type: 2, 
+	  title:'修改商品信息',
+	  area:['500px','600px'],
+	  content: 'product/product_edit.html' //这里content是一个普通的String
+	});
+	}
+	
+	//1、首先获取到浏览器窗口的位置（相对于文档）
+    function getMousePos(event) {
+		   var e = event || window.event; //event声明了全局变量对象 当前浏览器对象
+		   var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft; //获取当前页面滚动的X轴位移
+		   var scrollY = document.documentElement.scrollTop || document.body.scrollTop; //获取当前页面滚动的Y轴位移
+		   var x = e.pageX || e.clientX + scrollX; // clientX 获取当前页面X轴的位置 pageX返回页面X轴的坐标  e.clientX + scrollX 返回body内部X轴的坐标
+		   var y = e.pageY || e.clientY + scrollY; // clientY 获取当前页面Y轴的位置 pageX返回页面Y轴的坐标  e.clientX + scrollX 返回body内部Y轴的坐标
+		   return { 'x': x, 'y': y };
+		}
+   //显示隐藏预览图片
+
+      function show_img(obj){
+      	var imgurl = $(obj).attr('src')
+      	var res=getMousePos()
+      	var html ='<div style="background:#fff;width: 200px;border:solid 1px #ccc;border-radius: 6px;padding: 2px;position: absolute;left:'+res.x+'px;top:'+res.y+'px;z-index:4" id="preview">\
+      	  <img style="width: 100%;border-radius: 6px;" src="'+imgurl+'">\
+      	 </div> '
+        $('body').append(html)
+	  }
+
+	  function hide_img(){
+	  	$('#preview').remove()
+	  }
+
+   //添加商品
+       function add(pid){
+       	window.location.href="product/product_add.html?pid"+pid
+       }
+	</script>
+</body>
+</html>

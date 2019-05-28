@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>people_add.html</title>
+	<!-- 引入layui样式文件 -->
+	<link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+	<!-- 引入layui基础核心库 -->
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<style>
+		.layui-form{margin:20px 50px;}
+		.layui-btn{margin:20px 130px;}
+	</style>
+</head>
+<body>
+	<form class="layui-form" action="">
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">ID</label>
+	    <div class="layui-input-inline">
+	      <input type="text" name="title"  class="layui-input">
+	    </div>
+	  </div>
+	  <div class="layui-form-item">
+	    <label class="layui-form-label">角色名称</label>
+	    <div class="layui-input-block">
+	      <input type="radio" name="admin" value="系统管理员" title="系统管理员" checked>
+	      <input type="radio" name="admin" value="开发人员" title="开发人员">
+	    </div>
+       </div>
+       <button class="layui-btn">保存</button>
+     </form>
+     <script>
+		//Demo
+		layui.use('form', function(){
+		  var form = layui.form;
+		  
+		});
+</script>
+</body>
+</html>

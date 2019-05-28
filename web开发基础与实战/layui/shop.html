@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shop.html</title>
+	<!-- 引入layui样式文件 -->
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+	<!-- 引入layui基础核心库 -->
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<style>
+		.header span{background: #009688;color:#fff;padding: 10px;margin-left: 30px;line-height: 32px;}		
+		.header{border-bottom: 2px #009688 solid;}
+	</style>
+</head>
+<body style="padding: 10px;">
+	<div class="header">
+		<span>分类列表</span>		
+	</div>
+<form class="layui-form" action="">
+	<table class="layui-table">
+  		<thead>
+		    <tr>		      
+		      <th >ID</th>
+		      <th >排序</th>
+		      <th >标签名称</th>
+		      <th >是否禁用</th>		      	     	     
+		    </tr>
+  		</thead>
+
+  		<tbody>
+		      <tr>
+		        <td>1</td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 
+		        </td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 	
+		        </td>
+		        <td>
+					<input type="checkbox" name="" title="禁用" lay-skin="primary">					
+		        </td>		        
+			  </tr>
+
+			  <tr>
+		        <td>2</td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 
+		        </td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 	
+		        </td>
+		        <td>
+					<input type="checkbox" name="" title="禁用" lay-skin="primary">					
+		        </td>		        
+			  </tr>
+
+			  <tr>
+		        <td>3</td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 
+		        </td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 	
+		        </td>
+		        <td>
+					<input type="checkbox" name="" title="禁用" lay-skin="primary">					
+		        </td>		        
+			  </tr>
+
+			  <tr>
+		        <td>4</td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 
+		        </td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 	
+		        </td>
+		        <td>
+					<input type="checkbox" name="" title="禁用" lay-skin="primary">					
+		        </td>		        
+			  </tr>
+			  <tr>
+		        <td>5</td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 
+		        </td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 	
+		        </td>
+		        <td>
+					<input type="checkbox" name="" title="禁用" lay-skin="primary">					
+		        </td>		        
+			  </tr>
+			  <tr>
+		        <td>6</td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 
+		        </td>
+		        <td>
+					<input type="text" name="title"  class="layui-input"> 	
+		        </td>
+		        <td>
+					<input type="checkbox" name="" title="禁用" lay-skin="primary">					
+		        </td>		        
+			  </tr>
+		</tbody>
+	</table>
+	<button class="layui-btn layui-btn-sm">保存</button>
+</form>
+
+<script>
+	layui.use(['layer','form'], function(){	  
+	  var layer = layui.layer;	
+	  var form = layui.form;
+	  }); 
+	//子菜单跳转
+	function child(pid){
+		window.location.href="menu/index.html?pid"+pid
+	}
+  	  
+</script>
+</body>
+</html>
