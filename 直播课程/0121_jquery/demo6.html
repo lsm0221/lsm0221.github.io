@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery操作元素及属性的方法</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        div{
+            margin: 20px auto;
+            text-align: center;
+            width: 700px;
+            box-shadow: 0 0 5px #ccc;
+            height: 500px;
+        }
+        p{
+            width: 600px;
+            height: 100px;
+            line-height: 100px;
+            margin: 0px auto;
+        }
+        .box{
+            background: #F5F50F;
+            border-radius: 30px;
+        }
+        #text{
+            text-shadow: 3px 3px 3px #ff6500;
+            color: #fff;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="images/1.gif"  >
+    <p>Study hard</p>
+</div>
+
+    <!-- attr() 方法设置或返回被选元素的属性值,同时设置多个属性 -->
+    <!-- $('选择器').attr({属性名:值,属性名:值,...}) -->
+    <!-- removeAttr() 从被选元素中移除属性 -->
+<!-- 元素内部添加: -->
+    <!-- append() 在被选元素的结尾插入内容 -->
+    <!-- prepend() 在被选元素的开头插入内容 -->
+<!-- 元素外部添加: -->
+    <!-- after() 在被选元素之后插入内容 -->
+    <!-- before() 在被选元素之前插入内容 -->
+<!-- 删除元素 -->
+    <!-- remove() 方法删除被选元素及其子元素 -->
+    <!-- empty() 方法删除被选元素的子元素 -->
+    <script>
+        $(function(){
+            console.log($('img').attr('width'))
+            // $('img').attr('width','500')
+            $('p').attr('class','box')
+            $('img').attr({'width':'300px','height':'300px'})
+            $('p').attr({'class':'box',id:'text'})
+           
+            // $('p').removeAttr('id','text')
+            $('div').append('结束啦')
+            var a = '<p id="text"> 你好 </p>'
+            $('div').append(a)
+
+            $('div').prepend('开始啦')
+
+            $('div').after('我是after的效果!')
+
+            $('div').before('我是before的效果!')
+
+            // $('div').remove()
+            $('div').empty()
+
+        })
+    </script>
+</body>
+</html>

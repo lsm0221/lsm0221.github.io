@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击商品选中效果</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0px auto;
+            padding: 0px;
+        }
+        .top{
+            width: 402px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            margin-top: 50px;
+            background: #C40000;
+            color: #fff;
+        }
+        .main{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #C40000;
+        }
+        p{
+            width: 400px;
+            height: 26px;
+            margin-top: 10px;
+        }
+        b{
+            width: 90px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            font-size: 12px;
+            color: #838383;
+            border: 1px solid #ccc;
+            float: left;
+            margin-left: 5px;
+        }
+        span{
+            width: 90px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            font-size: 12px;
+            color: #838383;
+            border: 1px solid #ccc;
+            display: block;
+            float: left;
+            margin-left: 5px;
+        }
+        span:hover {
+            cursor: pointer;
+        }
+        button{
+            width: 120px;
+            height: 35px;
+            background: #C40000;
+            color: white;
+            border: 0px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        .notice{
+            border: 0px;
+        }
+        .select{
+            width: 88px;
+            height: 24px;
+            line-height: 24px;
+            border: 2px solid #C40000;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">请选择信息后加入购物车</div>
+        <div class="main">
+            <p class="item" name="version">
+                <b class="notice">版本</b>
+                <span>ONE A2001</span>
+                <span>ONE A0001</span>
+                <span>ONE A1001</span>
+            </p>
+            <P class="item" name="color">
+                <b class="notice">机身颜色</b>
+                <span>白色</span>
+                <span>黑色</span>
+                <span>金色</span>
+            </P>
+            <P class="item" name="type">
+                <b class="notice">套餐类型</b>
+                <span>标配</span>
+                <span>套餐一</span>
+                <span>套餐二</span>
+            </P><P class="item" name="ram">
+                <b class="notice">运行内存</b>
+                <span>2GB</span>
+                <span>3GB</span>
+                <span>4GB</span>
+            </P><P class="item" name="rom">
+                <b class="notice">机身内存</b>
+                <span>16GB</span>
+                <span>32GB</span>
+                <span>64GB</span>
+            </P>
+            <P class="item" name="location">
+                <b class="notice">产地</b>
+                <span>中国大陆</span>
+                <span>港澳台</span>
+            </P>
+            <P class="item" name="price">
+                <b class="notice">价格</b>
+                <span>999元抢购</span>              
+            </P>
+            <P class="item1" name="num">
+                <b class="notice">数量</b>
+                <input type="number" value="1" style="width: 40px;height: 26px;">
+            </P>
+            <p style="margin-top: 30px;margin-left: 95px;">
+                <button class="bu1" id="sub">加入购物车</button>
+            </p> 
+        </div>
+
+        <script>
+            $(function(){
+                $('span').click(function(){
+                    if($(this).hasClass('select')){ //匹配span中是否带有class为select
+                        $(this).removeClass('select')//含有就清除
+                    }else{
+                        $(this).addClass('select').siblings('span').removeClass('select')
+                    }//没有就添加上select的class名,同时匹配同级span,清除同级其他span中的选中样式
+                })
+
+                $('#sub').click(function(){
+                    let form = {}; //创建一个对象,用来存选中的数据的
+                    let flag = true; //能不能加入购物车
+                    // 判断是否每个选项都选中,没选中则弹窗警告,选中了则添加至需要发送的表单数据里
+                    $('.item').each(function(){ // each() 方法规定为每个匹配元素规定运行的函数
+                        if($(this).children('span.select').length != 1){
+                            alert($(this).find('.notice').html() + '未选中')
+                            flag = false;
+                        }else{
+                            let key = $(this).attr('name'); // 获取当前p标签的 name属性值 不同的p属性名不一样
+                            let value = $(this).children('span.select').html(); //获得被选中的商品类型
+                            form[key] = value; // 将键值对一一对应
+                        }
+                    })
+                    
+                    // 判断数量最少为1
+                    if($('.item1 input').val() <=0 ){
+                        flag = false;
+                        alert('数量最少为1')
+                    }else{
+                        form['num'] = $('.item1 input').val()
+                        console.log(form)
+                    }
+                    if(flag){
+                        alert('可以加入购物车了')
+                    }
+                })
+            })
+        </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jauery</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        .content,p{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            text-align: center;
+            line-height: 200px;
+            margin-bottom: 10px;
+        }
+        textarea{
+            width: 400px;
+            height: 200px;
+            padding: 3px 5px;
+            border-radius: 8px;
+            resize: none;  /* 当resize的属性为none时,则禁止拖动*/
+            outline: none; /* 去掉文本框再带获得焦点样式*/
+        }
+    </style>
+</head>
+<body>
+    <div class="content"> hello </div>
+    <button class="but">点我隐藏</button>
+    <button id="but">点我显示</button>
+    <button class="intro">点我有惊喜</button>
+    <p> 你是谁 </p>
+    <div style="width: 600px;height: 600px;">
+        <form style="width: 500px;height: 500px;">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </form>
+    </div>
+    <input type="button" value="清空页面">
+
+    <script>
+        $(function(){
+            //元素选择器、#id选择器、.class选择器
+            // $('.but').click(function(){
+            //     $('.content').css('display','none')
+            // })
+
+            // $('#but').click(function(){
+            //     $('.content').show(1000)
+            // })
+
+            //类型选择器
+                // :button 选中所有button类型的选择器
+            $(':button').click(function(){
+                $('.content').css('background','#ff6700')
+            })
+
+                // button.intro 选中button中class是intro的选择器
+            $('button.intro').click(function(){
+                $('.content').text('html 中文网')
+            })
+
+            // $(this) 选择当前HTML元素
+            $('p').mouseover(function(){
+                $(this).text('大家好').css('background','#E08BEF')
+            })
+            $('P').mouseleave(function(){
+                $(this).text('再见').css('background','#ff6700')
+            })
+
+            //$('*') 选取所有的元素
+            $('input').click(function(){
+                $('*').hide()
+            })
+
+            $('textarea').focus(function(){
+                $(this).css('border','1px solid red')
+            })
+            $('textarea').blur(function(){
+                $(this).css('border','1px solid #ccc')
+            })
+
+            //parent() 方法返回被选元素的直接父元素
+            //parents() 方法返回被选元素的所有祖先元素
+            //parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素
+            $('textarea').click(function(){
+                $(this).parent().css('border','1px solid black')
+            })
+            $('textarea').click(function(){
+                $(this).parents().css('border','1px solid yellow')
+            })
+            $('textarea').click(function(){
+                $(this).parents('form').css('border','1px solid blue')
+            })
+            $('textarea').click(function(){
+                $(this).parentsUntil('div').css('border','1px solid green')
+            })
+        })
+    </script>
+</body>
+</html>

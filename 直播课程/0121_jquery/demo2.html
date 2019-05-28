@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery遍历方法</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+        *{margin: 0px;padding: 0px;}
+        .box,ul,li{
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+        }
+        .box ul{
+            width: 450px;
+            height: 450px;
+        }
+        .box ul li{
+            width: 400px;
+            height: 400px;
+            list-style: none;
+            line-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <span>欢迎来到<a href="">PHP中文网</a>！</span>
+            </li>
+        </ul>
+    </div>
+
+    <p>
+        <span>hellophp</span>
+        <span class="cl">hello<a href>php</a></span>
+        <b>我是123</b>
+    </p>
+
+    <script>
+    // 1.jquery遍历(用一种相对的关系来查找html元素)
+    // 向上查找(祖先元素):
+        // parent() 方法返回被选元素的直接父元素
+    $(function(){
+        // $('a').parent().css('border','1px solid red')
+
+        //parents() 方法返回被选元素的所有祖先元素
+        // $('a').parents().css('border','1px solid red')
+
+        //parents() 方法会使用可选参数来过滤对祖先元素的搜索
+        // $('a').parents('ul').css('border','1px solid red')
+
+        //parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素
+        // $('a').parentsUntil('div').css('border','1px solid red')
+    
+    //向下查找(子元素)
+        //children() 方法返回被选元素的直接子元素
+        // $('.box').children().css('border','1px solid red')
+        // $('p').children('.cl').css('color','red')
+
+        // find() 方法返回被选元素的所有后代元素
+        // $('p').find('span').css('color','red')
+        // $('p').find('a').css('color','red')
+
+    //同级查找(同胞)
+        // siblings() 方法返回被选元素的所有同胞元素
+        $('span').siblings().css('color','red')
+        $('span').siblings('.cl').css('color','blue')
+    })
+    </script>
+</body>
+</html>

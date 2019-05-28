@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>评论功能练习</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="demo7css.css">
+</head>
+<body>
+    <div id="list">
+        <div class="box clearfix">
+            <!-- 删除说说按钮 close -->
+            <a class="close" href="javascript:;">x</a>
+            <img class="head" src="images/1.png" alt="">
+            <div class="content">
+                <div class="main">
+                    <p class="txt">
+                        <span class="user">西门大官人:</span>
+                            ~ All the luck is for you ~
+                    </p>
+                    <img class="pic" src="images/img1.jpg" alt="">
+                </div>
+                <div class="info clearfix">
+                    <span class="time">02-14 23:01</span>
+                    <!-- 给说说点赞 praise -->
+                    <a class="praise" href="javascript:;">赞</a>
+                </div>
+                <div class="praises-total" total="4" style="display: bolck;">4个人觉得很赞</div>
+            <!-- 评论内容 -->
+                <div class="comment-list">
+                    <!-- 每次评论要添加的内容跟标签 -->
+                    <div class="comment-box clearfix" user="self">
+                        <img class="myhead" src="images/4.jpg" alt="">
+                        <div class="comment-content">
+                            <p class="comment-text">
+                                <span class="user">我:</span>
+                                你说的都对......
+                            </p>
+                            <p class="comment-time">
+                                2019-01-19 14:36
+                                <a href="javascript:;" class="comment-praise" total="1" my="0" style="display: inline-block">
+                                1赞
+                                </a>
+                                <a href="javascript:;" class="comment-operate">删除</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 添加结束 -->
+                </div>
+                <!-- 评论内容结束 -->
+                <div class="text-box">
+                    <textarea class="comment" placeholder="评论..."></textarea>
+                    <button class="btn">回 复</button>
+                    <span class="word"><span class="length">0</span>/140</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box clearfix">
+            <a href="javascript:;" class="close">x</a>
+            <img class="head" src="images/2.jpg" alt="">
+            <div class="content">
+                <div class="main">
+                    <p class="txt">
+                        <span class="user">欧阳克 : </span>
+                        三亚的海滩很漂亮。
+                    </p>
+                    <img class="pic" src="images/img5.jpg" alt="">
+                </div>
+                <div class="info clearfix">
+                    <span class="time">02-14 23:01</span>
+                    <a href="javascript:;" class="praise">赞</a>
+                </div>
+                <div class="praises-total" total="0" style="display: none;"></div>
+                <div class="comment-list">
+                    <div class="comment-box clearfix" user="other">
+                        <img class="myhead" src="images/3.png" alt="">
+                        <div class="comment-content">
+                            <p class="comment-text">
+                                <span class="user">韦小宝:</span>
+                                我也想去三亚。
+                            </p>
+                            <p class="comment-time">
+                                2019-01-19 14:36
+                                <a class="comment-praise" href="javascript:;" total="0" my="0">赞</a>
+                                <a class="comment-operate" href="javascript:;">删除</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box">
+                    <textarea class="comment" placeholder="评论..."></textarea>
+                    <button class="btn">回 复</button>
+                    <span class="word"><span class="length">0</span>/140</span>
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+    <script>
+        $(function(){
+            // on() 方法可以在被选元素及子元素上添加一个或多个事件处理程序; 绑定事件 动态绑定
+            $('.comment').on('keyup',function(){
+                var len = $(this).val().length //文本框里面的信息内容字符的长度
+                $(this).parents('.text-box').find('.length').text(140-len)
+            })
+            $(document).on('click','.btn',function(){
+                // 遍历方法 prev()获得元素紧邻前的一个同胞元素
+                var val = $(this).prev().val() // 文本逛里面的信息内容
+                if(val == ""){
+                    alert('留言内容不能为空！')
+                }else{
+                    var date = new Date()
+                    var yy = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + '  ' +
+                     date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+                    var html ='<div class="comment-box clearfix" user="self"><img class="myhead" src="images/4.jpg" alt=""><div class="comment-content"><p class="comment-text"><span class="user">我:</span>'+ val +'</p><p class="comment-time">'+ yy +'<a href="javascript:;" class="comment-praise" total="1" my="0" style="display: inline-block">1赞</a><a href="javascript:;" class="comment-operate">删除</a></p></div></div>'
+                    $(this).parents('.box').find('.comment-list').append(html) // 添加评论
+                    $(this).parents('.box').find('.comment').val('') // 清空输入框
+                    $(this).parents('.box').find('.length').text(0)
+                    $(this).parents('.box').find('.comment').height(20)
+                }
+            })
+            $('.comment').click(function(){
+                $(this).height(80)
+            })
+
+        // // 方法一 :
+        //     //点赞功能 
+        //         //给说说点赞
+        //         $('.praise').click(function(){
+        //             $(this).attr('class','praise_2')
+        //         })
+        //         //给评论点赞
+        //         $('.comment-praise').click(function(){
+        //             var num = parseInt($(this).attr('total'))+1
+        //             $(this).attr('total',num)
+        //             $(this).html(num + '赞')
+        //         })
+
+        //         //删除功能
+        //         $('.comment-operate').click(function(){
+        //             if(confirm('确定要删除吗？')){
+        //             $(this).parents('.comment-box').remove()
+        //             }
+        //         })
+
+        //         $('.close').click(function(){
+        //             if(confirm('确定要删除吗？')){
+        //                 $(this).parents('.box').remove()
+        //             }
+        //         })
+
+        // 方法二:
+                //点赞功能
+                    //给说说点赞
+                    $('.praise').on('click',function(){
+                        $(this).attr('class','praise_2')
+                    })
+                    //给评论点赞
+                    $(document).on('click','.comment-praise',function(){
+                        var num = parseInt($(this).attr('total')) + 1
+                        $(this).attr('total',num)
+                        $(this).html(num + '赞')
+                    })
+                
+                //删除功能
+                    //删除评论
+                    $(document).on('click','.comment-operate',function(){
+                        if(confirm('确定要删除吗？')){
+                            $(this).parents('.comment-box').remove()
+                        }
+                    })
+                    //删除说说
+                    $(document).on('click','.close',function(){
+                        if(confirm('确定要删除吗？')){
+                            $(this).parents('.box').remove()
+                        }
+                    })
+        })
+    </script>
+</body>
+</html>

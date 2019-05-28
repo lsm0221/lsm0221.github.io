@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <title>导航条练习</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 100%;
+            height: 70px;
+            background: #f5f5f5;
+            box-shadow: 1px 1px 10px #ccc;
+            line-height: 70px;
+            position: relative;
+            top:-65px;
+        }
+        form{
+            width: 800px;
+            margin: 0px auto;
+            position: relative;
+        }
+        input{
+            width: 800px;
+            height: 35px;
+            border: 0px;
+            border-radius: 4px;
+            padding-left: 15px;
+        }
+        form i{
+            position: absolute;
+            top:0px;
+            right: 10px;
+            font-size: 28px;
+        }
+        span{
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            display: block;
+            background: url(images/show.jpg) -64px 168px;
+            right: 0px;          
+        }
+        .manu{
+            width: 1000px;
+            height: 40px;
+            line-height: 40px;
+            margin: 20px auto;
+            background: #f5f5f5;
+        }
+        .manu li{
+            float: left;
+            text-align: center;
+            width: 10%;
+            font-weight: bold;
+        }
+        .one li:hover a{
+            color:#fff;
+        }
+        .ba{
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background:#ff6500;
+            top:37px;
+        }
+        .three li{
+            position: relative;
+        }
+        .three li i{
+            font-size: 12px;
+            margin-left: 8px;
+        }
+        .three li ul{
+            width: 100px;
+            box-shadow: 0 2px 5px #f5f5f5;
+            position: absolute;
+            top:40px;
+        }
+        .three li ul li{
+            width: 100px;
+            line-height: 40px;
+        }
+        .three li ul li:hover{
+            background:#f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form>
+            <input type="text" placeholder="# 请输入关键字 #">
+            <i class="layui-icon">&#xe615;</i>
+        </form>
+        <span></span>
+    </div>
+    <ul class="manu one">
+        <li><a href="">要闻</a></li>
+        <li><a href="">国际</a></li>
+        <li><a href="">国内</a></li>
+        <li><a href="">社会</a></li>
+        <li><a href="">军事</a></li>
+        <li><a href="">娱乐</a></li>
+        <li><a href="">体育</a></li>
+        <li><a href="">汽车</a></li>
+        <li><a href="">科技</a></li>
+        <li><a href="">其他</a></li>
+    </ul>
+
+    <ul class="manu two" style="position: relative">
+            <li name="0"><a href="">要闻</a></li>
+            <li name="1"><a href="">国际</a></li>
+            <li name="2"><a href="">国内</a></li>
+            <li name="3"><a href="">社会</a></li>
+            <li name="4"><a href="">军事</a></li>
+            <li name="5"><a href="">娱乐</a></li>
+            <li name="6"><a href="">体育</a></li>
+            <li name="7"><a href="">汽车</a></li>
+            <li name="8"><a href="">科技</a></li>
+            <li name="9"><a href="">其他</a></li>
+            <div class="ba"></div>
+    </ul>
+
+    <ul class="manu three" >
+            <li name="0"><a href="">要闻</a></li>
+            <li name="1"><a href="">国际</a></li>
+            <li name="2"><a href="">国内</a></li>
+            <li name="3"><a href="">社会</a></li>
+            <li name="4"><a href="">军事</a></li>
+            <li name="5"><a href="">娱乐</a></li>
+            <li name="6"><a href="">体育</a></li>
+            <li name="7"><a href="">汽车</a></li>
+            <li name="8"><a href="">科技</a></li>
+            <li name="9"><a href="">其他</a><i class="layui-icon layui-icon-up"></i>
+                <ul>
+                    <li><a href="">你说</a></li>
+                    <li><a href="">你说</a></li>
+                    <li><a href="">你说</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    <script>
+        $(function(){
+            $('input').focus(function(){
+                $(this).css('boxShadow','0 0 5px #ff5600 inset')
+            })
+            $('input').blur(function(){
+                $(this).css('boxShadow','')
+            })
+
+            $('.box').hover(function(){
+                $(this).stop().animate({'top':'2px'},500)
+            },function(){
+                $(this).stop().animate({'top':'-65px'},500)
+            })
+
+        //第一个导航
+            $('.one>li').hover(function(){
+                $(this).css('background','#ff6700')
+            },function(){
+                $(this).css('background','#f5f5f5')
+            })
+
+        //第二个导航
+            $('.two li').hover(function(){
+                $x = parseInt($(this).attr('name'))*100
+                $('.ba').stop().animate({'left':$x+'px'},200)
+            },function(){
+                $('.ba').stop().animate({'left':0},200)
+            })
+
+        //第三个导航
+            $('.three li ul').hide()
+            $('.three li').hover(function(){
+                $(this).find('i').attr('class','layui-icon layui-icon-down')
+                $(this).find('ul').slideDown(500)
+            },function(){
+                $(this).find('i').attr('class','layui-icon layui-icon-up')
+                $(this).find('ul').slideUp(500)
+            })
+        })
+    </script>
+</body>
+</html>
