@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面中常用平级下拉菜单（手风琴）</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="static/images/logo.png" type="image/x-icon">
+    <script src="static/js/jquery.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <div class="parent">
+            <div class="one">
+                <strong>个人中心</strong>
+            </div>
+            <div class="two">
+                <div><a href=""></a>我的信息</div>
+                <div><a href=""></a>系统通知</div>
+                <div><a href=""></a>短信息</div>
+
+            </div>
+        </div>
+        <div class="parent">
+            <div class="one">
+                <strong>课程中心</strong>
+            </div>
+            <div class="two">
+                <div><a href=""></a>我的信息</div>
+                <div><a href=""></a>系统通知</div>
+                <div><a href=""></a>短信息</div>
+
+            </div>
+        </div>
+        <div class="parent">
+            <div class="one">
+                <strong>校内讨论</strong>
+            </div>
+            <div class="two">
+                <div><a href=""></a>我的信息</div>
+                <div><a href=""></a>系统通知</div>
+                <div><a href=""></a>短信息</div>
+
+            </div>
+        </div>
+        <div class="parent">
+            <div class="one">
+                <strong>资源中心</strong>
+            </div>
+            <div class="two">
+                <div><a href=""></a>我的信息</div>
+                <div><a href=""></a>系统通知</div>
+                <div><a href=""></a>短信息</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+       $(function(){
+           $('.two').css('display','none')
+           var one=$('.one')
+           var two=$('.two')
+           //each() 方法规定为每个匹配元素规定运行的函数。
+           $('.one').each(function(i){
+               $(this).click(function(){
+                if($(two[i]).css('display')=='none'){
+                    $(two[i]).slideDown(400)
+                }else{
+                    $(two[i]).slideUp(400)
+                }
+               })
+           })
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+a{
+    text-decoration:none;
+    color: #36b2f5;
+}
+
+
+.nav{
+    width: 250px;
+    margin: 70px auto;
+    border-top: 4px solid #36b2f5;
+    border-bottom: 3px solid #36b2f5;
+    
+}
+.nav .one{
+    border-bottom: 1px solid #36b2f5;
+    border-right: 1px solid #36b2f5;
+    border-left: 1px solid #36b2f5;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.two{
+    width: 248px;
+    border-right: 1px solid #36b2f5;
+    border-left: 1px solid #36b2f5;
+}
+.two div{
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-bottom: 1px dotted #36b2f5;
+    
+}
