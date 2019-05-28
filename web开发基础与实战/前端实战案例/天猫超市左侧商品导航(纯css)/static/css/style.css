@@ -1,0 +1,171 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    
+}
+body{
+    font-size: 12px;
+}
+
+/* 导航部分 */
+.top{
+    background: #f2f2f2;
+    height: 35px;
+}
+.content{
+    height: 35px;
+    line-height: 35px;
+    width: 1200px;
+    margin: 0px auto;
+}
+.left{
+    width: 300px;
+    float: left;
+}
+.left a{
+    margin-right: 17px;
+   
+}
+.top a{
+    color: #6D6E6A;
+}
+.right{
+    float: right;
+}
+.right li{
+    float: left;
+    margin-right: 17px;
+    position: relative;
+}
+.right li i{
+    color: red;
+}
+.content a:hover{
+    color: red;
+}
+.right li div{
+    box-shadow: 2px 1px 5px #ccc;
+    background: #fff;
+    text-align: center;
+    display: none;
+}
+.number{
+    width: 115px;
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    line-height: 25px;
+    padding: 10px 0px;
+}
+.dope{
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    line-height: 25px;
+    padding: 10px 0px;
+}
+#website{
+    width: 1200px;
+    height: 250px;
+    position: absolute;
+    right: 0px;
+    top: 35px;
+}
+.right li:hover div{
+    display: block;
+}
+
+/* 中间部分 */
+.middle{
+    width: 100%;
+    height: 500px;
+    background: url(../images/2.png);
+    background-size: cover;
+    margin-top: 40px;
+}
+.middle .content{
+    margin: 0px auto;
+    width: 1200px;
+    height: 500px;
+}
+.menu{
+    width: 200px;
+    height: 500px;
+    background: #000;
+    background: rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+.menu li{
+    height: 33px;
+    line-height: 33px;
+}
+.menu li:hover{
+    background: #fff;
+}
+.menu li a[href="#"]{
+    color: #fff;
+    font-weight: 400;
+
+}
+.menu li:hover a[href="#"]{
+    color: red;
+}
+.menu li:hover i{
+    color: red;
+}
+.menu li a i{
+    margin: 0px 10px 0px 15px;
+}
+
+/* 左侧导航 */
+.menu_content{
+    width: 820px;
+    height: 500px;
+    background: #fff;
+    position: absolute;
+    left: 200px;
+    top:0px;
+    background: #f2f2f2;
+    display: none;
+}
+.menu li:hover .menu_content{
+    display: block;
+}
+.menu_left{
+    width: 620px;
+    height: 500px;
+    float: left;
+    background: #fff
+}
+.menu_left p{
+    float: left;
+    margin: 10px 0px 0px 20px;   
+}
+.menu_left p a{
+    margin-right: 8px;
+    color: #6D6E6A;
+}
+.menu_content p span{
+    margin: 0px 10px 0px 5px;
+}
+.hr{
+    border-bottom:1px dashed #ccc;
+}
+.menu_right{
+    width: 180px;
+    height: 480px;
+    float: right;
+    margin: 8px 10px;
+    line-height: 14px;
+}
+.menu_right a img{
+    height: 52px;
+    width: 87px;
+}

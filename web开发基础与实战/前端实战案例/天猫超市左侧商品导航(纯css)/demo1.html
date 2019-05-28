@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品导航</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body p{
+            color: #aaa;
+            font-size: 13px;
+        }
+        
+        .shop{
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            box-shadow: 1px 2px 5px #ccc;
+            margin: 50px;
+            position: relative;
+        }
+        .shop li{
+            list-style: none;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+           
+        }
+        .shop li:hover{
+            background: #f2f2f2;
+
+        }
+        .shop li:hover .menu{
+            display: block;
+        }
+        .shop li:hover .menu2{
+            display: block;
+        }
+        .shop li:hover .menu3{
+            display: block;
+        }
+        .shop li a{
+            text-decoration: none;
+            font-size: 18px;
+            color: #666;
+        }
+        .menu{
+            width: 60px;
+            height: 120px;
+            background: #ccc;
+            position: absolute;
+            left: 200px;
+            top: 0px;
+            display: none;
+        }
+        .menu2{
+            width: 60px;
+            height: 120px;
+            background: #ccc;
+            position: absolute;
+            left: 200px;
+            top: 30px;
+            display: none;
+        }
+        .menu3{
+            width: 60px;
+            height: 120px;
+            background: #ccc;
+            position: absolute;
+            left: 200px;
+            top: 60px;
+            display: none;
+        }
+        .menu p:hover{
+            background: #f65000;
+            cursor: pointer;
+        }
+        .menu2 p:hover{
+            background: #f65000;
+            cursor: pointer;
+        }
+        .menu3 p:hover{
+            background: #f65000;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="shop">
+        <li><a href="">女装</a>
+            <div class="menu">
+                <p>衬衫</p>
+                <p>牛仔裤</p>
+                <p>连衣裙</p>
+                <p>休闲外套</p>
+                
+            </div>
+        </li>
+        <li><a href="">男装</a>
+            <div class="menu2">
+                    <p>衬衫</p>
+                    <p>牛仔裤</p>
+                    <p>拖鞋</p>
+                    <p>休闲外套</p>        
+            </div>
+        </li>
+        <li><a href="">箱包</a>
+            <div class="menu3">
+                    <p>大包</p>
+                    <p>小包</p>
+                    <p>皮包</p>
+                    <p>中包</p>        
+            </div>
+        
+        </li>
+        <li><a href="">零食</a></li>
+        <li><a href="">手机</a></li>
+        <li><a href="">水果</a></li>
+    </ul>
+</body>
+</html>
