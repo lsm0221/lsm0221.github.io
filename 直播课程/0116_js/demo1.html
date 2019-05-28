@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js流程控制</title>
+</head>
+<body>
+    <script>
+        var grade = 85;
+
+        // if( grade >= 60 && grade <80){
+        //     console.log('合格')
+        // } else if( grade >= 80 && grade < 90){
+        //     console.log('良好')
+        // } else if( grade >= 90 && grade <100){
+        //     console.log('优秀')
+        // } else {
+        //     console.log('补考')
+        // }
+
+        switch(true){
+            case grade >= 60 && grade< 80:
+            console.log('合格');
+            break;
+
+            case grade >= 80 && grade< 90:
+            console.log('良好');
+            break;
+
+            case grade >= 90:
+            console.log('优秀');
+            break;
+
+            default:
+            console.log('补考');
+        }
+    
+        // var lang = 'javascript';
+        // var lang = 'html';
+        var lang = ' Css ';
+        //去掉前后误输入的空格并强制全部转化为小写,以便于判断 trim()判断前后的空格 toLowerCase()转化为小写
+        switch(lang.trim().toLowerCase()){
+            case 'html':
+            console.log('超文本标记语言');
+            break;
+
+            case 'javascript':
+            console.log('前端脚本语言');
+            break;
+
+            case 'css':
+            console.log('层叠样式表');
+            break;
+
+            default:
+            console.log('输入错误');
+        }
+
+
+        // while循环
+        var n = 0; //初始化循环条件
+        while (n < 10){
+            console.log(n*2)
+            n++;
+        }
+
+        //do~while 循环 即使不满足条件仍然可以执行一次
+        var n = 12;
+        do{
+            console.log(n*2)
+            n++;
+        }while(n<10);
+
+        // for循环
+        for(var n = 0;n < 10; n++){
+            console.log(n*10)
+        }
+    </script>
+</body>
+</html>

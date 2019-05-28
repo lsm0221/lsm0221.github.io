@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js的三种引入方式</title>
+</head>
+<body>
+    <!-- 1.直接在元素的事件方法属性上写js代码 -->
+    <!-- onclick是click事件对应的方法,this默认指向当前元素对象,可以省略 -->
+    <h3 id="tips" onclick="alert(this.id)">javascript</h3>
+
+    <form action="">
+            <input type="text" name="site" value="php中文网">
+            <button type="button" onclick="alert(site.value)">显示站点</button>
+    
+        </form>
+
+    <!-- 2.将js脚本写在script标签中,仅限当前页面使用 -->
+    <form action="">
+        <input type="text" name="username" placeholder="用户名">
+        <button type="button" onclick="check(username)">验证</button>
+    </form>
+
+    <script>
+        function check(username){
+            if(username.value.length === 0){
+                alert('用户名空空如也');
+            }else{
+                alert('验证通过');
+            }
+        }
+    </script>
+
+    <!-- 3.将js脚本写到外部的js文件中 -->
+    <script src="demo2.js"></script>
+    <form action="">
+        <input type="password" name="password" placeholder="密码">
+        <button type="button" onclick="check(password)">登录</button>
+
+    </form>
+
+
+<script>
+    function sum(a,b){
+        return a+b;
+    }
+
+    var a = sum(10,20);
+    console.log(a)
+
+    var b = sum(100,200)
+    console.log(b)
+
+    
+
+    var c = function(d,e){
+        return d+e;
+    }
+    console.log(c(50,60));
+</script>
+</body>
+</html>
