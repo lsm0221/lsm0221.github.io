@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery表达选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<!-- jquery表单选择器:
+		$(":enabled")   		所有激活的input元素(可以使用的input元素)
+		$(":disabled")			所有禁用的input元素(不可以使用的input元素)
+		$(":selected")			所有被选取的元素，针对于select元素
+		$(":checked")			所有被选中的input元素 -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+				//$(":enabled").css("background","yellow")
+				$(":disabled").css("background","blue")
+				$(":selected").css("background","red")
+				$(":checked").parent().css("background","pink") //checked单独找不到，需要加入parent()才能被找到
+		})
+
+	</script>
+	<form >
+	输入框1 <input type="text" name=""><br>
+	输入框2	<input type="text" name=""><br>
+	输入框3	<input type="text" name="" disabled><br>
+	输入框4	<input type="text" name=""><br>
+		<select>
+			<option>看书</option>
+			<option selected>游泳</option>
+			<option >下棋</option>
+			<option>跑步</option>			
+		</select>
+		<br>
+兴趣爱好:<br>
+	<label>	<input type="checkbox" name="">看书</label>
+	<label>	<input type="checkbox" name="">下棋</label>
+	<label>	<input type="checkbox" name="" checked>游泳</label>
+	<label>	<input type="checkbox" name="">跑步</label>
+
+	</form>
+</body>
+</html>

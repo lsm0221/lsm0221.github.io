@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery操作属性的方法</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		/*.box{
+			color:red;
+		}
+		.main{
+			font-size:50px;
+			font-weight: bold;
+
+		}*/
+		.bb{color:yellow;}
+		
+	</style>
+</head>
+<body>
+		 <!-- jquery的操作属性其原理还是对于DOM操作
+		通过对象的关系，对节点树中的元素的属性进行操作方法
+		addClass()        该方法向被选中的元素添加一个或者多个类
+		removeClass()     该方法从被选中的元素移除一个或者多个类
+		attr() 			  该方法设置或者返回被选中元素的属性值
+		removeAttr()	  该方法从被选中的元素中移除属性
+		hasClass()	  	  该方法检查被选中的元素是否包含指定class
+		toggleClass()     该方法对被选中元素进行添加/删除类的切换操作
+			设置内容:
+		text() 			  该方法返回或者设置被选中的元素的文本内容
+		html() 			  该方法返回或者设置被选中的元素内容(类似innnerHTML 可以包括html标签)
+		var()             该方法返回或者设置被选中元素的值 -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+					//$("p").addClass("box main")  //添加多个类，中间用空格隔开
+					//$("p").removeClass("box main")
+
+					//alert($("p").attr("title"))
+					
+					// $("p").attr("title","您好")
+					// alert($("p").attr("title"))
+
+					//$("button").click(function(){
+					//	$("img").removeAttr("src")
+					//})
+
+					//$("button").click(function(){
+						//alert($("div").hasClass("one"))
+					//})
+					
+					 $("button").click(function(){
+					 $("span,b,p").toggleClass("bb")
+					 })
+
+					// alert($("span").text())
+					// $("b").text("我是lsm")
+
+					// alert($("p").html())
+					// $("p").html("<h1>hello world</h1>")
+
+					alert($("input").val())
+					$("input").val("我是被改变的值")
+
+			})
+
+
+		</script>
+		<!-- <p title="hello">中文网</p>
+		<img src="images/111111.jpg" alt="">
+		<button>点击删除</button>
+		<div class="one">你好</div>
+		<button>点击</button> -->
+
+		<span>你好</span><br>
+		<b>您好</b>
+		<p>中文网</p>
+		<button>点击切换</button>
+		<input type="text" name="" value="我是元素的值">
+</body>
+</html>

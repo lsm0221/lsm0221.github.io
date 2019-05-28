@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下划线导航</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+
+		.manu{
+			width:1000px;
+			height:40px;
+			background: pink;
+			margin:10px auto;
+			box-shadow: 0px 0px 5px;
+			border-radius: 5px;
+			position: relative;
+			}
+		
+		ul li{
+			list-style: none;
+			width:200px;
+			height:38px;
+			line-height: 38px;
+			float:left;
+			text-align: center;
+			font-size: 15px;
+			font-weight: bold;		
+			cursor: pointer;
+		}
+
+		.block{
+			width:200px;
+			height:2px;
+			line-height: 2px;
+			background: black;
+			top:38px;
+			
+			position: absolute;
+		}
+		
+		.one li{
+			width:198px;
+			height:35px;
+			line-height: 35px;
+			background: pink;
+			font-size: 13px;
+			border-radius: 5px;
+			border-bottom: 1px solid #ccc;
+			position: relative;
+		}
+		
+		.two {
+			position: absolute;
+			top:2px;
+			left:200px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('li').hover(
+				function(){
+				$x=parseInt($(this).attr('name'))*200
+				$('.block').stop().animate({left:$x+"px"},300)
+			},
+				function(){
+					$('.block').stop().animate({left:'0px'},300)
+				})
+
+			$('.one').hide()
+			$('.two').hide()
+
+			$('.three>li').mouseover(function(){
+				$(this).find('.one').slideDown(500)
+			})
+
+			$('.three>li').mouseleave(function(){
+				$(this).find('.one').slideUp(1000)
+			})
+
+			$('.one>li').mouseover(function(){
+				$(this).find('.two').slideDown(1300)
+			})
+
+			$('.one>li').mouseleave(function(){
+				$(this).find('.two').slideUp(1200)
+			})
+		})
+
+
+	</script>
+</head>
+<body>
+	<div class="manu">
+			<ul class="three">
+				<li name="0">首页
+					<ul class="one">
+						<li>西门大官人</li>
+						<li>孤独九剑</li>
+						<li>韦小宝</li>
+						<li>灭绝师太
+							<ul class="two">
+								<li>html</li>
+								<li>css</li>
+								<li>js</li>
+								<li>jq</li>								
+							</ul>
+
+						</li>						
+					</ul>
+				</li>
+				<li name="1">php中文网</li>
+				<li name="2">西门</li>
+				<li name="3">灭绝</li>
+				<li name="4">独孤</li>
+			</ul>
+			<div class="block"></div>
+	</div>
+</body>
+</html>

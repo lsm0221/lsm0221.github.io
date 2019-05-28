@@ -1,0 +1,112 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>jquery自定义动画效果</title> 	
+ 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		div{
+			width:200px;
+			height:200px;
+			margin:20px 0;
+		}
+
+		.box1{
+			width:100px;
+			height:100px;
+			background: red;		
+			position:absolute;
+
+		}
+
+		.box2{
+			width:100px;
+			height:100px;
+			background: blue;
+			position: absolute;			
+
+		}
+
+		.box3{
+			width:100px;
+			height:100px;
+			background: yellow;
+			position: absolute;			
+
+		}
+
+		.box4{
+			width:100px;
+			height:100px;
+			background: pink;
+			position: absolute;
+
+		}
+		
+
+	</style>
+ </head>
+ <body>
+ 		<!-- jquery自定义动画效果:
+ 				jquery中我们使用animate()方法创建自定义动画
+ 				语法:
+ 					$(selector).aniamte({params},speed,fn)
+
+ 					params 		必需的 参数定义形成动画的CSS属性
+ 					speed 		可选的 参数规定效果的时长，它可以取以下值:"slow","fast"或者毫秒值
+ 					fn  		可选的 动画完成后所执行的函数 -->
+
+ 		<script type="text/javascript">
+ 			$(document).ready(function(){
+ 				$('.but1').click(function(){
+ 				$('p').animate({fontSize:'40px'},1500)  //属性名称font-size改写成驼峰式写法:fontSize
+ 				})
+
+ 				$('.but2').click(function(){
+ 					$('.box1').animate({
+ 						left:'400px',
+ 						width:'200px',
+ 						height:'200px',
+ 						opacity:'0.4',
+ 					},1500)
+ 				})
+
+ 				$('.but3').click(function(){
+ 					$('.box2').animate({height:'toggle',width:'toggle'},1500)
+ 				})
+
+ 				$('.but4').click(function(){
+ 					$('.box3').animate({height:'hide',width:'hide'},1300)
+ 				})
+
+ 				$('.box4').hide()
+ 				$('.but5').click(function(){
+ 					$('.box4').animate({height:'show',width:'show'},1000)
+ 				})
+ 				
+
+ 			})
+
+ 		</script>
+
+ 		<button class="but1">点击字体放大</button>
+ 		<p>jquery中我们使用animate()方法创建自定义动画</p>
+ 		<div >
+ 			<button class="but2">点击移动</button>
+ 			<div class="box1"></div>
+ 		</div>
+ 		<div >
+ 			<button class="but3">点击切换</button>
+ 			<div class="box2"></div>
+ 		</div>
+ 		<div>
+			<button class="but4">点击隐藏</button>
+			<div class="box3"></div>
+ 		</div>
+ 		<div>
+			<button class="but5">点击显示</button>
+			<div class="box4"></div>
+ 		</div>
+
+ </body>  
+ </html>

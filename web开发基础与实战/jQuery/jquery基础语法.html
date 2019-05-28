@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery基础语法</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$str="我是一个变量";
+				alert($str);
+			$("div").hide();
+			$("button").click(function(){
+				$("div").show();
+			})
+
+		})
+
+
+	</script>
+<div style="width: 100px;height: 100px;background: yellow;"></div>
+<button>点击</button>
+</body>
+</html>

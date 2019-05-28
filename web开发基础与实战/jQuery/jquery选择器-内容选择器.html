@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery内容选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+			background: #ccc;
+			margin:20px;
+		}
+	
+	</style>
+</head>
+<body>
+	<!-- jquery内容选择器:
+		$(":contains(text)")    匹配包含给定文本(text)的元素
+		$(":has(selector)")		匹配包含特定选择器元素的元素
+		$(":empty")				匹配不含有内容的元素(即不含有子元素或者文本的空元素)
+		$(":parent")			匹配含有子元素或者文本的元素 -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("div:contains(li)").css("background","green");
+				$("div:has(span)").css("background","yellow");
+				$("div:empty").css("background","pink")
+				$("div:parent").css("width","200px")
+			})
+		</script>
+		<div>wang</div>
+		<div>zhao</div>
+		<div>li</div>
+		<div><span>你好啊</span></div>
+		<div></div>
+		<div><b></b></div>
+</body>
+</html>

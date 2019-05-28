@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件切换</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+		<!-- hover(over,out)
+			over:鼠标移上元素上要触发的一个函数
+			out:鼠标移出元素上要触发的一个函数
+		toggle() 如果元素是可见的，就切换为隐藏，否则反之 -->
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('div').hover(
+				function(){
+				$('div').css("background","green")
+				},
+				function(){
+					$('div').css("font-size","30px")
+				}
+			)
+
+			$('button').click(function(){
+				$('p').toggle().css("background","blue")
+			})
+		})
+
+	</script>
+
+	<div style="width: 100px;height: 100px;background: red;">我是一个内容</div><br>
+	<p style="width: 100px;height: 100px;background: pink;display: none"></p>
+	<button>点击</button>
+</body>
+</html>

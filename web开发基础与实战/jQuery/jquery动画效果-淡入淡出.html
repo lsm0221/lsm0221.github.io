@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery淡入淡出</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		.main{float:left;margin:20px;}
+		.box1,.box2,.box3,.box4{
+			width:100px;
+			height: 100px;
+			background: red;
+		}
+		.but1,.but2,.but3,.but4{
+			height:20px;
+			width:100px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<!-- jquery淡入淡出:
+		jquery是通过控制不透明度的变化来控制匹配到的元素的淡入淡出效果
+
+		fadeIn([speed][fn]) 			通过不透明的变化来实现匹配到元素的淡入效果
+		fadeOut([speed][fn]) 			通过不透明的变化来实现匹配到元素的淡出效果
+		fadeToggle([speed][fn])  		通过不透明的变化来开关所有匹配元素的淡入淡出效果
+		fadeTo([speed] opacity [fn])    把所有匹配到元素的不透明度以渐进发方式调整到指定的不透明度
+		opacity 						fadeTo()方法中必须参数，控制淡入淡出的效果的不透明度(值介于0-1之间)
+		speed 							规定效果的时长
+		fn 								动画完成时所执行的函数 -->
+
+		<script type="text/javascript">
+				$(document).ready(function(){
+					$('.box1').hide()
+					$('.but1').click(function(){
+						$('.box1').fadeIn(1500)
+					})
+
+					$('.but2').click(function(){
+						$('.box2').fadeOut(1600)
+					})
+
+					$('.but3').click(function(){
+						$(".box3").fadeToggle(2000)
+					})
+
+					$('.but4').click(function(){
+						$(".box4").fadeTo(1000,0.4)
+					})
+				})
+
+		</script>
+
+		<div class="main">
+			<button class="but1">淡入</button>
+			<div class="box1"></div>
+		</div>
+		<div class="main">
+			<button class="but2">淡出</button>
+			<div class="box2"></div>
+		</div>
+		<div class="main">
+			<button class="but3">淡入淡出</button>
+			<div class="box3"></div>
+		</div>
+		<div class="main">
+			<button class="but4">淡出到指定值</button>
+			<div class="box4"></div>
+		</div>
+</body>
+</html>

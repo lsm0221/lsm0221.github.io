@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三级下拉框练习</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		*{
+			margin:0px;
+			padding: 0px;
+		}
+
+		.menu{
+			width:1000px;
+			height:40px;
+			background: black;
+			margin:10px auto;
+		}
+
+		ul li{
+			list-style: none;
+			float:left;
+			width:198px;
+			color:#ccc;
+			height:40px;
+			line-height: 40px;
+			text-align: center;
+			border:1px solid #ccc;
+			font-size:20px;
+			cursor:pointer;
+		}
+				
+		.two li{
+			width:197px;
+			height: 40px;
+			line-height: 40px;
+			background: black;
+			font-size:15px;
+			position: relative;
+			cursor:pointer;
+
+		}
+
+		.three{
+			position:absolute;
+			top:0px;
+			left:198px;
+		}
+		
+		.three li{
+			width:196px;
+			height:38px;
+			line-height: 38px;
+			background: black;
+			font-size: 12px;
+			cursor:pointer;
+
+		}
+					
+	</style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.two').hide()
+			$('.three').hide()
+
+			$('.one>li').mouseover(function(){
+				$(this).find('.two').slideDown(1000)
+			})
+
+			$('.one>li').mouseleave(function(){
+				$(this).find('.two').slideUp(1000)
+			})
+
+			$('.two>li').mouseover(function(){
+				$(this).find('.three').slideDown(1200)
+			})
+
+			$('.two>li').mouseleave(function(){
+				$(this).find('.three').slideUp(1200)
+			})
+		})
+
+
+	</script>
+</head>
+<body>
+	<div class="menu">
+		<ul class="one">
+			<li>首页</li>
+			<li>产品
+				<ul class="two">
+					<li>产品1</li>
+					<li>产品2
+						<ul class="three">
+							<li>产品2.1</li>
+							<li>产品2.2</li>
+							<li>产品2.3</li>
+							<li>产品2.4</li>							
+						</ul>
+					</li>
+					<li>产品3</li>
+					<li>产品4</li>
+
+				</ul>
+			</li>
+			<li>新闻</li>
+			<li>会员</li>
+			<li>作业</li>
+			
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery停止动画</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		div{
+			height:200px;
+			margin:100px,0px;
+		}
+		.box{
+			width:100px;
+			height:100px;
+			background: blue;
+			position: absolute;
+		}
+
+		.box2{
+			width:100px;
+			height:100px;
+			background:pink;
+			position: absolute;
+			
+		}
+
+
+	</style>
+</head>
+<body>
+	<!-- jquery停止动画:
+		stop() 方法用于停止动画或效果，在她们完成之前，该方法适用于所有jquery效果函数，
+			   包括滑动，淡入淡出和自定义动画
+		语法: $(selector).stop(stopAll,goToEnd)
+		stopAll   可选参数 规定是否应该清楚动画队列，默认是false 仅停止活动的动画，
+				  允许任何排入队列的动画向后执行
+		goToEnd   可选参数 规定是否立即完成当前动画  默认是false
+		默认情况下  stop() 会清除在被选元素上指定的当前动画 -->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#right').click(function(){
+					$('.box').animate({left:'500px',fontSize:'40px'},3000)					
+				})
+
+				$('#stop').click(function(){
+					$('.box').stop(false,true)
+				})
+
+				$('#right_1').click(function(){
+					$('.box2').animate({left:'+500px'},3000)
+					$('.box2').animate({fontSize:'40px'},600)					
+				})
+
+				$('#stop_1').click(function(){
+					$('.box2').stop(false,true)
+				})
+			})
+
+		</script>
+		<div>
+		<button id="right">点击右移</button>
+		<div class="box">中文网</div>
+		<button id="stop">停止</button>
+		</div>
+		<div>
+		<button id="right_1">点击右移</button>
+		<div class="box2">中文网</div>
+		<button id="stop_1">停止</button>
+		</div
+ 
+</body>
+</html>

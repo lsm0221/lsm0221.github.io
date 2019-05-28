@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery层级选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<!-- jquery层级选择器语法:
+	$("父级元素>子级元素")        给定的父级元素下匹配所有的子元素
+	$("祖先元素  后代元素")       给定的祖先元素下匹配所有的后代元素
+	$("prev+next")(同级元素)      匹配紧跟在prev后面的next元素
+	$("prev~siblings")            匹配prev元素后面的所有的siblings元素 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("ul>li").css("list-style","none")
+			$("ul li").css("list-style","none")
+			$("label+input").css("height","100px")
+			$("label~input").css("background","green")
+		})
+
+	</script>
+    <ul>
+    	<li>1</li>
+    	<li>2</li>
+    	<li>3</li>
+    	<li>4</li>
+    	<li>5</li>
+    	<li>6</li>   	
+    </ul>
+	
+	<ul>
+    	<li>7</li>
+    	<li>8</li>
+    	<div><li>9</li></div>
+    	<li>10</li>
+    	<li>11</li>
+    	<li>12</li>   	
+	</ul>
+
+	<label>姓名</label>
+	<input type="text" name="">
+	<span>大家好</span>
+	<input type="text" name="">
+	<input type="text" name="">
+	<input type="text" name="">
+</body>
+</html>

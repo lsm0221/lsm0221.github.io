@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件方法2</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+		<!--
+		mouseover() 		当鼠标指针位于元素上方时会发生mouseover事件
+		mouseenter() 		当鼠标指针穿过元素时会发生mouseenter事件
+		mousemove() 		当鼠标指针在指定的元素中移动时，就会发生mousemove事件
+		mouseleave()  		当鼠标指针离开元素时，就会发生mouseleave
+		mouseout() 			当鼠标指针从元素上移开时，就会发生mouseout
+		mousedown()  		当鼠标指针移动到元素上方并按下按键时)
+		mouseup()  			当在元素上松开鼠标按键时
+		resize() 			当调整当前浏览器窗口大小时
+		pageX() 			属性是鼠标指针的位置，相对于文档的左边缘 event.pageX  event:必需 参数来自事件绑定函数
+		pageY()  			属性是鼠标指针的位置，相对于文档的右边缘 event.pageY  event:必需 参数来自事件绑定函数 -->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				 $(document).mousemove(function(aa){
+				 	$("span").text("x:"+aa.pageX+"y:"+aa.pageY)
+				 	})
+
+				 a=0
+				 $(window).resize(function(){
+				 	$("b").text(a++)
+				 })
+
+				$(".one").mouseenter(function(){
+					$(".one").css("background","blue")
+				})
+
+				$(".two").mouseover(function(){
+					$(".two").css("width","50px")
+				})
+
+				$(".three").mouseout(function(){
+					$(".three").css("height","50px")
+				})
+
+				$(".four").mousedown(function(){
+					$(".four").css({"width":"50px","height":"50px"})
+				})
+
+				$(".five").mouseup(function(){
+					$(".five").css({"width":"200px","height":"200px","background":"green"})
+				})
+
+			})
+
+		</script>
+
+		<div>当前鼠标的位置:<span></span></div>
+		<div>页面被调整大小的次数:<b></b></div>
+		<div class="one" style="width:100px;height: 100px;background: red"></div><br>
+		<div class="two" style="width:100px;height: 100px;background: red"></div><br>
+		<div class="three" style="width:100px;height: 100px;background: red"></div><br>	
+		<div class="four" style="width:100px;height: 100px;background: red"></div><br>	
+		<div class="five" style="width:100px;height: 100px;background: red"></div><br>	
+		
+
+ </body>
+</html>

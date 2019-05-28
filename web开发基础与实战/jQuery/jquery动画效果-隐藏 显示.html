@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jauery隐藏 显示</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+		<!-- jquery隐藏/显示
+			hide()   隐藏显示的元素
+			基本格式: hide([speed][seeing][fn])
+			show()   显示隐藏的元素
+			基本格式: show([speed][seeing][fn])
+			speed:   隐藏/显示过程的速度，速度是毫秒
+			seeing:  指定切换效果
+			fn:      动画完成时执行的一个函数 -->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#h1').click(function(){
+					$('p').hide(1500)
+				})
+
+				$('#s1').click(function(){
+					$('p').show(100)
+				})
+			})
+
+		</script>
+		<button id="h1">点击隐藏</button>
+		<button id="s1">点击显示</button>
+		<p >大家好</p>
+		<p >中文网</p>
+</body>
+</html>

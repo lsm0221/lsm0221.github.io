@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件方法</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+		<!-- ready()  		当我们的DOM已经加载，页面已经加载完成，触发的事件==onload
+		语法:
+		$(document).ready(function(){})
+		*不能与<body onload="">写在一起
+		blur()  		当元素失去焦点
+		focus()  		当元素获取焦点
+		change() 		当元素的值发生改变的时候
+		click() 		点击事件
+		dblclick()      双击事件 -->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// $("input").blur(function(){
+				// 	$("input").css("background","red")
+				// })
+
+				// $("input").focus(function(){
+				// 	$("input").css("background","yellow") })
+
+				$("input").change(function(){
+					$("input").css("background","blue")
+				})
+
+				$("button").click(function(){
+					$("div").css("background","pink")				
+				})
+
+				$("button").dblclick(function(){
+					$("div").css("background","green")
+				})
+
+			})
+		</script>
+
+		<input type="text" name="">
+		<div style="width:100px;height: 100px;background: purple"></div>
+		<button>点击</button>
+</body>
+</html>

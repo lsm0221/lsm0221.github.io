@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery基本选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+ 	<style>
+ 		#box{
+ 			width:100px;
+ 			height:100px;
+ 			margin-bottom: 20px;
+ 			background: #ccc;
+ 		}
+ 		.box{
+ 			width:100px;
+ 			height:100px;
+ 			background: #ccc;
+ 		}
+
+
+ 	</style>
+</head>
+<body>
+	<!-- jquery基本选择器语法:
+	$("#id名")     根据给定的id来匹配到元素
+	$(".class名")  根据给定的class来匹配到元素
+	$("element")   根据给定的标签来匹配到元素
+	$("*")         匹配到所有元素
+	$("#id名,.class名,element")  匹配到页面中多个选择器 -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#box").css("background","yellow");
+			$(".box").css("width","200px");
+			$("span").css("font-size","20px");
+			$("*").css("font-family","宋体");
+			$("#box,.box").css("height","300px");
+		})
+	</script>
+	<div id="box">你们好</div>
+	<div class="box">他们好</div>
+	<span>大家好</span>
+</body>
+</html>

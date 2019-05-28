@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery属性选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<!-- jquery属性选择器:
+	 	$("[属性名]")  				匹配包含给定属性的元素
+	 	$("[属性名=属性值]")		匹配给定属性是某个特定值的元素
+	 	$("[属性名!=属性值]")       匹配所有不含有特定值得属性或者说是属性不等于特定值的元素
+	 	$("[属性名^=属性值]")		匹配给定属性是以某些值开始的元素
+	 	$("[属性名$=属性值]")		匹配给定属性是以某些值结尾的元素
+	 	$("[属性名*=属性值]")		匹配给定属性包含某些值的元素
+	 	$("attrSel[1] attrSel[1] attrSel[1]")    	符合选择器，需要同时瞒住多个条件使用 -->
+	 <script type="text/javascript">
+	 	$(document).ready(function(){
+	 		// $("input[type]").css("background","green");
+	 		// $("input[type=text]").css("background","red")
+	 		//$("input[type!=password]").css("background","yellow")
+	 		//$("input[type^=t]").css("background","pink")
+	 		//$("input[type$=d]").css("background","blue")
+	 		//$("input[type*=o]").css("background","purple")
+	 		$("input[id*=an][name]").css("background","black")
+	 	})
+
+	 </script>
+
+	<label for="">1</label> <input type="text" name="name1" id="woman"><br>
+	<label for="">2</label> <input type="password" name="name2" id="man"><br>
+	<label for="">3</label> <input type="texd" id="surpman" name="neme"><br>
+	<label for="">4</label> <input type="button" value="点击"><br>	 
+	
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>获取随机颜色</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+	*{margin:0px;padding: 0px}
+		a{
+			text-decoration: none;
+			display: block;
+			margin:100px;
+			float:left;
+			width:100px;
+			height:100px;
+			background: pink;
+			text-align: center;
+			line-height: 100px;
+			border-radius:50px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		//改变标签的背景颜色
+		function changecolor(tag){
+			var len=document.getElementsByTagName(tag).length   //获取标签长度
+			for(var i=0;i<len;i++){
+				document.getElementsByTagName(tag)[i].style.backgroundColor="rgb("+Math.floor(Math.random()*256)+
+				","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")"    //获取随机整数颜色值
+			}
+		}
+
+		$(document).ready(function(){
+			changecolor('a')
+			$('a').mouseover(function(){
+				$bg=$(this).css('backgroundColor')  
+				$(this).css('box-shadow','0px 0px 20px '+$bg)  //因为这是css样式，在css中给box-shadow（）时，内部参数与参数之间没有空格会连在一起不显示
+				$(this).css('border-radius','20px')
+			})
+
+			$('a').mouseleave(function(){
+				$(this).css('box-shadow','none')
+				$(this).css('border-radius','50px')
+			})
+		})
+
+	</script>
+</head>
+<body>
+	<a href="#">颜色1</a>
+	<a href="#">颜色2</a>
+	<a href="#">颜色3</a>
+	<a href="#">颜色4</a>
+
+</body>
+</html>

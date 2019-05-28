@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery滑动</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<!-- jauery滑动:
+		jquery的滑动是通过高度的变化(向某个方向增大或者缩小)来动态的显示所匹配的元素
+		slideDown([speed][fn])    	下滑效果 通过高度的变化，向下增大的动态效果
+		speed  						下滑显示过程的速度 英文值(fast/slow)或者毫秒
+		fn 							动画完成时执行是函数
+
+		slideUp([speed][fn]) 		上滑效果 通过高度的变化，向上减小的动态效果
+		speed  						上滑显示过程的速度 英文值(fast/slow)或者毫秒
+		fn 							动画完成时执行是函数
+
+		slideToggle([speed][fn])   	切换效果 通过高度的变化来切换元素的可见性
+		speed   					上滑隐藏/下滑显示 过程的速度 英文值(fast/slow)或者毫秒
+		fn 							动画完成时执行是函数 -->
+
+		<script type="text/javascript">
+				$(document).ready(function(){
+					$('.p1').hide()
+					$('.but1').click(function(){
+						$('.p1').slideDown(1500)
+					})
+
+					$('.but2').click(function(){
+						$('.p2').slideUp(1200)
+					})
+
+					$('.but3').click(function(){
+						$('.p3').slideToggle(500)
+					})
+				})
+
+		</script>
+
+		<button class="but1">点击下滑</button>
+		<p class="p1">下滑效果 通过高度的变化，向下增大的动态效果</p>
+		<p class="p1">下滑效果 通过高度的变化，向下增大的动态效果</p>
+		<p class="p1">下滑效果 通过高度的变化，向下增大的动态效果</p>
+		<button class="but2">点击上滑</button>
+		<p class="p2">上滑效果 通过高度的变化，向上减小的动态效果</p>
+		<p class="p2">上滑效果 通过高度的变化，向上减小的动态效果</p>
+		<p class="p2">上滑效果 通过高度的变化，向上减小的动态效果</p>
+		<button class="but3">点击切换</button>
+		<p class="p3">切换效果 通过高度的变化来切换元素的可见性</p>
+		<p class="p3">切换效果 通过高度的变化来切换元素的可见性</p>
+		<p class="p3">切换效果 通过高度的变化来切换元素的可见性</p>
+
+</body>
+</html>

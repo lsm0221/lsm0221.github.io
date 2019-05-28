@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery改变css/获取css</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//改变单个css属性
+			//$("选择器").css("属性名","属性值")
+			$("body").css("background","#ccc")
+			//改变多个css属性
+			//$("选择器").css({"属性名":"属性值","属性名1":"属性值1","属性名2":"属性值2"})
+			$("p").css({"color":"red","font-size":"50px","font-weight":"bold"})
+			//获取单个css属性值
+			//$("选择器").css("属性名")
+			alert($("div").css("width"))
+			
+		})
+
+	</script>
+	<p>中文网</p>
+	<div style="width:100px;height:100px; background-color: blue "> </div>
+</body>
+</html>
