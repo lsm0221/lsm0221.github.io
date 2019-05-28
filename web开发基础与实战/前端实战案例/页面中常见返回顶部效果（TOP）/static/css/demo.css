@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    text-align: center;
+}
+div{
+    width: 1200px;
+    height: 1500px;
+    background: #eee;
+    margin: 30px auto;
+}
+#back a{
+    text-align: center;
+    position: fixed;
+    bottom: 100px;
+    right: 60px;
+    background: #fff;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    color: #999;
+    line-height: 36px;
+    box-shadow: 0 0 5px 0 rgba(2,2,2,0.2);
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.top{
+    position: absolute;
+    top:0px;
+    right: 35px; 
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    width: 60px;
+    padding: 0px;
+    text-align:center;
+    white-space: nowrap;
+    background: #e0f7e2;
+   
+    border-radius: 18px 0 0 18px;
+}

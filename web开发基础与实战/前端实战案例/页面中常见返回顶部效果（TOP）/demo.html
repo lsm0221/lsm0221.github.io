@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>仿爱奇艺返回顶部效果（TOP）</title>
+    <link rel="stylesheet" href="static/css/demo.css">
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="static/images/logo.png" type="image/x-icon">
+    <script src="static/js/jquery.js"></script>
+</head>
+<body>
+    <a href=""></a>
+    <div>网页内容</div>
+    <p id="back">
+        <a href="">
+            <i class="fa fa-angle-up"></i>
+            <span class="top">回到顶部</span>
+        </a>
+    </p>
+
+    <script>
+        $(function(){
+            $('a').hide();
+            $('.top').hide();
+            $('a').mouseover(function(){
+                $('.top').show()
+            });
+            $('a').mouseout(function(){
+                $('.top').hide()
+            });
+
+            $(window).scroll(function(){
+                if($(window).scrollTop()>150){
+                    $('a').fadeIn(1000)
+                }else{
+                    $('a').fadeOut(1000)
+                }
+            })
+        })
+    </script>
+</body>
+</html>
