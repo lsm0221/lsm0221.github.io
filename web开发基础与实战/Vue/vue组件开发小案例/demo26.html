@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户点赞</title>
+</head>
+<body>
+    <div id="box">
+        <like-component>
+
+        </like-component>    
+    </div>
+
+    <!-- 将组件中的模板写在html中 -->
+    <template id="like">
+          <button @click="setLike" :style="isLiked ? {backgroundColor:'#ff6700'} : ''">{{text}} {{sign = isLiked? '+' : '-'}}{{count}}</button>  
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            components:{
+                'like-component':{
+                    data: function(){
+                        return {
+                            text:'点赞',
+                            // 点赞数量
+                            count:'200',
+                            // 设置当前点赞状态,false表示初始状态,还没有点赞
+                            isLiked: false
+                        }
+                    },
+
+                    // 组件模板
+                    template: '#like',
+
+                    // 组件方法
+                    methods: {
+                        setLike: function(){
+                            // 判断用户是否点赞 如果isLiked为false,表示没有点赞
+                            if(!this.isLiked){
+                                this.count++;
+                                this.text = '已点赞';
+                            }else{
+                                // 否则就是点赞过了
+                                this.count--;
+                                this.text = '点赞';
+                            }
+
+                            //将点赞还原
+                            this.isLiked = !this.isLiked;
+                            
+                        }
+                    }
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>观察者/侦听器/监听器</title>
+</head>
+<body>
+    <div id="box">
+        用户名: <input type="text" v-model="username">
+        <h3>{{length}}</h3>
+        <!-- v-show指令, true为显示, false为不显示 -->
+        <h3 v-show="isShow" :style="style">{{message}}</h3>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                username: '',
+                message: '用户名太短了',
+                length: '0',
+                isShow: false,
+                style: 'color:red'
+            },
+            // watch侦听器属性,监听页面中的变量值的变化
+            watch: {
+                username: function(){
+                    this.length++;
+                    if(this.length<6){
+                        this.isShow = true;
+                    }else{
+                        this.isShow = false;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

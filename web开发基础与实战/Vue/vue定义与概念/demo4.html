@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双向数据绑定</title>
+</head>
+<body>
+    <div id="box">
+        <!-- 双向数据绑定 -->
+            <!-- 1.单向绑定: 用数据模型Model中的数据内容来更新页面中变量 -->
+            <!-- 2.双向绑定: 用页面中变量内容来更新数据模型Model中的数据 -->
+
+            <!-- input有一个特点: 既可以显示内容,也可以输入内容/更新内容 -->
+            <!-- <input type="text" :value="info"> -->
+            <!-- v-model 指令可以实现双向绑定:用模板中的变量来更新模型中的变量 -->
+            <input type="text" v-model:value="info">
+
+            <h3>{{info}}</h3>
+
+            <p>你的级别是:
+                <select v-model="level">
+                    <option value="1">VIP1</option>
+                    <option value="2">VIP2</option>
+                    <option value="3">VIP3</option>
+                </select>
+                <h3>你的级别是:{{level}}</h3>
+            </p>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#box',
+            data: {
+                info: 'html',
+                level: '1'
+
+            }
+        })
+    </script>
+</body>
+</html>

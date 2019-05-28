@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面布局(插槽)</title>
+    <style>
+        .header, .footer{
+            min-height: 60px;
+            background: lightblue;
+        }
+        .main {
+            margin: 5px auto;
+            min-height: 600px;
+            overflow: hidden;
+        }
+        .main .side{
+            width: 30%;
+            min-height: inherit;
+            background: antiquewhite;
+            float: left;
+        }
+        .main .content{
+            width: 70%;
+            min-height: inherit;
+            background: lightgreen;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!-- 头部 -->
+        <div class="header" slot="header">{{header}}</div>
+        <!-- 主体 -->
+        <div class="main" slot="main">
+            <div class="side">{{main[0]}}</div>
+            <div class="content">{{main[1]}}</div>
+        </div>
+        <div class="footer" slot="footer">{{footer}}</div>
+    </div>
+
+    <template id="template-tpl">
+        <div class="container">
+            <slot name="header"></slot>
+            <slot name="main"></slot>
+            <slot name="footer"></slot>
+
+        </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 全局组件
+        Vue.component(
+            'layout',{
+                template:'#template-tpl',
+            }
+        );
+
+        let vm = new Vue({
+            el: '#box',
+            data:{
+                header:'头部',
+                main: ['侧边距','内容'],
+                footer:'底部'
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>插槽</title>
+</head>
+<body>
+    <div id="box">
+        <my-component1>
+                <p>html中文网</p>
+        </my-component1>
+
+        <my-component2>
+            <p slot="site">html.cn</p>
+            <h3 slot="data">www.html.cn</h3>
+            <h1 slot="desc">专业、团结</h1>
+        </my-component2>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+    //全局组件: 匿名插槽 / 单插槽
+    Vue.component(
+        'my-component1',{
+            template:'<div><slot></slot></div>'
+            // 插槽就是一个预留的占位符,最终会被组件中的指定内容所替换
+        }
+
+    ); 
+
+    //命名插槽
+    Vue.component(
+        'my-component2',{
+            template:`<div>
+                        <slot name="site"></slot>
+                        <slot name="data"></slot>
+                        <slot name="desc"></slot>
+
+                    </div`
+        }
+    )
+
+
+    let vm = new Vue({
+        el: '#box'
+    })
+    
+    </script>
+</body>
+</html>

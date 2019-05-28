@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>挂载点和变量</title>
+</head>
+<!-- 在当前页面中创建一个挂载点 -->
+<div id="box">
+    <!-- 使用{{变量名}},插值 -->
+    <p>{{message1}}</p>
+    <!-- 使用模板指令: v-text,通常都是写到标签属性中的 -->
+    <p v-text="message1"></p>
+    <p v-text="message2"></p>
+    <!-- 使用模板指令: v-html,可以将字符串中的html标签解析出来 -->
+    <p v-html="message3"></p>
+
+
+</div>
+<body>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+            // 绑定一个挂载点
+            el: '#box',
+            // 创建一个数据模型
+            data: {
+                message1: 'vue.js开发基础',
+                message2: '<h3 style="color:red">php.cn中文网</h3>',
+                message3: '<h3 style="color:red">php.cn中文网</h3>'
+            }
+        })
+    </script>
+</body>
+</html>

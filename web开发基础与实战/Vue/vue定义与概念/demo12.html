@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环输出与列表渲染</title>
+</head>
+<body>
+    <!-- 
+    v-for 指令
+        循环遍历数组或对象
+        也可以遍历整数
+        v-for="item in items"
+        v-for="item of items"
+
+        v-for="(item,key) in items"
+        v-for="(item,key,index) in items" 
+    -->
+
+    <div id="box">
+        <p>课程列表:</p>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>php</li>
+        </ul>
+        <hr>
+
+        <p>课程列表:</p>
+        <ul>
+            <li v-for="abc in courses">{{abc}}</li>
+        </ul>
+        <hr>
+
+        <p>商品列表</p>
+        <ul>
+            <li v-for="(shop,key) in products">
+                <span>{{key}} -- {{shop.name}} : {{shop.price}}</span>
+            </li>
+        </ul>
+
+        <hr>
+
+        <p>商品列表</p>
+        <ul>
+            <li v-for="(shop,key,index) in products" :key="index">
+                <span>{{key}} -- {{shop.name}} : {{shop.price}}</span>
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                courses :['html','css','javascript','php'],
+                products: [
+                    {
+                        name:'手机',
+                        price:4000
+                    },
+                    {
+                        name:'电脑',
+                        price:2000
+                    },
+                    {
+                        name:'衣服',
+                        price:500
+                    }
+                ]
+                    
+                
+            }
+        })
+    </script>
+
+</body>
+</html>

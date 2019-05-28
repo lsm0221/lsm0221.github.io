@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实时监控用户输入的内容</title>
+</head>
+<body>
+    <div id="box">
+        <textarea v-model="text" @input.delete="count">{{text}}</textarea>
+        <p>您输入的内容:{{text}}</p>
+        <p>还能输入:{{num}}</p>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                //用户输入的内容
+                text:'',
+
+                //输入最大的字数
+                num: 100,
+
+                //禁止输入的词汇
+                ban: [
+                    '六合彩','吸毒','王八蛋','一夜情'
+                ]
+            },
+            //事件属性
+            methods:{
+                count: function(event) {
+                    if(event.keyCode === 8) {
+                       return (this.num === 100) ? false : this.num++;           
+                    }else{
+                        return (this.num === 0) ? false : this.num--;
+                    }
+                }
+            },
+            // 监听器/侦听器
+            watch:{
+                text: function(value){
+                    this.ban.forEach(function(words){
+                        if(value.indexOf(words) !== -1){
+                            alert('有非法内容！');
+                            location.reload();
+                        }
+                    })
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

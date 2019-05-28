@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用原生js实现一个留言板</title>
+</head>
+<body>
+    <div id="box">
+        <h3>留言板</h3>
+        <input type="text">
+        <button>提交</button>
+        <ul></ul>
+    </div>
+
+    <script>
+        //获取元素
+        let input = document.getElementsByTagName('input')[0];
+        let btn = document.getElementsByTagName('button')[0];
+        let ul = document.getElementsByTagName('ul')[0];
+
+        btn.onclick = function(){
+            //创建一个新元素
+            let li = document.createElement('li');
+
+            //添加内容
+            li.innerHTML = input.value;
+
+            // 将新元素添加到页面中
+            // ul.appendChild(li);
+
+            //判断当前列表是否为空,如果为空,直接添加到末尾
+            //如有已有留言,插到留言前面
+            if(ul.children.length === 0){
+                ul.appendChild(li);
+            }else{
+                let first = ul.firstElementChild;
+                ul.insertBefore(li,first)
+            }
+
+
+            //清空留言区
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

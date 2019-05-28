@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用Vue快速制作一个留言板</title>
+</head>
+<body>
+    <div id="box">
+        <h3>留言板</h3>
+        <input type="text" v-model="input" placeholder="请输入内容">
+        <button @click="btn">提交</button>
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                input: '',
+                list:[]
+            },
+            methods:{
+                btn: function(){
+                    //末尾添加内容
+                    // this.list.push(this.input);
+
+                    //头部添加内容
+                    this.list.unshift(this.input);
+
+                    //清空留言板
+                    this.input = "";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

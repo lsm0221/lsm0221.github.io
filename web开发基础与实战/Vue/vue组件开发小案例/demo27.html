@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品信息表</title>
+</head>
+<body>
+    <div id="box">
+        <shop :my-products="products">
+
+        </shop>
+    </div>
+
+    <template id="product-tpl">
+            <table :style="tableStyle">
+                    <caption :style="title">商品信息表</caption> 
+                    <thead>
+                        <tr :style="bgColor">
+                            <th :style="tdStyle">编号</th>
+                            <th :style="tdStyle">名称</th>  
+                            <th :style="tdStyle">价格</th>  
+                            <th :style="tdStyle">数量</th> 
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr v-for="(item,index) in myProducts">
+                            <td :style="tdStyle">{{index}}</td>
+                            <td :style="tdStyle">{{item.name}}</td>
+                            <td :style="tdStyle">{{item.price}}</td>
+                            <td :style="tdStyle"><input type="number" v-model.number="item.count"></td>
+
+                        </tr>
+                    </tbody>
+                    
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" :style="tdStyle">总计:</td>
+                            <td :style="tdStyle">{{total}}</td>
+                        </tr>
+                    </tfoot>
+                    
+                    
+                    
+                </table>
+    </template>  
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            // 创建一个父组件 发送数据
+            el: '#box',
+            data:{
+                products:[
+                    {
+                        name:'苹果笔记本',
+                        price:18888,
+                        count:''
+                    },
+                    {
+                        name:'华为笔记本',
+                        price:15888,
+                        count:''
+                    },
+                    {
+                        name:'小米笔记本',
+                        price:8888,
+                        count:''
+                    }
+                ]
+            },
+
+            // 创建一个子组件(局部组件),它从实例(父组件)中接受数据
+            components:{
+                'shop':{
+                    // 注意: html属性名不区分大小写,myProducts 会转为my-products
+                    props:['myProducts'],
+                    
+                    data:function(){
+                        return{
+                            tableStyle: {
+                                borderCollapse:'collapse',
+                                border:'1px solid #555',
+                                width:'90%',
+                                textAlign:'center'
+                            },
+
+                            tdStyle: {
+                                border:'1px solid #555',
+                                padding:'8px'
+                            },
+
+                            bgColor: {
+                                backgroundColor:'lightblue'
+                            },
+
+                            title: {
+                                fontSize:'20px',
+                                marginBottom:'10px'
+                            }
+                        }
+                    },
+                    // es6: 用反引号来包含大量的html代码
+                    // 用模板标签 template 进行简化
+                    template:'#product-tpl',
+                     
+                    // 计算属性
+                    computed: {
+                        total:function(){
+                            let sum = 0 ;
+                            this.myProducts.forEach(function(product){
+                               sum += product.count * product.price
+                            });
+                            return sum;
+                        }
+                    }
+                    
+                    
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

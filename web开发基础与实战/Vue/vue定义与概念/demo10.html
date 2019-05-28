@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算属性(computed)/方法属性(methods)</title>
+</head>
+<body>
+    <!-- 计算属性和方法属性之间的关系 -->
+        <!-- 
+        计算属性依赖缓存,只有相关依赖数据发生变化才会重新计算,性能更好
+        方法属性动态性更强,只要重新渲染,方法总会被调用,实时性更好 
+        -->
+
+        <div id="box">
+            <p>
+                商品: {{name}}<br>
+                价格: <input type="number" v-model.number="number"><br>
+                数量: <input type="number" v-model.number="price"><br>
+            </p>
+
+            <p>金额{{ number * price }}元</p>
+
+            <!-- Vue实例中的计算属性 -->
+            <p>金额{{ total }}元</p>
+
+            <!-- Vue实例中的方法属性 -->
+            <p>金额{{ total1() }}元</p>
+
+
+        </div>
+
+        <script src="../js/vue.js"></script>
+        <script>
+            let vm = new Vue({
+                el: '#box',
+                data: {
+                    name : "iphoneXR",
+                    number : "",
+                    price : "",
+                },
+                // 计算属性/派生属性
+                computed: {
+                    total:function(){
+                        return this.number * this.price;
+                    }
+                },
+                // 方法属性
+                methods: {
+                    total1:function(){
+                        return this.number * this.price;
+                    }
+                }
+            })
+        </script>
+</body>
+</html>

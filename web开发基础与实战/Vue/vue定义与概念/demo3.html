@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板,属性和事件</title>
+</head>
+<body>
+    <div id="box">
+        <!-- 1.模板 -->
+        <h3>{{message}}</h3>
+        <!-- 模板还可以写在vue实例中 -->
+
+        <!-- 2.属性 -->
+        <!-- <h3 style="color:red">{{message}}</h3> -->
+        <!-- 添加属性也有一个模板指令: v-bind:属性名="属性值" -->
+        <!-- <h3 v-bind:style="style">{{message}}</h3> -->
+        <!-- <h3 v-bind:style="style + 'font-size:5rem;'">{{message}}</h3> -->
+        <!-- 简写: v-bind => 冒号: -->
+        <h3 :style="style">{{message}}</h3>
+
+        <!-- 3.事件 -->
+        <!-- 模板指令: v-on: 事件名称="方法名" -->
+        <h2 v-on:click="changeText">{{message}}</h2>
+        <!-- 事件也有简写: @ -->
+        <h2 @click="changeText">{{message}}</h2>
+
+        <!-- 4.数据上可以直接计算或者应用js函数处理 -->
+        <p>{{num*2+23}}</p>
+        <!-- slice(0,4) 取0-4字符 -->
+        <p>{{site.slice(0,4)}}</p> 
+        <!-- toUpperCase() 变换成大写 -->
+        <p>{{site.slice(0,4).toUpperCase()}}</p>
+
+
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#box',
+        // vue实例中的模板优先级高于挂载点中的模板
+        // template: '<h3>《html权威指南》</h3>',
+        data :{
+            message:'《javascript权威指南》',
+            style:'color:yellow;font-size:30px;background:red;',
+            num: 100,
+            site: 'html中文网'
+        },
+        methods:{
+            changeText:function(){
+                this.message = '《vue.js权威指南》'
+            }
+        }
+    })
+</script>
+</html>

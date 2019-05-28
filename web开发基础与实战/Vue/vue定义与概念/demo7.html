@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模板与样式绑定</title>
+    <style>
+        .correct{
+            color: green;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p class="correct error">{{text}}</p>
+        <p class="error">{{text}}</p>
+
+        <!-- v-bind -->
+        <p v-bind:class="error">{{text}}</p>
+
+        <!-- 需要将类名做为vue实例数据对象的属性,并设置状态(布尔) -->
+        <p v-bind:class="{correct:isActive}">{{text}}</p>
+
+        <!-- 再次声明一个类样式,后面的样式会覆盖掉前面同名样式规则 -->
+        <p v-bind:class="{correct:isActive,error:hasError}">{{text}}</p>
+
+        <!-- 类属性的值使用数组 -->
+        <p v-bind:class="[correctClass,errorClass]">{{text}}</p>
+
+        <!-- 传统内联样式style -->
+        <p style="color: blue;font-size: 20px">容易走的路都是下坡路</p>
+
+        <!-- 数组属性 -->
+        <p v-bind:style="[colorStyle,fontSizeStyle]">容易走的路都是下坡路</p>
+
+        <!-- 对象属性 -->
+        <p v-bind:style="{color:'red',fontSize:'24px'}">容易走的路都是下坡路</p>
+
+        <p v-bind:style="styleRule">容易走的路都是下坡路</p>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                text: '学习是一件令人快乐的事情',
+                isActive: true,
+                hasError: true,
+                //样式数组
+                correctClass:'correct',
+                errorClass:'error',
+
+                colorStyle:{
+                    color:'green'
+                },
+                fontSizeStyle:{
+                    fontSize:'14px'
+                },
+
+                styleRule:{
+                    color:'blue',
+                    fontSize:'28px'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

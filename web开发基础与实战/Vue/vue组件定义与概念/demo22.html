@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父组件向子组件传递数据</title>
+</head>
+<body>
+    <div id="box">
+        <!-- 子组件: 局部组件 -->
+        <local-component :link="nav" :lesson="crouse"></local-component>
+        <hr>
+        <!-- 子组件: 全局组件 -->
+        <global-component :link="nav" :lesson="crouse"></global-component>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+    // 子组件: 全局组件
+        Vue.component(
+            'global-component',
+            {
+                props:['link','lesson'],
+                template:'<p><ul><li v-for="item in link"><a>{{item}}</a></li></ul>{{lesson}}</p>'
+            }
+        );
+
+     // 父组件
+     let vm = new Vue({
+         el: '#box',
+         data: {
+             nav:['首页','视频','直播','工具'],
+             crouse:'vue.js'
+         },
+
+         // 子组件: 局部组件
+         components:{
+             'local-component': {
+                 data: function() {
+                     return {
+                         site: 'html.cn'
+                     };
+                 },
+                 // props 是用来接收父组件传递过来的数据的容器,是一个数组
+                 props:['link','lesson'],
+                 // 组件模板
+                 template:'<p>欢迎来到 {{site}} 学习<ul><li v-for="item in link"><a>{{item}}</a></li></ul>{{lesson}}</p>'
+             }
+         }
+     })   
+    
+    </script>
+</body>
+</html>

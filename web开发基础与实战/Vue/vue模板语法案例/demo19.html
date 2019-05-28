@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟Ajax用户注册操作</title>
+</head>
+<body>
+    <div id="box">
+        <h4>用户注册</h4>
+        <p>
+            <label for="name">用户:</label>
+            <!-- lazy失去焦点才会出现 trim除去空格字符 -->
+            <input type="text" id="name" v-model.lazy.trim="name" @input="input" @keyup.delete="reName">
+            <span v-show="nameError" :style="error">{{name}}用户已经注册过</span>
+        </p>
+
+        <p>
+            <label for="email">邮箱:</label>
+            <input type="email" id="email" v-model.lazy.trim="email"  @input="input" @keyup.delete="reEmail">
+            <span v-show="emailError" :style="error">{{email}}邮箱已经注册过</span>
+        </p>
+
+        <p>
+            <button @click="submit">登录</button>
+            <span :style="error">{{tips}}</span>
+        </p>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                name: '',
+                email: '',
+
+                // 用户验证提示显示状态
+                nameError: false,
+
+                // 邮箱验证提示显示状态
+                emailError: false,
+
+                // 设置错误信息的文本样式
+                error: 'color:red',
+
+                // 登录提示信息
+                tips: '',
+
+                // 已存在用户名列表
+                nameList: ['admin','123456','liu',],
+
+                // 已存在邮箱列表
+                emailList: ['admin@qq.com','123456@qq.com','liu@qq.com']
+
+            },
+
+            // 响应事件方法
+            methods: {
+                submit: function(){
+                    // 非空判断
+                    if(this.name.length ===0 && this.email.length === 0){
+                        this.tips = '请输入用户和邮箱';
+                        document.getElementsByTagName('input')[0].focus();
+                    } else if(this.name.length ===0 || this.email.length === 0){
+                        this.tips = '请输入用户或者邮箱';
+                        this.error = 'color:red';
+                    }else if( this.nameError === false && this.emailError ===false){
+                        this.tips = '验证通过,请登录';
+                        this.error = 'color:green';
+                    } else {
+                        this.tips = '用户或者邮箱错误';
+                    }
+                },
+
+                
+                input: function(){
+                    this.tips = '';
+                },
+
+                // 按下删除键,提示信息消失
+                reName: function(){
+                    this.nameError = false;
+                },
+                reEmail: function(){
+                    this.emailError = false;
+                }
+
+            },
+
+            //监听器
+            watch: {
+                //监听用户的更新
+                name: function(value){
+                    // 遍历用户列表,如果注册过的用户,重新输入并重置焦点
+                    this.nameList.forEach(function(list){
+                        if(value === list){
+                            vm.nameError = true;
+                            document.getElementsByTagName('input')[0].focus();
+                        }
+                    })
+                },
+
+                //监听邮箱的更新
+                email: function(value){
+                    // 遍历邮箱列表,如果注册过的邮箱,重新输入并重置焦点
+                    this.emailList.forEach(function(list){
+                        if(value === list){
+                            vm.emailError = true;
+                            document.getElementsByTagName('input')[1].focus();
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>同级组件之间传递数据</title>
+</head>
+<body>
+    <div id="box">
+        <my-component1></my-component1>
+
+        <my-component2></my-component2>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        // 创建一个空的实例
+        let middle = new Vue();
+
+        // 创建实例
+        let vm = new Vue({
+            el: '#box',
+                    
+            components:{
+                //第一个组件 发送数据
+                'my-component1':{
+                    data:function(){
+                        return {
+                            num: [0,1,2,3]
+                        };
+                     },
+                    
+                     //创建实例模板
+                     template:'<button @click="change">向同级组件之间发送数据</button>',
+
+                     //组件方法
+                     methods: {
+                         change: function(){
+                             middle.$emit('getData',this.num);
+                         }
+                     }
+                },
+
+                //第二个组件 接受数据
+                'my-component2': {
+                    data: function(){
+                        return {
+                            verify:['AD23','WE55','FG77','IK11'],
+                            code: '9527',
+                            style:'background:#666;color:#eee;width:60px;text-align:center;'
+                        };
+                    },
+
+                    // 创建实例模板
+                    template:'<p :style="style">{{code}}</p>',
+
+                    // 挂载完成的时候监听事件
+                 mounted: function(){
+                // 暂存当前作用域对象
+                let current = this;
+
+                middle.$on('getData',function(index){
+                    // 从0-3 随机取一个数, 作为下标
+                    let n = index[Math.floor(Math.random()*index.length)];
+
+                    current.code = current.verify[n];
+                })
+            }
+                }
+
+            },
+
+            
+        })
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>条件判断与元素的显示切换</title>
+</head>
+<body>
+    <!--
+     v-if指令:
+        控制模板元素的存在或移除
+        移除是真正的删除了该元素 
+    -->
+
+    <!--
+     v-show指令:
+        控制模板元素的显示与隐藏
+        隐藏仅仅是用css控制显示
+    -->
+
+    <div id="box">
+        <p v-if="on">控制模板元素的存在或移除，移除是真正的删除了该元素</p>
+
+        <p v-show="seen">控制模板元素的显示与隐藏,隐藏仅仅是用css控制显示</p>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                on: true,
+                seen: true
+            }
+        })
+
+        // 将on的状态改为 false
+        vm.on = false;
+
+        // 将seen的状态改为 false
+        vm.seen = false;
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>子组件向父组件传递数据</title>
+</head>
+<body>
+    <div id="box">
+        <my-component @getdata="getThing"></my-component>
+        <ul>
+            <li v-for="item in userInfo">{{item}}</li>
+        </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        //父组件: 实例
+        let vm = new Vue({
+            el: '#box',
+            // 创建数据容器,接收子组件传来的数据
+            data: {
+                userInfo:[]
+            },
+
+            //子组件: 局部组件
+            components: {
+                'my-component':{
+                    // 创建要发送给父组件的数据
+                    data: function(){
+                        return{
+                             name: 'admin',
+                             email: 'admin@qq.com'
+                        }                 
+                    },
+
+                    //创建一个模板,并在模板中定义事件
+                    template:'<button @click="send">子组件向父组件传递数据</button>',
+
+                    //组件方法
+                    methods: {
+                        send: function(){
+                            this.$emit('getdata',[this.name,this.email]);
+                        }
+                    }
+
+
+                }
+            },
+
+            methods:{
+                getThing:function(user){
+                    user.forEach(function(value){
+                        this.userInfo.push(value);
+                    },this)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

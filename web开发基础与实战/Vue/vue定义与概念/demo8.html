@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件与方法</title>
+</head>
+<body>
+    <div id="box">
+        <button v-on:click="say()">点击</button>
+        <button @click="say">点击</button>
+        <button @click="hello('html中文网')">点击</button>
+
+        <p>{{welcome}}</p>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                welcome:''
+            },
+            methods:{
+                say: function(){
+                    this.welcome = '欢迎学习';
+                },
+                hello: function(ha){
+                    this.welcome = '欢迎来到' + ha + '学习vue';
+                }
+            }
+        })
+    </script>
+</body>
+</html>

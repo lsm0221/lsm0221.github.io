@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局组件</title>
+</head>
+<body>
+    <div id="box">
+        <!-- 这里调用全局组件 -->
+            <global-component></global-component>      
+    </div>
+
+    <div id="box2">
+            <global-component></global-component>      
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+        // 创建全局组件
+            Vue.component(
+                // 1.组件名称
+                'global-component',
+
+                // 2.组件内容
+                // 2.1组件中的私有数据
+                {
+                    data: function(){
+                        return {
+                            site : 'html 中文网',
+                            course: ['html','css','javascript','Vue.js']
+                        };
+                    },
+
+                // 2.2组件模板的内容
+                template: '<div><p>欢迎来到 {{site}} 学习 </p> <ul><li v-for="item in course">{{item}}</li></ul</div'
+                }
+            )
+    
+    
+    </script>
+
+
+
+    <script>
+        let vm1 = new Vue({
+            el: '#box'
+        })
+
+        let vm2 = new Vue({
+            el: '#box2'
+        })
+    </script>
+</body>
+</html>

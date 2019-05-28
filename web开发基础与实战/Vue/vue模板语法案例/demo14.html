@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小小购物车案例</title>
+</head>
+<body>
+    <div id="box">
+        <table border="1" cellpadding="5" cellspacing="0" width="90%" align="center">
+            <caption>小小购物车</caption>
+            <tr bgcolor="#f5deb3">
+                <th>编号</th>
+                <th>品名</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>金额</th>
+            </tr>
+            <tr align="center" v-for="(item,index) in products">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td><input type="number" v-model.number="item.num"></td>
+                <td>{{subtotal(index)}}</td>
+            </tr>
+            <tr align="center">
+                <td colspan="3">合计:</td>
+                <td>{{count}}</td>
+                <td>{{total}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#box',
+            data: {
+                products:[
+                    {
+                        id: '1',
+                        name: 'iphone XR',
+                        price: '5999',
+                        num: ''
+                    },
+                    {
+                        id: '2',
+                        name: '华为 P30',
+                        price: '4999',
+                        num: ''
+                    },
+                    {
+                        id: '3',
+                        name: '小米 9',
+                        price: '2999',
+                        num: ''
+                    }
+                ]
+            },
+
+            //计算金额
+            computed: {
+                subtotal() {
+                    return function(index) {
+                        let price = this.products[index].price;
+                        let num = this.products[index].num;
+                        return price * num;
+                    }
+                },
+
+                //计算商品数量
+                count: function(){
+                    let n = 0;
+                    this.products.forEach(function(value){
+                        n += value.num;
+                    });
+                    return n;
+                },
+
+                //计算总金额
+                total: function(){
+                    let  m = 0;
+                    this.products.forEach(function(value){
+                        m += value.num * value.price;
+                    });
+                    return m;
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>
