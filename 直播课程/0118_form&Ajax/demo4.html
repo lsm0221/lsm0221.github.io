@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js中的元素拖拽原理</title>
+    <style>
+        #ball{
+            width: 50px;
+            height: 50px;
+            background-color: lightpink;
+            border-radius: 50%;
+            box-shadow: 2px 2px 1px #888;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+
+    <script>
+        //onmousedown: 选择    onmouseover/onmousemove: 移动    onmouseup: 放下
+
+        var ball = document.getElementById('ball');
+        // 找到小球的位置:
+        // 当前鼠标到小球边沿的距离相对是不变的，变的只是小球到左边与顶部的距离
+        // 这个不变的距离,是鼠标点击下去的一瞬间就确定了,就可以求出来了
+        // 根据当前鼠标到当前可视区的距离
+
+        ball.onmousedown = function (event){
+            var x = event.clientX - this.offsetLeft;
+            var y = event.clientY - this.offsetTop;
+            console.log(x,y)
+
+            document.onmousemove = function (event){
+                ball.style.left = event.clientX - x + 'px';
+                ball.style.top = event.clientY - y + 'px';
+                console.log(ball.style.left,ball.style.top)
+            }
+
+            document.onmouseup = function (){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>

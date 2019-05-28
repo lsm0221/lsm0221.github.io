@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表达事件(二)</title>
+</head>
+<body>
+    <h3>用户登录</h3>
+    <form action="" method="GET" name="login">
+        <p>
+            <label for="name">用户:</label>
+            <input type="text" name="name" id="name">
+            <span style="color:red" id="name-tips">*</span>
+        </p>
+
+        <p>
+            <label for="password">密码:</label>
+            <input type="password" name="password" id="password">
+            <span style="color:red" id="psw-tips">*</span>
+        </p>
+        <button>登录</button>
+    </form>
+
+    <script>
+        // onsubmit: 表达提交事件: 用户提交表单时触发
+        // onblur: 失去焦点事件: 控件失去焦点时触发
+        // onfocus: 获取焦点事件: 控件获取焦点时触发
+        // oninput: 输入框内容发生变化时触发
+
+        //还有一些与事件对应的方法
+        // submit(): 提交表单,表单元素上调用,脚本提交不需要事件触发
+        // reset(): 重置表单控件值
+        // focus(): 设置控件焦点
+
+        var form = document.forms['login'];
+        //name代表文本框:用户名
+        //设置预焦点
+         form.name.focus(); 
+     
+        form.onsubmit = function(){
+            if(form.name.value.length ===0){
+                alert('用户名不能为空')
+                form.name.focus();
+                return false;
+            } else if(form.password.value.length ===0){
+                alert('密码不能为空')
+                form.password.focus();
+                return false;
+            }
+
+            //confirm()对话框和alert()不同,多了一个取消按钮,返回布尔值true/false
+            // if(confirm('确定要登录吗？')){
+            //     return true;
+            // } else{
+            //     return false;
+            // }
+
+            return confirm('确定登录吗？');
+        }
+
+        // onblur : 失去焦点事件,当控件失去焦点时触发,应该作用到控件元素上
+        var tip1 = document.getElementById('name-tips');
+
+        form.name.onblur = function(){
+            if(form.name.value.trim().length ===0){
+                tip1.innerHTML = '用户名不能为空';
+                form.name.foucs();
+            }
+        }
+
+        // oninput事件,在输入框内容发生变化时立即触发,而不像onchange要等到失去焦点再触发
+        form.name.oninput = function(){
+           tip1.innerHTML = "";
+        }
+
+
+        var tip2 = document.getElementById('psw-tips');
+
+        form.password.onblur = function(){
+            if(form.password.value.trim().length ===0){
+                tip2.innerHTML = '密码不能为空';
+                form.password.focus();
+            }
+        }
+        form.password.oninput = function(){
+            tip2.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

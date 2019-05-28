@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js中的元素运动原理</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background: lightblue;
+            padding: 10px;
+            border: 2px solid red;
+            margin: 20px;
+            /* border-radius: 50%; */
+            position: absolute;
+            top: 50px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>动起来</button>
+    <div></div>
+
+    <script>
+        var btn = document.querySelector('button');
+        var ball = document.querySelector('div');
+
+        // offsetWidth (盒子的可视宽度) offsetWidth = width + padding + border
+        // 当前盒子可视宽度: 50 + 10*2 + 2*2 = 74 (数值不是字符串)
+        // offsetLeft (盒子相对定位父级的左边相对位置) : left + margin-left
+
+        // 经过分析,只需要改变offsetLeft就可以使这个小球向右动起来
+        // 小球的margin-left不会改变,只要不断的改变left就可以
+        // 需要使用到定时器函数 setInterval() 用于间歇执行某一函数
+
+        btn.onclick = function(){
+            var timer = null;
+            timer = setInterval(function(){
+                //多次点击会创建多个定时器导致加速运动,所以再创建一个新定时器之前,先清除之前的定时器
+                clearInterval(timer);
+                if(ball.offsetLeft<500){
+                ball.style.left = ball.offsetLeft + 5 + 'px';
+                }else{
+                    clearInterval(timer);
+                }
+            },100)
+           
+        }
+    </script>
+</body>
+</html>

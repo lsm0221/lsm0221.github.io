@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单事件(一)</title>
+</head>
+<body>
+    <!-- 
+    1.表单值得获取:name属性
+    2.onchange()事件,当值发生改变时触发,不同的控件,触发时间时机不同
+      2.1. text/textarea,在输入完成失去焦点时,内容有更新就会触发 
+    -->
+
+    <h3>登录</h3>
+    <form action="" id="login">
+        <p>
+            <label for="username">用户名:</label>
+            <input type="text" name="username" id="username" value="admin">
+        </p>
+
+        <!-- 单选按钮 -->
+        <p>
+            <input type="radio" name="gender" value="male" id="male" checked><label for="male">男</label>
+            <input type="radio" name="gender" value="female" id="female"><label for="female">女</label>
+        </p>
+
+        <!-- 复选按钮 -->
+        <p>
+            <input type="checkbox" name="hoppy[]" value="game" id="game"><label for="game">玩游戏</label>
+            <input type="checkbox" name="hoppy[]" value="book" id="book"><label for="book">看书</label>
+        </p>
+
+        <!-- 下拉框 -->
+        <p>
+            <select name="area" value="与option中的selected一致">
+                <!-- 默认选中第一选项 -->
+                <option value="shushan">蜀山区</option>
+                <option value="luyang">庐阳区</option>
+                <option value="baohe" selected>包河区</option>
+            </select>
+        </p>
+
+        <script>
+            var login = document.getElementById('login');
+
+            login.username.onchange = function(){
+                console.log(login.username.value);
+            }
+            // 我们应该将onchange事件分别添加到每一个单选按钮上
+            for(var i = 0; i<login.gender.length; i++){
+                // this是发生事件的当前元素(上下文对象)
+                // 重复点击一个按钮不会触发,只有改变选择才会有效
+                login.gender[i].onchange = function(){
+                    console.log(this.value)
+                }
+            }
+                //hoppy[] 有非法字符，所以需要转化成字符串,
+            for( var i = 0; i<login['hoppy[]'].length; i++){
+                login['hoppy[]'][i].onchange = function(){
+                    console.log(this.value)
+                }
+            }
+
+            login.area.onchange = function(){
+                console.log(login.area.value)
+            }
+        </script>
+    </form>
+</body>
+</html>
