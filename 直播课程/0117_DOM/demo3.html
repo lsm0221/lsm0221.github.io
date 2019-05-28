@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>给ToList增加删除留言功能</title>
+</head>
+<body>
+   
+    <h3>请留言</h3>
+    <input type="text">
+    <ul></ul>
+
+    <script>
+        var comment = document.querySelector('input');
+        var ul = document.getElementsByTagName('ul')[0];
+        comment.focus() //获取文本框的焦点
+
+        comment.onkeydown = function(event){
+           if(event.keyCode ===13) {
+               var li = document.createElement('li');
+               li.innerHTML = comment.value + '<a href="javascript:;" onclick="del(this)">删除</a>'
+              
+
+               //应该将新元素添加到列表中的第一个元素的位置上才符合常识
+               //如果当前列表为空时(子元素的数量为0),则新元素应该是第一条留言
+                if(ul.childElementCount ===0 ){
+                    ul.appendChild(li);
+                } else { //如果列表已有留言,则插入到新一条之前
+                    var first = ul.firstElementChild;
+                    ul.insertBefore(li,first);  //(插入元素,插入元素的位置)
+                }
+                comment.value=""; //清空留言区
+           }
+        }
+    
+        function del(ele){
+            if(confirm('是否删除')){
+                //获取要删除的元素
+                var li = ele.parentNode;
+                // 一定要找到被删除元素的父节点,在它上面调用删除方法
+                li.parentNode.removeChild(li)
+
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

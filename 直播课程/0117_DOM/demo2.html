@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>经典的ToList</title>
+</head>
+<body>
+    <!-- 
+    节点中最常用的是以下三类节点
+    1. 文档节点: Document
+    2. 元素节点: Element
+    3. 文本节点: Text
+
+    涉及属性:
+    children(获取所有子元素), childNodes(获取所有子节点), 
+    childElementCount(获取所有子节点的数量),
+     keyCode(检测键盘是否按下), firstElementChild(获取第一个子元素)
+    涉及方法:
+    querySelector(), getElementsByTagName(), appendChild(), insertBefore(), focus() 
+    -->
+    <h3>请留言</h3>
+    <input type="text">
+    <ul></ul>
+
+    <script>
+        var comment = document.querySelector('input');
+        var ul = document.getElementsByTagName('ul')[0];
+        comment.focus() //获取文本框的焦点
+
+        comment.onkeydown = function(event){
+           if(event.keyCode ===13) {
+               var li = document.createElement('li');
+               li.innerHTML = comment.value;
+              
+
+               //应该将新元素添加到列表中的第一个元素的位置上才符合常识
+               //如果当前列表为空时(子元素的数量为0),则新元素应该是第一条留言
+                if(ul.childElementCount ===0 ){
+                    ul.appendChild(li);
+                } else { //如果列表已有留言,则插入到新一条之前
+                    var first = ul.firstElementChild;
+                    ul.insertBefore(li,first);  //(插入元素,插入元素的位置)
+                }
+                comment.value=""; //清空留言区
+           }
+        }
+    
+    </script>
+</body>
+</html>

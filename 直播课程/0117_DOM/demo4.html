@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js操作表格的基本技巧</title>
+    <style>
+        table,td,th {
+            border:1px solid #666;
+        }
+
+        table {
+            width:500px;
+            border-collapse:collapse;
+            text-align: center;
+        }
+
+        table caption{
+            font-size:1.2rem;
+            margin-bottom:15px;
+        }
+
+        thead tr:nth-of-type(1){
+            background-color:lightblue;
+        }
+    </style>
+</head>
+<body>
+    <table id = "cart1">
+        <caption>购物车1</caption>
+        <thead>
+            <tr>
+                <td>编号</td>
+                <td>品名</td>
+                <td>数量</td>
+                <td>单价</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>手机</td>
+                <td>1</td>
+                <td>3000</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>电脑</td>
+                <td>1</td>
+                <td>5000</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>手机</td>
+                <td>1</td>
+                <td>3000</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <hr>
+    <table id = "cart2">
+            <caption>购物车2</caption>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>品名</td>
+                    <td>数量</td>
+                    <td>单价</td>
+                </tr>
+            </thead>
+    
+            <tbody>  </tbody>
+    </table>
+
+    <script>
+        var cart1 = document.getElementById('cart1');
+        // 电脑在table的第3个子元素的第2个子元素下的第2个子元素的内容中
+        console.log( cart1.children[2].children[1].children[1].innerHTML);
+        console.log( cart1.children[2].children[1].children[3].innerHTML);
+        cart1.children[2].children[1].children[3].innerText = 7000;
+        console.log( cart1.children[2].children[1].children[3].innerText);
+
+        // table对象定义一些属性,可以快速获取指定的子元素
+        // 1.tHead: <thea>
+        // 2.tBodies: <tbody>...复数
+        // 3.tFoot: <tfoot>
+        // 4.rows: 所有行
+        // 5.cells：所有列
+
+        // 既然可写，那么这些表格数据，其实是可以动态生成的，开发过程中，这些数据肯定是来自数据库的
+        // 数据库中的数据最终会被解析为js对象字面量的格式渲染到页面中的DOM元素中
+        // 下面我们使用js对象的方式来提供数据,动态生成一个购物车
+
+        // 对象数组
+        var data = [
+            {id:1, name:'牛奶',count:3,price:50},
+            {id:1, name:'苹果',count:10,price:80},
+            {id:1, name:'衣服',count:2,price:600}
+        ];
+
+        var cart2 = document.getElementById('cart2');
+        var tbody = cart2.children[2];//返回tbody
+
+        // 遍历对象数组,value是一个对象
+        data.forEach(function(value){
+            var tr = document.createElement('tr');
+            tr.innerHTML = '<td>' + value.id + '</td>';
+            tr.innerHTML += '<td>' + value.name + '</td>';
+            tr.innerHTML += '<td>' + value.count + '</td>';
+            tr.innerHTML += '<td>' + value.price + '</td>';
+            tbody.appendChild(tr);
+        })
+    </script>
+</body>
+</html>

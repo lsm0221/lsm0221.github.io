@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM选择页面元素的方法</title>
+</head>
+<body>
+    <h3>购物清单</h3>
+    <ul id="list">
+        <li class="item">手机一部</li>
+        <li class="item">电脑一台</li>
+        <li class="item">外套一件</li>
+        <li class="item">啤酒一箱</li>
+    </ul>
+
+    <input type="text" name="username">
+
+    <script>
+        // tag 返回元素集合,必须使用数组语法[index]获取
+        var h3 = document.getElementsByTagName('h3')[0];
+        // var h3 = document.getElementsByTagName('h3').item(0);
+        h3.style.color="red";
+
+        // id获取页面中的唯一一个元素
+        var ul = document.getElementById('list');
+        ul.style.backgroundColor="lightcyan";
+
+        // class返回元素集合
+        var li = document.getElementsByClassName('item');
+        for(var i = 0; i< li.length; i++){
+            li[i].style.color="green";
+        }
+
+        // name返回元素集合
+        var text = document.getElementsByName('username')[0];
+        text.style.backgroundColor = 'yellow';
+
+        // 以上的方法来获取元素,可以实时反映元素中的变化
+
+        // 用css方式获取,获取的是一个静态快照,不能反映实时变化
+        var li = document.querySelector('li');
+        li.style.backgroundColor = 'pink';
+    
+        var li = document.querySelectorAll('li');
+        for( var i = 0; i< li.length; i++){
+            li[i].style.fontSize = "20px";
+        }
+    </script>
+</body>
+</html>
