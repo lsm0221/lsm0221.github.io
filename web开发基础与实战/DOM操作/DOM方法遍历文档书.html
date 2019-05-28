@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>如何通过DOM方法来遍历文档书</title>
+</head>
+<body>
+	<ul>
+		<li>列表1</li>
+		<li>列表2</li>
+		<li>列表3</li>
+		<li>列表4</li>
+		<li>列表5</li>	
+		<li>列表6</li>	
+	</ul>	
+	<script type="text/javascript">
+	//文档中所有内容都是节点类型
+	//节点有文档节点document,元素节点Element,文本节点Text
+	//每个节点对象还有三个最常用的属性: nodeType节点类型，nodeName节点名称,nodeValue节点的值
+
+	//查看最顶层的文档节点对象
+	console.log(document.nodeType);
+	console.log(document.nodeName);
+	console.log(document.nodeValue);
+
+	//childNodes 可以获取到父节点下的所有子节点，不包括孙节点
+	console.log(document.childNodes);  //获取NodeList(2)[<!DOCTYPE html>,html]
+	console.log(document.childNodes[1]); //获取<html>
+	//页面中的空白字符也是一个文本节点，换行字符也会获取到
+	console.log(document.childNodes[1].childNodes[1]); //获取到换行符
+	//为了避免文本节点的干扰，js还提供一套API（访问接口），仅获取子元素类型（仅选择元素节点类型）
+	console.log(document.children);   // 获取HTMLCollection[html]
+	console.log(document.children[0]);  //获取<html>
+	console.log(document.children[0].children[0]); //获取<head>  children仅获取元素节点
+	console.log(document.children[0].children[1]); //获取<body>  children仅获取元素节点
+
+	//获取ul
+	let ul = document.children[0].children.item(1).children[0]; //获取ul
+	console.log(ul)
+	ul.firstElementChild.style.backgroundColor="yellow";  //获取第一个元素
+	ul.lastElementChild.style.backgroundColor="red";	  //获取最后一个元素
+	console.log(ul.childElementCount);   //子元素的数量
+	console.log(ul.children.length);     //子元素的数量
+
+	//获取第三个li
+	let li1 = ul.children.item(2);
+	console.log(li1);
+	li1.style.backgroundColor="green";
+
+	li1.nextElementSibling.style.backgroundColor="coral"; //下一个兄弟元素，同级的
+	li1.previousElementSibling.style.backgroundColor="cyan"; //上一个兄弟元素,同级的 
+
+	//获取父元素
+	li1.parentElement.style.backgroundColor="wheat";
+
+	//用最原始的节点方法，因为父节点一定是唯一的，并且父节点不可是文本节点
+	li1.parentNode.style.backgroundColor="blue";
+	</script>
+</body>
+</html>

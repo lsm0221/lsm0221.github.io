@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>name和TagName获取元素的快捷方式</title>
+</head>
+<body>
+	<img src="image/p.jpg" name="pic">
+	<form action="" name="register">
+		<input type="text" placeholder="用户名"><br>
+		<input type="password" placeholder="密码"><br>
+		<button>提交</button>
+	</form>
+	<p><a href="http://www.php.cn" name="php">php中文网</a></p>
+
+	<script type="text/javascript">
+		//以文档对象的方式来访问这些特定的元素集合
+		//document.images:获取所有<img>元素,返回是一个数组
+		document.images[0].style.width="200px";  //1.标签的数字索引
+		document.images['pic'].style.width="300px";  //2.name的属性值
+		//如果将images看成是对象，就可以把name看成属性
+		document.images.pic.style.width="400px";  //3.name做为images对象的属性
+		document.images.item(0).style.width="500px"; //4.使用元素集合的item()方法
+
+		//forms属性: 获取到页面中的所有<form>元素
+		document.forms[0].style.backgroundColor="green";  //1.标签的数字索引
+		document.forms['register'].style.backgroundColor="yellow"; //2.name的属性值
+		document.forms.register.style.backgroundColor="red";  //3.name作为forms对象的属性值
+		document.forms.item(0).style.backgroundColor="pink";  //4.使用元素集合的item()方法
+
+		//links属性: 获取页面的<a>链接
+		document.links[0].style.backgroundColor="green";  //1.标签的数字索引
+		document.links['php'].style.backgroundColor="yellow";  //2.name的属性值
+		document.links.php.style.backgroundColor="red";   //3.name作为forms对象的属性值
+		document.links.item(0).style.backgroundColor="pink";  //4.使用元素集合的item()方法
+
+		//body属性: <body>
+		document.body.style.backgroundColor="wheat";
+
+		//head属性: <head>
+		let style=document.createElement('style');
+		document.head.appendChild(style);
+
+		//documentElement属性: <html>
+		console.log(document.documentElement);
+
+		//doctype : 文档类型
+		console.log(document.doctype);
+	</script>
+</body>
+</html>

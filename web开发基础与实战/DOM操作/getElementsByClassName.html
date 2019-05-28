@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据ClassName来获取元素</title>
+</head>
+<body>
+	<ul class="ul">
+		<li class="red">列表1</li>
+		<li class="red">列表2</li>
+		<li class="green">列表3</li>
+		<li class="red">列表4</li>
+		<li class="coral large">列表5</li>
+		
+	</ul>
+
+<script type="text/javascript">
+	//根据class来获取元素
+	let red = document.getElementsByClassName('red');
+	console.log(red);
+	red[1].style.backgroundColor="red";
+
+	//该方法不仅可以在document对象上调用，也可以在元素上调用，一般在父类上调用
+	let ul = document.getElementsByClassName('ul').item(0);  // 获取 ul
+	let green = ul.getElementsByClassName('green').item(0);  // 获取 li.green
+	green.style.backgroundColor="green";
+
+	//class支持多值
+	let large = document.getElementsByClassName('coral large').item(0);
+	large.style.backgroundColor="coral";
+	large.style.fontSize="22px";
+
+</script>
+</body>
+</html>

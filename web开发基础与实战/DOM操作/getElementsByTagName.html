@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据标签名来获取元素</title>
+</head>
+<body>
+	<ul>
+		<li>列表1</li>
+		<li>列表2</li>
+		<li>列表3</li>
+		<li>列表4</li>
+		<li>列表5</li>
+	</ul>
+
+<script type="text/javascript">
+	//返回是一个元素的集合，就会有一个length
+	let ul = document.getElementsByTagName('ul')[0];
+	ul.style.backgroundColor= "yellow";
+
+	//元素的集合其实是一个对象，它的上面有一个方法：item()
+	let ul1 = document.getElementsByTagName('ul').item(0);
+    ul1.style.backgroundColor="green";
+
+    //获取所有li元素
+    let lists = document.getElementsByTagName('li');
+    console.log(lists.length);
+    console.log(lists)
+    for(let i=0;i<lists.length;i++){
+    	lists[i].style.backgroundColor="pink";
+    }
+
+    //该方法不仅定义在document对象上，还在元素对象上也有定义
+     let ul2 = document.getElementsByTagName('ul').item(0);
+     let li2 = ul2.getElementsByTagName('li').item(1);
+     li2.style.backgroundColor="red";
+</script>
+</body>
+</html>

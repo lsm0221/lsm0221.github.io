@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟智能客服在线系统2</title>
+
+<style>
+		.contents{
+			width:500px;
+			height:550px;
+			background: pink;
+			margin:30px auto;
+			box-shadow: 3px 3px 3px #808080;
+		}
+
+		h2{
+			text-align: center;
+			margin-bottom: -10px;
+			
+		}
+		
+		ul{
+			list-style: none;
+			line-height: 20px;
+			
+			
+		}
+		ul li{
+			margin:10px 0;
+
+		}
+
+		.content{
+			width:450px;
+			height:420px;
+			background: lightblue;
+			margin:10px auto;
+			border:1px solid green;
+			overflow: auto;
+		}
+
+		table{
+			width: 450px;
+			height:80px;
+			margin:0 auto;
+		}
+
+		textarea{
+			border:none;
+			background: lightyellow;
+			resize: none;
+			width: 380px;
+		}
+
+		button{
+			width: 60px;
+			height:60px;
+			border:none;
+			background: #12B7F5;
+			color: #FFF;
+		}
+
+		button:hover{
+			cursor:pointer;
+			background: orange;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="contents">
+		<h2>在线客服</h2>
+		<div class="content">
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+		<table>
+				<tr>
+					<td ><textarea name="text"  cols="50" rows="4"></textarea></td>
+					<td ><button>发送</button></td>					
+				</tr>	
+		</table>
+	</div>
+	
+	<script type="text/javascript">
+		//获取元素
+		let text = document.getElementsByName('text')[0];
+		let btn = document.getElementsByTagName('button')[0];
+		let list = document.getElementsByTagName('ul')[0];
+		let sum = 0; //计数器
+
+		//添加点击事件,获取用户说的内容并且发送到窗口
+		 btn.onclick = function(){
+		 	//获取用户提交的内容
+		 	if(text.value.length==0){
+		 		alert('好像忘了什么东西');
+		 		return false;
+		 }
+		 	//创建一个li
+		 	let li = document.createElement('li')
+		 	//获取用户的提交的内容并将内容保存
+		 	let userContent = text.value;
+		 	//获取用户头像
+		 	let img = '<img src="image/1.jpg" style="width:50px;border-radius:50%" >'
+		 	//改变li的内容
+		 	li.innerHTML= img +'  '+ userContent;
+		 	list.appendChild(li);
+		 	sum+=1;
+		 	//立即将用户留言区清空
+		 	text.value="";
+
+		 	//设置一个定时器,2s后自动回复
+		 	setTimeout(function(){
+		 		//自动回复信息模板
+		 		let info = [
+		 				'亲，你好啊',
+		 				'有什么需要帮助的呢',
+		 				'欢迎来到本店',
+		 				'亲，对不起哦',
+		 				'回复请扣1'
+				 		];
+				 //随机选取0-5句回复,获取自动回复的内容
+				let temp = info[Math.floor(Math.random()*5) ];
+				//创建一句自动回复
+				let reply = document.createElement('li');
+				//获取客服头像
+				let serviceImg = '<img src="image/p.jpg" style="width:50px;border-radius:50%" >';
+				//改变reply的内容
+				reply.innerHTML= serviceImg+'<span style="color:red">'+temp+'</span>'+'  ';
+				list.appendChild(reply);
+				sum+=1;
+		 	},1000);
+
+		 	//清空窗口并将计数器清零
+		 	if(sum>10){
+		 		list.innerHTML="";
+		 		sum=0;
+		 	}
+		 	
+		 }
+		
+
+	</script>
+</body>
+</html>

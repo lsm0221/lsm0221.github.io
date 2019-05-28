@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据Name获取元素</title>
+</head>
+<body>
+	<!-- name属性并不是所有元素都有，只有一些特定的元素才有，比如：表单，表单内的元素，图像，iframe -->
+	<form name="login">
+		<input type="text" name="username"><br>
+		<input type="password" name="password"><br>
+		<button name="button">提交</button>
+	</form>
+
+	<script type="text/javascript">
+	//getElementsByName()返回是一个节点列表数组，NodeList
+	 let login = document.getElementsByName('login')[0];
+	 console.log(login);
+	 login.style.backgroundColor="yellow";
+	 //我们可以把name属性当成document对象的属性来用
+	 let login1 = document.login;
+	 console.log(login1);
+	 login1.style.backgroundColor="green";
+	</script>
+</body>
+</html>

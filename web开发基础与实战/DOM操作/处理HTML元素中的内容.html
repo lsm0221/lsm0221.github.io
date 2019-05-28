@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>如何处理HTML元素中的内容</title>
+</head>
+<body>
+	<p>我正在学习JavaScript编程技术</p>
+	<p>我正在学习<strong style="color:red">JavaScript</strong>编程技术</p>
+
+	<script type="text/javascript">
+	//元素的内容主要是二类：1.纯文本  2.html代码
+	//innerHTML 将元素内容全部读出，包括html代码
+	 let p1 = document.getElementsByTagName('p')[0];
+	 let p2 = document.getElementsByTagName('p')[1];
+	 console.log(p1.innerHTML);
+	 console.log(p2.innerHTML);
+
+	 //textContent :仅获取纯文本
+	 console.log(p1.textContent);
+	 console.log(p2.textContent);  //过滤到html代码
+
+	 //nodeType == 3 ;代表文本节点
+	 if(p1.childNodes[0].nodeType==3){
+	 	console.log(p1.childNodes[0].nodeValue)
+	 }
+	 if(p2.childNodes[0].nodeType==3){
+	 	console.log(p2.childNodes[0].nodeValue)
+	 }
+	 //因为后面内容的节点类型发生了变化,变成了元素属性，所以获取不到后面的内容。
+	</script>
+</body>
+</html>

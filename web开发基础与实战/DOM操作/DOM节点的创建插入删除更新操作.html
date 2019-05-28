@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM节点的创建、插入、删除、更新操作</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//创建节点
+	//1.首先创建新元素
+	let ul = document.createElement('ul');
+	//2.像新创建的元素中添加内容
+	ul.innerHTML='<li>我是列表项1</li>';
+	//3.将新元素添加到页面中，要在父级上调用
+	document.body.appendChild(ul);
+
+	//再创建一个列表项
+	let li = document.createElement('li');
+	li.innerHTML = '我是列表项2';
+	ul.appendChild(li); //默认传入到父节点的尾部
+
+	//如果想在任何位置插入，使用insertBefore() 方法
+	let li2 = document.createElement('li');
+	li2.innerHTML = '<span style="color:red">我是新插入的列表项</span>'
+	// ul.insertBefore('新节点','插入的位置')
+	ul.insertBefore(li2,li);
+
+	let li3 = document.createElement('li');
+	li3.innerHTML = '<span style="color:green">另外插入的新节点</span>'
+    ul.insertBefore(li3,null);   //等价于ul.appendChild(li3)
+	
+    //删除节点
+    ul.removeChild(li3);
+
+    //替换节点
+    let li4 = document.createElement('li');
+    li4.innerHTML='<span style="color:pink">我是替换的列表项</span>';
+    ul.replaceChild(li4,li2)
+	</script>
+</body>
+</html>

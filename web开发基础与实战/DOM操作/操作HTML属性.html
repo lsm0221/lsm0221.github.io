@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>如何操作HTML属性</title>
+</head>
+<body>
+	<!-- html元素属性有二类:1.标签自带的原生属性；2.用户自定义的属性； -->
+	<img src="image/1.jpg" width="300px">
+	<h3 id="header" class="hello" style="color:red" title="当幸福来敲门" index="php.cn">别走:幸福终究会到来</h3>
+
+	<script type="text/javascript">
+	//1.原生属性:看作当前元素对象的属性，进行读写
+	let img = document.getElementsByTagName('img').item(0);
+	console.log(img.src);  //读取原生属性
+	img.src="image/p.jpg"; //更新属性
+	img.width="200";
+
+	//class属性，因为class与js中的关键字冲突，所以用className 来表示
+	let h3 = document.getElementById('header');
+	console.log(h3.className); //获取h3的class
+	h3.className="word";	   //更新h3的class
+	console.log(h3.className); //获取更新后的class
+
+	//style属性，它的值不是一个字符串，而是一个对象
+	h3.style.color="green";
+
+	//2.自定义属性
+	if (h3.hasAttribute('index')) {  //判断h3中是否有index属性
+			console.log(h3.getAttribute('index')) ;//查看属性
+			h3.setAttribute('index','php中文网') ; //更新属性
+			h3.removeAttribute('index');           //移除自定义属性
+	}
+
+	//以上方法也可以用在原生属性
+	h3.setAttribute('style','color:blue;font-size:30px');
+
+	//以数组的方式来获取元素的属性，这时属性是只读的，获取的是实时更新的
+	console.log(h3.attributes);
+	console.log(h3.attributes[0]);         //获取id
+	console.log(h3.attributes['id']);      //获取id
+	console.log(h3.attributes['class']);   //获取class
+	console.log(h3.attributes['style']);   //获取style
+	</script>
+</body>
+</html>

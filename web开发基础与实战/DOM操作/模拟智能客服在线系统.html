@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟智能客服在线系统</title>
+	<style>
+		.contents{
+			width:500px;
+			height:550px;
+			background: pink;
+			margin:30px auto;
+			box-shadow: 3px 3px 3px #808080;
+		}
+
+		h2{
+			text-align: center;
+			margin-bottom: -10px;
+			
+		}
+		
+		ul{
+			list-style: none;
+			line-height: 20px;
+			overflow: hidden;
+			padding: 10px;
+		}
+
+		.content{
+			width:450px;
+			height:420px;
+			background: lightblue;
+			margin:10px auto;
+			border:1px solid green;
+		}
+
+		table{
+			width: 450px;
+			height:80px;
+			margin:0 auto;
+		}
+
+		textarea{
+			border:none;
+			background: lightyellow;
+			resize: none;
+			width: 380px;
+		}
+
+		button{
+			width: 60px;
+			height:60px;
+			border:none;
+			background: #12B7F5;
+			color: #FFF;
+		}
+
+		button:hover{
+			cursor:pointer;
+			background: orange;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="contents">
+		<h2>在线客服</h2>
+		<div class="content">
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+		<table>
+				<tr>
+					<td ><textarea id="textss" cols="50" rows="4"></textarea></td>
+					<td ><button>发送</button></td>					
+				</tr>	
+		</table>
+	</div>
+
+	<script type="text/javascript">
+	//获取元素
+	let texts = document.getElementById('textss');
+	let butn = document.getElementsByTagName('button')[0];
+	let ul = document.getElementsByTagName('ul')[0];
+
+	butn.onclick = function(){
+		let list = document.createElement('li');
+		list.innerHTML = texts.value;
+		ul.appendChild(list);
+		texts.value="";
+
+	}
+	</script>
+</body>
+</html>

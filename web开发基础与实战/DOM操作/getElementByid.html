@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>根据ID获取元素</title>
+</head>
+<body>
+	<ul id="lists">
+		<li id="item1">列表项1</li>
+		<li >列表项2</li>
+		<li id="item3">列表项3</li>
+		<li >列表项4</li>
+		<li id="item5">列表项5</li>
+	</ul>
+
+	<script type="text/javascript">
+		//通过ID来选择元素
+		//document是Document对象的一个引用，是一个全局变量
+		let item1 = document.getElementById('item1')
+		let item3 = document.getElementById('item3')
+		let item5 = document.getElementById('item5')
+
+		//设置元素的属性
+		item1.style.backgroundColor="yellow";
+		item3.style.backgroundColor="yellow";
+		item5.style.backgroundColor="yellow";
+
+		//通过函数来简化以上操作
+		function getElement(){ //参数是多个id字符串
+			let elements = {} //保存获取到的dom对象元素
+			for(let i=0;i<arguments.length;i++){
+				let id = arguments[i];  //获取参数id
+				let elt = document.getElementById(id); //根据id字符串
+				if(elt===null){
+					throw new Error("没有这个元素"+id); //抛出异常					
+				}
+				elements[id] = elt //将获取到的元素保存到结果集合中
+			}
+			return elements;  //将获取到的元素返回
+		}
+
+		//根据id获取页面上的指定元素,返回一个关联数组对象,键名就是id
+		let elements = getElement('item1','item3','item5');
+		console.log(elements);
+
+		//进行遍历
+		for(let key in elements){
+			elements[key].style.backgroundColor="red";
+		}
+		
+	</script>
+</body>
+</html>
