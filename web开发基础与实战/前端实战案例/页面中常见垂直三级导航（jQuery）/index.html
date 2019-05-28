@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>页面中常见的垂直三级导航 (jquery)</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="shortcut icon" href="static/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+    <script src="static/js/jquery.js"></script>
+</head>
+<body>
+    <ul class="nav">
+        <li class="one" style="background: #be1616;"><a href="" style="margin-right: 10px;">图书</a></li>
+        <li class="one"><a href="">文学 <i class="fa fa-angle-right"></i></a>
+            <ul>
+                <li class="two" style="border-top: 1px solid #5a5a5a;">穆斯林的葬礼<i class="fa fa-angle-right"></i>
+                    <div class="three">
+                        <p>
+                            《穆斯林的葬礼》是霍达创作的一部长篇小说，该小说以回族手工匠人梁亦清的玉器作坊奇珍斋升沉起伏为主线，
+                            在历史的背景下描写梁家三代人不同的命运变迁，表现了主人公为追求理想和事业，为完善自身素质所发出的蓬勃不息的命运意识。
+                        </p>
+                    </div>
+                </li>
+                <li class="two">穆斯林的葬礼<i class="fa fa-angle-right"></i>
+                    <div class="three">
+                        <p>
+                            《穆斯林的葬礼》是霍达创作的一部长篇小说，该小说以回族手工匠人梁亦清的玉器作坊奇珍斋升沉起伏为主线，
+                            在历史的背景下描写梁家三代人不同的命运变迁，表现了主人公为追求理想和事业，为完善自身素质所发出的蓬勃不息的命运意识。
+                        </p>
+                    </div>
+                
+                </li>
+                <li class="two">穆斯林的葬礼<i class="fa fa-angle-right"></i></li>
+                <li class="two">穆斯林的葬礼<i class="fa fa-angle-right"></i></li>
+
+            </ul>
+        </li>
+        <li class="one"><a href="">漫画 <i class="fa fa-angle-right"></i></a></li>
+        <li class="one"><a href="">小说 <i class="fa fa-angle-right"></i></a></li>
+        <li class="one"><a href="">杂志 <i class="fa fa-angle-right"></i></a></li>
+    </ul>
+
+    <script>
+        $(function(){
+            $('.two,.three').hide()
+            $('li.one:eq(1)').mouseover(function(){
+                 $(this).find('.two').slideDown(300)
+            })
+            $('li.one:eq(1)').mouseleave(function(){
+                 $(this).find('.two').hide(300)
+            })
+            $('li.two').mouseover(function(){
+                 $(this).find('.three').slideDown(300)
+            })
+            $('li.two').mouseleave(function(){
+                 $(this).find('.three').hide()
+            })
+           
+        })
+    </script>
+</body>
+</html>
