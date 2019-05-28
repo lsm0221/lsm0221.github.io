@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>照片墙(css动态效果)</title>
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <script src="static/js/jquery.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .box{
+            width: 1500px;
+            margin: 50px auto;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="static/images/1.jpg" alt="">
+        <img src="static/images/2.jpg" alt="">
+        <img src="static/images/3.jpg" alt="">
+        <img src="static/images/4.jpg" alt="">
+        <img src="static/images/5.jpg" alt="">
+        <img src="static/images/6.jpg" alt="">
+        <img src="static/images/7.jpg" alt="">
+        <img src="static/images/8.jpg" alt="">
+        <img src="static/images/9.jpg" alt="">
+        <img src="static/images/10.jpg" alt="">
+        <img src="static/images/11.jpg" alt="">
+        <img src="static/images/12.jpg" alt="">
+        <img src="static/images/13.jpg" alt="">
+        <img src="static/images/14.jpg" alt="">
+        <img src="static/images/15.jpg" alt="">
+        <img src="static/images/16.jpg" alt="">
+    </div>
+
+    <script>
+        var arr = ['bounce','flash','pulse','rubberBand','shakeswing','tadaw','obble','bounceIn','bounceInDown','bounceInLeft']
+        $('img').on('click',function(){
+            $('img').removeClass();
+            // 随机生成新的class
+            var rand = parseInt(Math.random()*10);
+            $(this).addClass('animated '+arr[rand])
+        })
+    </script>
+</body>
+</html>
