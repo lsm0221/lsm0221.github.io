@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左中右布局</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+
+        /* 如果使用频繁,可提前定义类 */
+        .left {
+            float: left;
+        }
+        .right {
+            float: right
+        }
+        .clear {
+            overflow: hidden;
+        }
+
+        /* 大容器 */
+        .wrapper{
+            width: 1210px;
+            /* border: 1px solid red; */
+            margin: 0 auto;
+            background-color: #FDFCF8
+        }
+        .header-left {
+            background: url(img/bg.png) no-repeat 0 -146px;
+            width: 1210px;
+            height: 110px;
+        }
+        .header-left:hover {
+            background-position: 0 -246px;
+        }
+        .header-right {
+            float: right;
+            margin-top: -73px;
+            margin-right: 10px;
+        }
+        .header-right input[type="text"] {
+            width: 256px;
+            height: 28px;
+            padding-left: 6px;
+        }
+        .header-right input[type="submit"] {
+            width: 31px;
+            height: 31px;
+            background: #AE4141;
+            font-size: 12px;
+            color: #fff;
+            border: 0px;
+        }
+
+        /* 导航 */
+        .navbar{
+            background-color: #ccc;
+            /* padding: 12px 0; */
+        }
+        .navbar ul {
+            overflow: hidden;
+        }
+        .navbar ul li {
+            float: left;
+            /* 1.添加宽度 2.overflow:hidden */
+            width: 150px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .navbar ul li:hover {
+            background: #3c3c3c;
+        }
+
+        /* 内容区域 */
+        /* 内容左边区域 */
+        .nav-left {
+            width: 180px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            /* padding: 25px 0px 0px 15px; */
+        }
+        /* 父级的宽度定了,不想动了,可以在加有个div,然后在进行设置 */
+        /* .nav-left > div { */
+            /* padding: 15px 0px 10px 15px; */
+        /* } */
+        .nav-left h3 {
+            margin-top: 10px;
+            padding: 5px 0px 5px 10px;
+        }
+        .nav-left a{
+            font-size: 12px;
+            width: 180px;
+            height: 26px;
+            padding: 5px 0px 5px 15px;
+            line-height: 26px;
+        }
+        .nav-left li:hover{
+            background: #444;
+        }
+        .nav-left li:hover a{
+            color: #fff;
+        }
+        .nav-left .help {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .nav-left .help a{
+            font-size: 14px;
+             margin-left: 5px;
+            color: #0479A7;
+            border: none;    
+            padding: 0px;    
+        }
+        .nav-left .help a:hover{
+            /* text-decoration: underline; */
+            border-bottom: 1px solid #0479A7;
+        }
+
+        /* 中间区域 */
+        .content {
+            width: 850px;
+        }
+        .content .section1 {
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        .content .section1  h2 {
+            color: #3f3f3f;
+        }
+        .content .section1 p {
+            font-size: 18px;
+            margin-top: 12px;
+        }
+        .content .section1 strong {
+            font-size: 18px;
+            color: #3f3f3f;
+            font-weight: 800;
+        }
+
+        .content .section2 {
+            background: url(img/icon2.png) no-repeat;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        .content .section2 h3 {
+            margin-top: 35px;
+            margin-left: 110px;
+            font-size: 24px;
+        }
+        .content .section2 p {
+            font-size: 16px;
+            margin-left: 110px;
+            margin-top: 12px;
+        }
+
+        .content .section3 {
+            background: url(img/icon3.png) no-repeat;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #aaa;
+        }
+        .content .section3 h3 {
+            margin-top: 35px;
+            margin-left: 110px;
+            font-size: 24px;
+        }
+        .content .section3 p {
+            font-size: 16px;
+            margin-left: 110px;
+            margin-top: 12px;
+        }
+
+        .content .section8 {
+            background: url(img/icon6.png) no-repeat;
+            padding-bottom: 30px;   
+            border-bottom: 1px solid #aaa;
+        }
+        .content .section8 h3 {
+            margin-top: 35px;
+            margin-left: 110px;
+            font-size: 24px;
+        }
+        .content .section8 p {
+            font-size: 16px;
+            margin-left: 110px;
+            margin-top: 12px;
+        }
+        .content .section8 p a {
+            color: #900b09;
+            border-bottom: 1px solid #900b09;
+        }
+        .content .section8 p a:hover {
+            color:red;
+            border-bottom: 1px solid red;
+        }
+
+
+        .content .section4 {
+            background: url(img/icon7.png) no-repeat;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #aaa;
+            min-height: 118px;
+        }
+        .content .section4 h3 {
+            margin-top: 35px;
+            margin-left: 110px;
+            font-size: 24px;
+        }
+        .content .section4 p {
+            font-size:16px;
+            margin-left: 110px;
+            margin-top: 12px;
+        }
+        .content .section4 p a {
+            color: #900b09;
+            border-bottom: 1px solid #900b09
+        }
+        .content .section4 p a:hover {
+            color: red;
+            border-bottom: 1px solid red;
+        }
+
+        .content .section5 h3 {
+            margin-top: 35px;
+            margin-left: 110px;
+            font-size: 24px;
+        }  
+        .content .section5 p {
+            font-size: 16px;
+            margin-left: 110px;
+            margin-top: 12px;
+        }
+        .content .section5 p a {
+            color: #000;
+            border-bottom: 1px solid #900b09;
+        }
+        .content .section5 p a:hover{
+            border-bottom: 1px solid red;
+        }
+
+        .content .section6 {
+            width: 290px;
+            height: 117px;
+            margin-left: 75px;
+            margin-top: 15px;
+            float: left;
+            background: url(img/icon9.png) top left no-repeat;
+            padding-bottom: 30px;
+            margin-left: 25px;
+            padding: 30px 0 30px 0;
+        }
+        .content .section6 h3 {
+            font-size: 14px;
+            margin: -10px 0 0 58px;
+            color: #777;
+            font-weight: 400;
+        }
+        .content .section6 p {
+            font-size: 14px;
+            margin: 0 0 0 58px;
+            line-height: normal;
+        }
+        .content .section6 p a {
+            color: #000;
+            border-bottom: 1px solid #900b09;
+        }
+        .content .section6 p a:hover {
+            border-bottom: 1px solid red;
+            
+        }
+
+        .content .section7 {
+            width: 299px;
+            margin-left: 75px;
+            margin-top: 15px;
+            float: left;
+            height: 117px;
+            background: url(img/icon10.png) 1px 17px no-repeat;
+            padding-bottom: 30px;
+            margin: 0 0 0 60px;
+            padding: 30px 0 30px 0;
+        }
+        .content .section7 h3 {
+            font-size: 14px;
+            margin: 10px 0 0 58px;
+            color: #777;
+            font-weight: 400;
+        }
+        .content .section7 p {
+            font-size: 14px;
+            margin: 0 0 0 58px;
+            
+        }  
+
+        .content > div {
+            padding: 20px;
+        }
+
+        /* 右侧区域 */
+        .nav-right {
+            width: 176px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+        .nav-right h3 {
+            margin-top: 10px;
+            padding: 5px 0px 5px 10px;
+        }
+        .nav-right a{
+            color: #900b09;
+            font-size: 12px;
+            width: 160px;
+            height: 26px;
+            padding: 5px 0px 5px 15px;
+            line-height: 26px;
+        }
+        .nav-right li:hover{
+            background: #AE4141;
+        }
+        .nav-right li:hover a{
+            color: #fff;
+        }
+
+
+        /* 底部区域 */
+        .footer {
+            width: 1210px;
+            padding: 15px;
+            background: #E8E7E3;
+            margin-top: -4px;
+        }
+        .footer .footer-1 {
+            font-size: 12px;
+            text-align: center;
+            line-height: 24px;
+            color: #777;     
+        }
+        .footer-2 {
+            height: 30px;
+            margin: 30px 0 30px 0;
+            font-size: 14px;
+            text-align: center;
+            color: #777777;
+        }
+    </style>
+</head>
+<body style="background-color:#FDFCF8">
+    <div class="wrapper clear">
+        <div class="header-left">
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="请在此输入内容">
+            <input type="submit" value="GO">
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="">HTML/CSS</a></li>
+                <li><a href="">JavaScript</a></li>
+                <li><a href="">Server Side</a></li>
+                <li><a href="">ASP.NET</a></li>
+                <li><a href="">XML</a></li>
+                <li><a href="">Web SErvices</a></li>
+                <li><a href="">Web Building</a></li>
+
+            </ul>
+        </div>
+
+        <div class="body clear">
+            <div class="nav-left left">
+                <div class="">
+                    <h3>HTML 教程</h3>
+                    <ul>
+                        <li><a href="">HTML</a></li>
+                        <li><a href="">HTML5</a></li>
+                        <li><a href="">XHTML</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">CSS3</a></li>
+                        <li><a href="">TCP/IP</a></li>
+                    </ul>
+                    
+                    <h3>浏览器脚本</h3>
+                    <ul>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">HTML DOM</a></li>
+                        <li><a href="">jQuery</a></li>
+                        <li><a href="">jQuery Mobile</a></li>
+                        <li><a href="">AJAX</a></li>
+                        <li><a href="">JSON</a></li>
+                        <li><a href="">DHTML</a></li>
+                        <li><a href="">E4X</a></li>
+                        <li><a href="">WML Script</a></li>
+                    </ul>
+
+                    <h3>XML</h3>
+                    <ul>
+                        <li><a href="">XML</a></li>
+                        <li><a href="">DTD</a></li>
+                        <li><a href="">XML DOM</a></li>
+                        <li><a href="">XSL</a></li>
+                        <li><a href="">XSLT</a></li>
+                        <li><a href="">XSL-FO</a></li>
+                        <li><a href="">X-Path</a></li>
+                        <li><a href="">XQuery</a></li>
+                        <li><a href="">XLink</a></li>
+                        <li><a href="">XPointer</a></li>
+                        <li><a href="">Schema</a></li>
+                        <li><a href="">XForms</a></li>
+                        <li><a href="">WAP</a></li>
+                        <li><a href="">SVG</a></li>
+                    </ul>
+
+                    <h3>建站手册</h3>
+                    <ul>
+                        <li><a href="">网站构建</a></li>
+                        <li><a href="">万维网联盟(W3C)</a></li>
+                        <li><a href="">浏览器信息</a></li>
+                        <li><a href="">网站品质</a></li>
+                        <li><a href="">语义网</a></li>
+                        <li><a href="">职业规划</a></li>
+                       
+                        
+
+                    </ul>
+
+                    <h2 class="help"><a href="">关于 W3School</a></h2>
+                    <h2 class="help"><a href="">帮助 W3School</a></h2>
+                </div>
+            </div>
+            <!-- nav-left end -->
+            <div class="content left">
+                <div>
+                    <div class="section1">
+                        <h2>领先的 Web 技术教程 - 全部免费</h2>
+                        <p>在 w3school，你可以找到你所需要的所有的网站建设教程。</p>
+                        <p>从基础的 HTML 到 CSS，乃至进阶的 XML、SQL、JS、PHP 和 ASP.NET。</p>
+                        <p><strong>从左侧的菜单选择你需要的教程</strong>！</p>
+                    </div>
+                    
+                    <div class="section2">
+                        <h3>完整的网站技术参考手册</h3>
+                        <p>我们的参考手册涵盖了网站技术的方方面面。</p>
+                        <p>其中包括W3C标准技术：HTML、CSS、XML 。以及其他技术，诸如 JavaScript、PHP、SQL 等。</p>
+                    </div>
+                    
+                    <div class="section3">
+                        <h3>在线实例测试工具</h3>
+                        <p>在 w3school，我们提供上千个实例。</p>
+                        <p>通过使用我们的在线编辑器，你可以编辑这些例子，并对代码进行实验。</p>
+                    </div>
+                    
+                    <div class="section8">
+                        <h3>W3School 新闻</h3>
+                        <p>
+                            <a href="" title="CSS3 参考手册">CSS3 参考手册</a>
+                            已上线，敬请批评指正。
+                        </p>
+                    </div>
+
+                    <div class="section4">
+                        <h3>W3School 更新信息</h3>
+                        <p>
+                            <a href="#" title="PHP Calendar 函数">参考手册：PHP Calendar 函数</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="#" title="PHP Date / Time 函数"> 参考手册：PHP Date / Time 函数 </a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="#" title="HTML 教程"> 教程：HTML 教程 </a>
+                        </p>
+                    </div>
+
+                    <div class="section5">
+                        <h3>W3School 友情链接</h3>
+                        <p>
+                            <a href="#" target="_blank">Firefox 中文社区</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="" target="_blank">w3ctech </a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="" target="_blank">WeTest腾讯质量开放平台 </a>
+                        </p>
+                    </div>
+                    <div class="" style = margin-top:40px;>
+                        <div class="section6">
+                            <h3>新浪微博</h3>
+                            <p><a href="#" target="_blank">W3School 官方微博</a></p>
+                        </div>
+
+                        <div class="section7">
+                            <h3>微信公众号</h3>
+                            <p>W3School 官方服务号</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right left">
+                <h3>参考手册</h3>
+                <ul>
+                    <li><a href="">HTML/HTML 标签</a></li>
+                    <li><a href="">HTML 颜色</a></li>
+                    <li><a href="">CSS 1,2,3</a></li>
+                    <li><a href="">JavaScript</a></li>
+                    <li><a href="">HTML DOM</a></li>
+                    <li><a href="">jQuery</a></li>
+                    <li><a href="">jQuery Mobile</a></li>
+                    <li><a href="">VBScript</a></li>
+                    <li><a href="">ASP</a></li>
+                    <li><a href="">ADO</a></li>
+                    <li><a href="">ASP.NET</a></li>
+                    <li><a href="">PHP 5.1</a></li>
+                    <li><a href="">XML DOM</a></li>
+                    <li><a href="">XSL 1.0</a></li>
+                    <li><a href="">XPath 2.0</a></li>
+                    <li><a href="">XSL-FO</a></li>
+                    <li><a href="">WML 1.1</a></li>
+                    <li><a href="">WEC 术语表</a></li>
+                </ul>
+
+                <h3>字符集</h3>
+                <ul>
+                    <li><a href="">HTML 字符集</a></li>
+                    <li><a href="">HTML ASCII</a></li>
+                    <li><a href="">HTML ISO-8859-1</a></li>
+                    <li><a href="">HTML 符号</a></li>
+                </ul>
+
+                <h3>实例/案例</h3>
+                <ul>
+                    <li><a href="">HTML 实例</a></li>
+                    <li><a href="">CSS 实例</a></li>
+                    <li><a href="">XML 实例</a></li>
+                    <li><a href="">JavaScript 实例</a></li>
+                    <li><a href="">JavaScript 对象实例</a></li>
+                    <li><a href="">HTML DOM 实例</a></li>
+                    <li><a href="">jQuery 实例</a></li>
+                    <li><a href="">jQuery Mobile 实例</a></li>
+                    <li><a href="">XML DOM 实例</a></li>
+                    <li><a href="">DHTML 实例</a></li>
+                    <li><a href="">AJAX 实例</a></li>
+                    <li><a href="">VBScript 实例</a></li>
+                    <li><a href="">ASP 实例</a></li>
+                    <li><a href="">ADO 实例</a></li>
+                    <li><a href="">SVG 实例</a></li>
+                    <li><a href="">WAP 实例</a></li>
+                    <li><a href="">WAP 实例</a></li>
+                    <li><a href="">WAP 实例</a></li>
+                    
+
+                </ul>
+
+               
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-1">
+                W3School 简体中文版提供的内容仅用于培训和测试,不保证内容的正确性。
+            </p>
+            
+        </div>
+        <p class="footer-2">
+                使用条款和隐私条款。版权所有，保留一切权利。 赞助商：上海赢科投资有限公司。 蒙ICP备06004630号  &nbsp;&nbsp; 广告刊例
+        </p>
+    </div>
+</body>
+</html>
